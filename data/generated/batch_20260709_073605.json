@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-07-09T07:36:05.074928",
+  "total_requested": 5,
+  "successful": 5,
+  "failed": 0,
+  "service_used": "pollinations.ai",
+  "results": [
+    {
+      "success": true,
+      "filepath": "images/20260709_073303_modern_office_worksp.png",
+      "filename": "20260709_073303_modern_office_worksp.png",
+      "size_bytes": 88766,
+      "size_kb": 86.69,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20modern%20office%20workspace%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2383",
+      "relative_path": "images/20260709_073303_modern_office_worksp.png",
+      "keyword": "modern office workspace",
+      "category": "business",
+      "prompt": "Professional stock photo of modern office workspace, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20modern%20office%20workspace%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2383",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "modern office workspace"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_073307_professional_busines.png",
+      "filename": "20260709_073307_professional_busines.png",
+      "size_bytes": 77041,
+      "size_kb": 75.24,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20professional%20business%20meeting%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2387",
+      "relative_path": "images/20260709_073307_professional_busines.png",
+      "keyword": "professional business meeting",
+      "category": "business",
+      "prompt": "Professional stock photo of professional business meeting, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20professional%20business%20meeting%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2387",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "professional business meeting"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_073351_startup_team_collabo.png",
+      "filename": "20260709_073351_startup_team_collabo.png",
+      "size_bytes": 78776,
+      "size_kb": 76.93,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20startup%20team%20collaboration%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2431",
+      "relative_path": "images/20260709_073351_startup_team_collabo.png",
+      "keyword": "startup team collaboration",
+      "category": "business",
+      "prompt": "Professional stock photo of startup team collaboration, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20startup%20team%20collaboration%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2431",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "startup team collaboration"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_073436_corporate_executive_.png",
+      "filename": "20260709_073436_corporate_executive_.png",
+      "size_bytes": 56504,
+      "size_kb": 55.18,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20corporate%20executive%20portrait%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2476",
+      "relative_path": "images/20260709_073436_corporate_executive_.png",
+      "keyword": "corporate executive portrait",
+      "category": "business",
+      "prompt": "Professional stock photo of corporate executive portrait, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20corporate%20executive%20portrait%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2476",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "corporate executive portrait"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_073520_mountain_landscape_s.png",
+      "filename": "20260709_073520_mountain_landscape_s.png",
+      "size_bytes": 75499,
+      "size_kb": 73.73,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20mountain%20landscape%20sunset%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2520",
+      "relative_path": "images/20260709_073520_mountain_landscape_s.png",
+      "keyword": "mountain landscape sunset",
+      "category": "nature",
+      "prompt": "Professional stock photo of mountain landscape sunset, stunning landscape photography, golden hour, National Geographic quality, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20mountain%20landscape%20sunset%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=2520",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "nature",
+        "mountain landscape sunset"
+      ]
+    }
+  ]
+}
