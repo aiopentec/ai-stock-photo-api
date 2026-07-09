@@ -60,6 +60,7 @@ def download_image(url: str, output_path: Path) -> Dict[str, Any]:
                 'size_bytes': file_size,
                 'size_kb': round(file_size / 1024, 2),
                 'url': url
+                'relative_path': f"images/{output_path.name}"
             }
         else:
             return {
@@ -141,7 +142,7 @@ def batch_generate_images(
                 'category': category,
                 'prompt': prompt,
                 'source_url': result.get('url', ''),
-                'relative_path': str(filepath.relative_to(Path.cwd())),
+                'relative_path': f"images/{filepath.name}",
                 'license': 'CC0 1.0 Universal',
                 'tags': [category, keyword.lower()]
             })
