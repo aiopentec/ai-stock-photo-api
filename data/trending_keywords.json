@@ -1,58 +1,110 @@
-﻿{
-    "metadata":  {
-                     "total":  10,
-                     "fetched_at":  "i12o8601"
-                 },
-    "keywords":  [
-                     {
-                         "keyword":  "business meeting",
-                         "rank":  1,
-                         "category":  "business"
-                     },
-                     {
-                         "keyword":  "nature landscape",
-                         "rank":  2,
-                         "category":  "nature"
-                     },
-                     {
-                         "keyword":  "modern technology",
-                         "rank":  3,
-                         "category":  "technology"
-                     },
-                     {
-                         "keyword":  "diverse team",
-                         "rank":  4,
-                         "category":  "people"
-                     },
-                     {
-                         "keyword":  "abstract background",
-                         "rank":  5,
-                         "category":  "abstract"
-                     },
-                     {
-                         "keyword":  "healthy food",
-                         "rank":  6,
-                         "category":  "food"
-                     },
-                     {
-                         "keyword":  "city architecture",
-                         "rank":  7,
-                         "category":  "travel"
-                     },
-                     {
-                         "keyword":  "online learning",
-                         "rank":  8,
-                         "category":  "education"
-                     },
-                     {
-                         "keyword":  "yoga fitness",
-                         "rank":  9,
-                         "category":  "health"
-                     },
-                     {
-                         "keyword":  "startup office",
-                         "rank":  10,
-                         "category":  "business"
-                     }
-                 ]
+{
+  "metadata": {
+    "fetched_at": "2026-07-09T00:39:11.221761",
+    "total_keywords": 20,
+    "source": "fallback",
+    "note": "Using fallback keywords due to Google Trends limitation"
+  },
+  "keywords": [
+    {
+      "keyword": "modern office workspace",
+      "category": "business",
+      "rank": 1
+    },
+    {
+      "keyword": "professional business meeting",
+      "category": "business",
+      "rank": 2
+    },
+    {
+      "keyword": "startup team collaboration",
+      "category": "business",
+      "rank": 3
+    },
+    {
+      "keyword": "corporate executive portrait",
+      "category": "business",
+      "rank": 4
+    },
+    {
+      "keyword": "mountain landscape sunset",
+      "category": "nature",
+      "rank": 5
+    },
+    {
+      "keyword": "ocean beach waves",
+      "category": "nature",
+      "rank": 6
+    },
+    {
+      "keyword": "forest trees sunlight",
+      "category": "nature",
+      "rank": 7
+    },
+    {
+      "keyword": "flower garden spring",
+      "category": "nature",
+      "rank": 8
+    },
+    {
+      "keyword": "artificial intelligence technology",
+      "category": "technology",
+      "rank": 9
+    },
+    {
+      "keyword": "computer coding workspace",
+      "category": "technology",
+      "rank": 10
+    },
+    {
+      "keyword": "smartphone mobile app",
+      "category": "technology",
+      "rank": 11
+    },
+    {
+      "keyword": "data visualization charts",
+      "category": "technology",
+      "rank": 12
+    },
+    {
+      "keyword": "healthy food salad bowl",
+      "category": "food",
+      "rank": 13
+    },
+    {
+      "keyword": "coffee cup cafe",
+      "category": "food",
+      "rank": 14
+    },
+    {
+      "keyword": "restaurant dining table",
+      "category": "food",
+      "rank": 15
+    },
+    {
+      "keyword": "diverse people group",
+      "category": "people",
+      "rank": 16
+    },
+    {
+      "keyword": "happy family moment",
+      "category": "people",
+      "rank": 17
+    },
+    {
+      "keyword": "fitness yoga exercise",
+      "category": "health",
+      "rank": 18
+    },
+    {
+      "keyword": "abstract geometric pattern",
+      "category": "abstract",
+      "rank": 19
+    },
+    {
+      "keyword": "city skyline architecture",
+      "category": "travel",
+      "rank": 20
+    }
+  ]
 }
