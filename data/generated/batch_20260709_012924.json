@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-07-09T01:29:24.338953",
+  "results": [
+    {
+      "success": false,
+      "error": "Failed after retries",
+      "keyword": "modern office workspace",
+      "category": "business"
+    },
+    {
+      "success": false,
+      "error": "Failed after retries",
+      "keyword": "professional business meeting",
+      "category": "business"
+    },
+    {
+      "success": false,
+      "error": "Failed after retries",
+      "keyword": "startup team collaboration",
+      "category": "business"
+    },
+    {
+      "success": false,
+      "error": "Failed after retries",
+      "keyword": "corporate executive portrait",
+      "category": "business"
+    },
+    {
+      "success": false,
+      "error": "Failed after retries",
+      "keyword": "mountain landscape sunset",
+      "category": "nature"
+    }
+  ]
+}
