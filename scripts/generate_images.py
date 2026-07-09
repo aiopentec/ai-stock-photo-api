@@ -18,36 +18,20 @@ import urllib.parse
 POLLINATIONS_API = "https://image.pollinations.ai/prompt"
 
 def generate_image_url(prompt: str, width: int = 1024, height: int = 1024) -> str:
-    """
-    Generate image using Pollinations.ai free API.
-    Returns URL to the generated image.
-    """
-    # Encode prompt for URL
+    """Generate image URL using Pollinations.ai."""
     encoded_prompt = urllib.parse.quote(prompt)
-    
-    # Build URL with parameters
     url = f"{POLLINATIONS_API}/{encoded_prompt}?width={width}&height={height}&nologo=true&seed={int(time.time()) % 10000}"
-    
     return url
 
 def download_image(url: str, output_path: Path) -> Dict[str, Any]:
-    """
-    Download image from URL to local file.
-    """
+    """Download image from URL to local file."""
     try:
         print(f"  ⬇️ Downloading from API...")
-        
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (AI Stock Photo Bot)'
-        }
-        
+        headers = {'User-Agent': 'Mozilla/5.0 (AI Stock Photo Bot)'}
         response = requests.get(url, headers=headers, timeout=120)
         
         if response.status_code == 200:
-            # Ensure directory exists
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            
-            # Save image
             with open(output_path, 'wb') as f:
                 f.write(response.content)
             
@@ -59,7 +43,7 @@ def download_image(url: str, output_path: Path) -> Dict[str, Any]:
                 'filename': output_path.name,
                 'size_bytes': file_size,
                 'size_kb': round(file_size / 1024, 2),
-                'url': url
+                'url': url,
                 'relative_path': f"images/{output_path.name}"
             }
         else:
@@ -80,33 +64,28 @@ def create_optimized_prompt(keyword: str, category: str = "general") -> str:
     """Create professional stock photo prompt."""
     
     category_enhancements = {
-        'business': "professional corporate photography, modern office, business people, soft lighting",
-        'nature': "stunning landscape photography, golden hour, National Geographic quality, vibrant colors",
-        'technology': "futuristic technology, clean minimal design, product photography, blue lighting",
-        'food': "appetizing food photography, restaurant quality, warm ambient light, gourmet presentation",
-        'people': "diverse group of people, lifestyle photography, authentic moment, natural expression",
-        'abstract': "abstract geometric art, gradient colors, contemporary design, minimalist composition",
-        'travel': "iconic travel destination, wanderlust photography, blue hour, architectural beauty",
-        'education': "bright learning environment, student studying, knowledge concept, academic setting",
-        'health': "fitness and wellness, active lifestyle, yoga meditation, healthy living"
+        'business': "professional corporate photography, modern office, business people",
+        'nature': "stunning landscape photography, golden hour, National Geographic quality",
+        'technology': "futuristic technology, clean minimal design, product photography",
+        'food': "appetizing food photography, restaurant quality, warm ambient light",
+        'people': "diverse group of people, lifestyle photography, authentic moment",
+        'abstract': "abstract geometric art, gradient colors, contemporary design",
+        'travel': "iconic travel destination, wanderlust photography, blue hour",
+        'education': "bright learning environment, student studying, knowledge concept",
+        'health': "fitness and wellness, active lifestyle, yoga meditation"
     }
     
     enhancement = category_enhancements.get(category, "high quality professional photography")
-    
-    prompt = f"Professional stock photo of {keyword}, {enhancement}, 8k resolution, sharp focus, commercially usable, Unsplash style, award-winning photography"
+    prompt = f"Professional stock photo of {keyword}, {enhancement}, 8k resolution, sharp focus, commercially usable"
     
     return prompt
 
-def batch_generate_images(
-    keywords: List[Dict[str, Any]], 
-    output_dir: Path, 
-    count: int = 5
-) -> Dict[str, Any]:
+def batch_generate_images(keywords: List[Dict[str, Any]], output_dir: Path, count: int = 5) -> Dict[str, Any]:
     """Generate multiple images."""
     
     print(f"\n{'='*60}")
     print(f"🎨 GENERATING {count} STOCK PHOTOS")
-    print(f"   Using: Pollinations.ai (FREE, No API Key)")
+    print(f"   Using: Pollinations.ai (FREE)")
     print(f"{'='*60}\n")
     
     results = []
@@ -116,23 +95,18 @@ def batch_generate_images(
         keyword = kw_data['keyword']
         category = kw_data.get('category', 'general')
         
-        print(f"\n[{i+1}/{min(count, len(keywords))}] 📷 {keyword}")
+        print(f"[{i+1}/{min(count, len(keywords))}] 📷 {keyword}")
         print(f"   Category: {category}")
         
-        # Create optimized prompt
         prompt = create_optimized_prompt(keyword, category)
-        print(f"   Prompt: {prompt[:80]}...")
         
-        # Generate URL
         img_url = generate_image_url(prompt)
         
-        # Create filename
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         safe_keyword = "".join(c if c.isalnum() else "_" for c in keyword[:20])
         filename = f"{timestamp}_{safe_keyword}.png"
         filepath = output_dir / filename
         
-        # Download image
         result = download_image(img_url, filepath)
         
         if result['success']:
@@ -142,31 +116,21 @@ def batch_generate_images(
                 'category': category,
                 'prompt': prompt,
                 'source_url': result.get('url', ''),
-                'relative_path': f"images/{filepath.name}",
                 'license': 'CC0 1.0 Universal',
                 'tags': [category, keyword.lower()]
             })
             results.append(result)
-            
             print(f"   ✅ Success! ({result['size_kb']} KB)")
         else:
             print(f"   ❌ Failed: {result.get('error', 'Unknown')}")
-            results.append({
-                'success': False,
-                'keyword': keyword,
-                'error': result.get('error'),
-                'url': result.get('url', '')
-            })
+            results.append({'success': False, 'keyword': keyword, 'error': result.get('error')})
         
-        # Small delay between downloads
         if i < count - 1:
             time.sleep(1)
     
-    # Summary
     print(f"\n{'='*60}")
     print(f"✅ GENERATION COMPLETE")
     print(f"   Successful: {successful}/{count}")
-    print(f"   Total size: {sum(r.get('size_bytes', 0) for r in results if r.get('success')) / 1024:.1f} KB")
     print('='*60)
     
     return {
@@ -185,13 +149,11 @@ def main():
     parser.add_argument('--output-dir', '-o', default='images')
     args = parser.parse_args()
     
-    # Load keywords
     try:
         with open(args.keywords_file, 'r') as f:
             data = json.load(f)
         keywords = data.get('keywords', [])
     except:
-        # Fallback keywords if file missing
         keywords = [
             {'keyword': 'modern office workspace', 'category': 'business'},
             {'keyword': 'mountain landscape sunset', 'category': 'nature'},
@@ -206,13 +168,11 @@ def main():
     
     print(f"📂 Loaded {len(keywords)} keywords")
     
-    # Generate images
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
     results = batch_generate_images(keywords, output_dir, args.count)
     
-    # Save metadata
     meta_dir = Path('data/generated')
     meta_dir.mkdir(parents=True, exist_ok=True)
     
