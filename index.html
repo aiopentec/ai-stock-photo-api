@@ -425,12 +425,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load images from API
 async function loadImages() {
     const grid = document.getElementById('imageGrid');
-    const baseUrl = window.location.origin;
     
     try {
-        console.log('📡 Fetching from:', baseUrl + '/api/images.json');
+        console.log('📡 Fetching images...');
         
-        const response = await fetch('/api/images.json');
+        // Use RELATIVE path (works on github.io/REPO-NAME/)
+        const response = await fetch('api/images.json');
         
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -449,7 +449,6 @@ async function loadImages() {
                 <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
                     <h2 style="font-size: 2rem; margin-bottom: 1rem;">🔧 Generating First Photos...</h2>
                     <p style="color: #718096;">Run the workflow manually to generate first images.</p>
-                    <p style="margin-top: 1rem;"><a href="/api/info" style="color: #667eea;">Check API Status →</a></p>
                 </div>`;
             return;
         }
@@ -472,9 +471,8 @@ async function loadImages() {
                 <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #e53e3e;">⚠️ Error Loading Photos</h2>
                 <p style="color: #718096; margin-bottom: 1rem;">${error.message}</p>
                 <p style="margin-top: 1rem;">
-                    <strong>Debug info:</strong><br>
-                    API URL: ${baseUrl}/api/images.json<br>
-                    Make sure this URL returns valid JSON.
+                    Trying to load: <code>api/images.json</code><br>
+                    Current URL: <code>${window.location.href}</code>
                 </p>
             </div>`;
     }
@@ -482,36 +480,32 @@ async function loadImages() {
 
 function renderImages(images) {
     const grid = document.getElementById('imageGrid');
-    const baseUrl = window.location.origin;
     
     console.log(`🎨 Rendering ${images.length} images...`);
     
     grid.innerHTML = images.map((img, index) => {
-        // Build absolute URL from relative path
+        // Use RELATIVE URL for images too!
         let imgUrl = img.url || img.relative_url || '';
         
-        // Ensure it's absolute
+        // If it starts with /, keep it relative (don't add base)
         if (!imgUrl.startsWith('http')) {
-            imgUrl = baseUrl + (imgUrl.startsWith('/') ? '' : '/') + imgUrl;
+            if (!imgUrl.startsWith('/')) {
+                imgUrl = '/' + imgUrl;
+            }
         }
         
-        // Generate display name from filename
+        // Generate display name
         const displayName = img.filename 
-            ? img.filename.replace('.png', '').replace(/_/g, ' ')
+            ? img.filename.replace('.png', '').replace(/_/g, ' ').substring(0, 35)
             : `AI Photo ${index + 1}`;
             
-        // Get category or default
         const category = img.source_category || 'General';
-        
-        // Get size or default
         const size = img.size_kb ? img.size_kb + ' KB' : 'HD';
-        
-        console.log(`   [${index + 1}] ${displayName} (${category}) - ${imgUrl}`);
         
         return `
         <div class="image-card" onclick="openModal('${imgUrl}', '${displayName}', '${img.filename || ''}')">
             <img src="${imgUrl}" alt="${displayName}" loading="lazy"
-                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>🎨 Loading...</text></svg>'">
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>🎨 Photo</text></svg>'">
             <div class="image-info">
                 <h3 title="${displayName}">${displayName}</h3>
                 <div class="image-meta">
@@ -537,8 +531,7 @@ function searchImages() {
     const filtered = allImages.filter(img => {
         const name = (img.filename || '').toLowerCase();
         const keyword = (img.source_keyword || '').toLowerCase();
-        const prompt = (img.prompt || '').toLowerCase();
-        return name.includes(query) || keyword.includes(query) || prompt.includes(query);
+        return name.includes(query) || keyword.includes(query);
     });
     
     renderImages(filtered);
@@ -550,8 +543,6 @@ document.getElementById('searchInput').addEventListener('keypress', (e) => {
 
 // Filter by category
 function filterByCategory(category) {
-    currentCategory = category;
-    
     document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
     
@@ -572,9 +563,15 @@ function openModal(imageUrl, title, filename) {
     const modalTitle = document.getElementById('modalTitle');
     const downloadLink = document.getElementById('downloadLink');
     
-    modalImg.src = imageUrl;
+    // Ensure absolute URL for download
+    let absUrl = imageUrl;
+    if (!absUrl.startsWith('http')) {
+        absUrl = window.location.origin + (absUrl.startsWith('/') ? '' : '/') + absUrl;
+    }
+    
+    modalImg.src = absUrl;
     modalTitle.textContent = title || 'AI Generated Masterpiece';
-    downloadLink.href = imageUrl;
+    downloadLink.href = absUrl;
     downloadLink.download = filename || 'stock-photo.png';
     
     modal.classList.add('active');
@@ -587,7 +584,6 @@ function closeModal(event) {
     document.body.style.overflow = 'auto';
 }
 
-// Close on Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
 });
