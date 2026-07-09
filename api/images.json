@@ -1,6 +1,42 @@
 {
   "api_version": "1.0.0",
-  "total_images": 0,
-  "last_updated": "2026-07-09T01:29:24.390648",
-  "images": []
+  "total_images": 5,
+  "last_updated": "2026-07-09T02:22:26.929557",
+  "images": [
+    {
+      "id": "img_20260709_022057_corporate_executive_",
+      "filename": "20260709_022057_corporate_executive_.png",
+      "url": "/images/20260709_022057_corporate_executive_.png",
+      "size_kb": 50.57,
+      "created_at": "2026-07-09T02:21:41.787921"
+    },
+    {
+      "id": "img_20260709_021927_professional_busines",
+      "filename": "20260709_021927_professional_busines.png",
+      "url": "/images/20260709_021927_professional_busines.png",
+      "size_kb": 71.31,
+      "created_at": "2026-07-09T02:20:11.765173"
+    },
+    {
+      "id": "img_20260709_022012_startup_team_collabo",
+      "filename": "20260709_022012_startup_team_collabo.png",
+      "url": "/images/20260709_022012_startup_team_collabo.png",
+      "size_kb": 69.96,
+      "created_at": "2026-07-09T02:20:56.661880"
+    },
+    {
+      "id": "img_20260709_022142_mountain_landscape_s",
+      "filename": "20260709_022142_mountain_landscape_s.png",
+      "url": "/images/20260709_022142_mountain_landscape_s.png",
+      "size_kb": 71.11,
+      "created_at": "2026-07-09T02:22:26.873631"
+    },
+    {
+      "id": "img_20260709_021925_modern_office_worksp",
+      "filename": "20260709_021925_modern_office_worksp.png",
+      "url": "/images/20260709_021925_modern_office_worksp.png",
+      "size_kb": 83.48,
+      "created_at": "2026-07-09T02:19:26.584972"
+    }
+  ]
 }
