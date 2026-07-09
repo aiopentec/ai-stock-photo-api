@@ -482,17 +482,21 @@ function renderImages(images) {
     const grid = document.getElementById('imageGrid');
     
     console.log(`🎨 Rendering ${images.length} images...`);
+    console.log('📍 Current page:', window.location.href);
     
     grid.innerHTML = images.map((img, index) => {
-        // Use RELATIVE URL for images too!
+        // Get URL from API data
         let imgUrl = img.url || img.relative_url || '';
         
-        // If it starts with /, keep it relative (don't add base)
+        // CRITICAL FIX: Build ABSOLUTE URL for GitHub Pages subdirectory
         if (!imgUrl.startsWith('http')) {
-            if (!imgUrl.startsWith('/')) {
-                imgUrl = '/' + imgUrl;
-            }
+            // Remove leading slash if present
+            imgUrl = imgUrl.replace(/^\//, '');
+            // Prepend full origin + base path
+            imgUrl = window.location.origin + '/' + imgUrl;
         }
+        
+        console.log(`   [${index + 1}] Image URL: ${imgUrl}`);
         
         // Generate display name
         const displayName = img.filename 
@@ -505,7 +509,12 @@ function renderImages(images) {
         return `
         <div class="image-card" onclick="openModal('${imgUrl}', '${displayName}', '${img.filename || ''}')">
             <img src="${imgUrl}" alt="${displayName}" loading="lazy"
-                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>🎨 Photo</text></svg>'">
+                 srcset="${imgUrl} 1x"
+                 onerror="
+                    console.error('❌ Failed:', '${imgUrl}');
+                    this.onerror = null;
+                    this.src = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2224%22>⚠️ Load Error</text></svg>';
+                 ">
             <div class="image-info">
                 <h3 title="${displayName}">${displayName}</h3>
                 <div class="image-meta">
