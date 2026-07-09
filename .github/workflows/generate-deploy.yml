@@ -1,1 +1,85 @@
-﻿
+﻿name: AI Stock Photo Generator
+
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      image_count:
+        description: 'Number of images to generate'
+        required: false
+        default: '20'
+      category:
+        description: 'Category filter (optional)'
+        required: false
+        default: 'all'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+jobs:
+  generate-images:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytrends requests Pillow python-dotenv
+      
+      - name: Fetch keywords
+        run: python scripts/fetch_keywords.py --output data/trending_keywords.json
+      
+      - name: Generate images
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python scripts/generate_images.py \
+            --keywords-file data/trending_keywords.json \
+            --count ${{ github.event.inputs.image_count || '20' }} \
+            --output-dir images \
+            --metadata-dir data/generated
+      
+      - name: Update API index
+        run: python scripts/update_api_index.py --images-dir images --api-dir api
+      
+      - name: Commit changes
+        run: |
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add .
+          TIMESTAMP=$(date +'%Y-%m-%d %H:%M')
+          git commit -m "Generated stock photos - $TIMESTAMP" || exit 0
+          git push
+
+  deploy-pages:
+    needs: generate-images
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4
