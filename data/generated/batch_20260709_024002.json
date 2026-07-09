@@ -1,0 +1,369 @@
+{
+  "generated_at": "2026-07-09T02:40:02.392906",
+  "total_requested": 20,
+  "successful": 20,
+  "failed": 0,
+  "service_used": "pollinations.ai",
+  "results": [
+    {
+      "success": true,
+      "filepath": "images/20260709_022544_modern_office_worksp.png",
+      "filename": "20260709_022544_modern_office_worksp.png",
+      "size_bytes": 90412,
+      "size_kb": 88.29,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20modern%20office%20workspace%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=3944",
+      "relative_path": "images/20260709_022544_modern_office_worksp.png",
+      "keyword": "modern office workspace",
+      "category": "business",
+      "prompt": "Professional stock photo of modern office workspace, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20modern%20office%20workspace%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=3944",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "modern office workspace"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_022548_professional_busines.png",
+      "filename": "20260709_022548_professional_busines.png",
+      "size_bytes": 72740,
+      "size_kb": 71.04,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20professional%20business%20meeting%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=3948",
+      "relative_path": "images/20260709_022548_professional_busines.png",
+      "keyword": "professional business meeting",
+      "category": "business",
+      "prompt": "Professional stock photo of professional business meeting, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20professional%20business%20meeting%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=3948",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "professional business meeting"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_022633_startup_team_collabo.png",
+      "filename": "20260709_022633_startup_team_collabo.png",
+      "size_bytes": 72776,
+      "size_kb": 71.07,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20startup%20team%20collaboration%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=3993",
+      "relative_path": "images/20260709_022633_startup_team_collabo.png",
+      "keyword": "startup team collaboration",
+      "category": "business",
+      "prompt": "Professional stock photo of startup team collaboration, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20startup%20team%20collaboration%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=3993",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "startup team collaboration"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_022718_corporate_executive_.png",
+      "filename": "20260709_022718_corporate_executive_.png",
+      "size_bytes": 61630,
+      "size_kb": 60.19,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20corporate%20executive%20portrait%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4038",
+      "relative_path": "images/20260709_022718_corporate_executive_.png",
+      "keyword": "corporate executive portrait",
+      "category": "business",
+      "prompt": "Professional stock photo of corporate executive portrait, professional corporate photography, modern office, business people, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20corporate%20executive%20portrait%2C%20professional%20corporate%20photography%2C%20modern%20office%2C%20business%20people%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4038",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "business",
+        "corporate executive portrait"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_022803_mountain_landscape_s.png",
+      "filename": "20260709_022803_mountain_landscape_s.png",
+      "size_bytes": 78042,
+      "size_kb": 76.21,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20mountain%20landscape%20sunset%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4083",
+      "relative_path": "images/20260709_022803_mountain_landscape_s.png",
+      "keyword": "mountain landscape sunset",
+      "category": "nature",
+      "prompt": "Professional stock photo of mountain landscape sunset, stunning landscape photography, golden hour, National Geographic quality, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20mountain%20landscape%20sunset%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4083",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "nature",
+        "mountain landscape sunset"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_022848_ocean_beach_waves.png",
+      "filename": "20260709_022848_ocean_beach_waves.png",
+      "size_bytes": 84089,
+      "size_kb": 82.12,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20ocean%20beach%20waves%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4128",
+      "relative_path": "images/20260709_022848_ocean_beach_waves.png",
+      "keyword": "ocean beach waves",
+      "category": "nature",
+      "prompt": "Professional stock photo of ocean beach waves, stunning landscape photography, golden hour, National Geographic quality, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20ocean%20beach%20waves%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4128",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "nature",
+        "ocean beach waves"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_022933_forest_trees_sunligh.png",
+      "filename": "20260709_022933_forest_trees_sunligh.png",
+      "size_bytes": 138985,
+      "size_kb": 135.73,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20forest%20trees%20sunlight%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4173",
+      "relative_path": "images/20260709_022933_forest_trees_sunligh.png",
+      "keyword": "forest trees sunlight",
+      "category": "nature",
+      "prompt": "Professional stock photo of forest trees sunlight, stunning landscape photography, golden hour, National Geographic quality, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20forest%20trees%20sunlight%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4173",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "nature",
+        "forest trees sunlight"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023018_flower_garden_spring.png",
+      "filename": "20260709_023018_flower_garden_spring.png",
+      "size_bytes": 95550,
+      "size_kb": 93.31,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20flower%20garden%20spring%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4218",
+      "relative_path": "images/20260709_023018_flower_garden_spring.png",
+      "keyword": "flower garden spring",
+      "category": "nature",
+      "prompt": "Professional stock photo of flower garden spring, stunning landscape photography, golden hour, National Geographic quality, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20flower%20garden%20spring%2C%20stunning%20landscape%20photography%2C%20golden%20hour%2C%20National%20Geographic%20quality%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4218",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "nature",
+        "flower garden spring"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023103_artificial_intellige.png",
+      "filename": "20260709_023103_artificial_intellige.png",
+      "size_bytes": 69448,
+      "size_kb": 67.82,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20artificial%20intelligence%20technology%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4263",
+      "relative_path": "images/20260709_023103_artificial_intellige.png",
+      "keyword": "artificial intelligence technology",
+      "category": "technology",
+      "prompt": "Professional stock photo of artificial intelligence technology, futuristic technology, clean minimal design, product photography, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20artificial%20intelligence%20technology%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4263",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "technology",
+        "artificial intelligence technology"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023148_computer_coding_work.png",
+      "filename": "20260709_023148_computer_coding_work.png",
+      "size_bytes": 75092,
+      "size_kb": 73.33,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20computer%20coding%20workspace%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4308",
+      "relative_path": "images/20260709_023148_computer_coding_work.png",
+      "keyword": "computer coding workspace",
+      "category": "technology",
+      "prompt": "Professional stock photo of computer coding workspace, futuristic technology, clean minimal design, product photography, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20computer%20coding%20workspace%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4308",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "technology",
+        "computer coding workspace"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023233_smartphone_mobile_ap.png",
+      "filename": "20260709_023233_smartphone_mobile_ap.png",
+      "size_bytes": 22405,
+      "size_kb": 21.88,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20smartphone%20mobile%20app%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4353",
+      "relative_path": "images/20260709_023233_smartphone_mobile_ap.png",
+      "keyword": "smartphone mobile app",
+      "category": "technology",
+      "prompt": "Professional stock photo of smartphone mobile app, futuristic technology, clean minimal design, product photography, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20smartphone%20mobile%20app%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4353",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "technology",
+        "smartphone mobile app"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023318_data_visualization_c.png",
+      "filename": "20260709_023318_data_visualization_c.png",
+      "size_bytes": 72986,
+      "size_kb": 71.28,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20data%20visualization%20charts%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4398",
+      "relative_path": "images/20260709_023318_data_visualization_c.png",
+      "keyword": "data visualization charts",
+      "category": "technology",
+      "prompt": "Professional stock photo of data visualization charts, futuristic technology, clean minimal design, product photography, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20data%20visualization%20charts%2C%20futuristic%20technology%2C%20clean%20minimal%20design%2C%20product%20photography%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4398",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "technology",
+        "data visualization charts"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023403_healthy_food_salad_b.png",
+      "filename": "20260709_023403_healthy_food_salad_b.png",
+      "size_bytes": 79814,
+      "size_kb": 77.94,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20healthy%20food%20salad%20bowl%2C%20appetizing%20food%20photography%2C%20restaurant%20quality%2C%20warm%20ambient%20light%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4443",
+      "relative_path": "images/20260709_023403_healthy_food_salad_b.png",
+      "keyword": "healthy food salad bowl",
+      "category": "food",
+      "prompt": "Professional stock photo of healthy food salad bowl, appetizing food photography, restaurant quality, warm ambient light, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20healthy%20food%20salad%20bowl%2C%20appetizing%20food%20photography%2C%20restaurant%20quality%2C%20warm%20ambient%20light%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4443",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "food",
+        "healthy food salad bowl"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023448_coffee_cup_cafe.png",
+      "filename": "20260709_023448_coffee_cup_cafe.png",
+      "size_bytes": 55600,
+      "size_kb": 54.3,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20coffee%20cup%20cafe%2C%20appetizing%20food%20photography%2C%20restaurant%20quality%2C%20warm%20ambient%20light%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4488",
+      "relative_path": "images/20260709_023448_coffee_cup_cafe.png",
+      "keyword": "coffee cup cafe",
+      "category": "food",
+      "prompt": "Professional stock photo of coffee cup cafe, appetizing food photography, restaurant quality, warm ambient light, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20coffee%20cup%20cafe%2C%20appetizing%20food%20photography%2C%20restaurant%20quality%2C%20warm%20ambient%20light%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4488",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "food",
+        "coffee cup cafe"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023534_restaurant_dining_ta.png",
+      "filename": "20260709_023534_restaurant_dining_ta.png",
+      "size_bytes": 72410,
+      "size_kb": 70.71,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20restaurant%20dining%20table%2C%20appetizing%20food%20photography%2C%20restaurant%20quality%2C%20warm%20ambient%20light%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4534",
+      "relative_path": "images/20260709_023534_restaurant_dining_ta.png",
+      "keyword": "restaurant dining table",
+      "category": "food",
+      "prompt": "Professional stock photo of restaurant dining table, appetizing food photography, restaurant quality, warm ambient light, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20restaurant%20dining%20table%2C%20appetizing%20food%20photography%2C%20restaurant%20quality%2C%20warm%20ambient%20light%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4534",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "food",
+        "restaurant dining table"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023617_diverse_people_group.png",
+      "filename": "20260709_023617_diverse_people_group.png",
+      "size_bytes": 113637,
+      "size_kb": 110.97,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20diverse%20people%20group%2C%20diverse%20group%20of%20people%2C%20lifestyle%20photography%2C%20authentic%20moment%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4577",
+      "relative_path": "images/20260709_023617_diverse_people_group.png",
+      "keyword": "diverse people group",
+      "category": "people",
+      "prompt": "Professional stock photo of diverse people group, diverse group of people, lifestyle photography, authentic moment, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20diverse%20people%20group%2C%20diverse%20group%20of%20people%2C%20lifestyle%20photography%2C%20authentic%20moment%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4577",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "people",
+        "diverse people group"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023703_happy_family_moment.png",
+      "filename": "20260709_023703_happy_family_moment.png",
+      "size_bytes": 94962,
+      "size_kb": 92.74,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20happy%20family%20moment%2C%20diverse%20group%20of%20people%2C%20lifestyle%20photography%2C%20authentic%20moment%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4623",
+      "relative_path": "images/20260709_023703_happy_family_moment.png",
+      "keyword": "happy family moment",
+      "category": "people",
+      "prompt": "Professional stock photo of happy family moment, diverse group of people, lifestyle photography, authentic moment, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20happy%20family%20moment%2C%20diverse%20group%20of%20people%2C%20lifestyle%20photography%2C%20authentic%20moment%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4623",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "people",
+        "happy family moment"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023748_fitness_yoga_exercis.png",
+      "filename": "20260709_023748_fitness_yoga_exercis.png",
+      "size_bytes": 54490,
+      "size_kb": 53.21,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20fitness%20yoga%20exercise%2C%20fitness%20and%20wellness%2C%20active%20lifestyle%2C%20yoga%20meditation%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4668",
+      "relative_path": "images/20260709_023748_fitness_yoga_exercis.png",
+      "keyword": "fitness yoga exercise",
+      "category": "health",
+      "prompt": "Professional stock photo of fitness yoga exercise, fitness and wellness, active lifestyle, yoga meditation, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20fitness%20yoga%20exercise%2C%20fitness%20and%20wellness%2C%20active%20lifestyle%2C%20yoga%20meditation%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4668",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "health",
+        "fitness yoga exercise"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023833_abstract_geometric_p.png",
+      "filename": "20260709_023833_abstract_geometric_p.png",
+      "size_bytes": 53776,
+      "size_kb": 52.52,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20abstract%20geometric%20pattern%2C%20abstract%20geometric%20art%2C%20gradient%20colors%2C%20contemporary%20design%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4713",
+      "relative_path": "images/20260709_023833_abstract_geometric_p.png",
+      "keyword": "abstract geometric pattern",
+      "category": "abstract",
+      "prompt": "Professional stock photo of abstract geometric pattern, abstract geometric art, gradient colors, contemporary design, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20abstract%20geometric%20pattern%2C%20abstract%20geometric%20art%2C%20gradient%20colors%2C%20contemporary%20design%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4713",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "abstract",
+        "abstract geometric pattern"
+      ]
+    },
+    {
+      "success": true,
+      "filepath": "images/20260709_023918_city_skyline_archite.png",
+      "filename": "20260709_023918_city_skyline_archite.png",
+      "size_bytes": 85009,
+      "size_kb": 83.02,
+      "url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20city%20skyline%20architecture%2C%20iconic%20travel%20destination%2C%20wanderlust%20photography%2C%20blue%20hour%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4758",
+      "relative_path": "images/20260709_023918_city_skyline_archite.png",
+      "keyword": "city skyline architecture",
+      "category": "travel",
+      "prompt": "Professional stock photo of city skyline architecture, iconic travel destination, wanderlust photography, blue hour, 8k resolution, sharp focus, commercially usable",
+      "source_url": "https://image.pollinations.ai/prompt/Professional%20stock%20photo%20of%20city%20skyline%20architecture%2C%20iconic%20travel%20destination%2C%20wanderlust%20photography%2C%20blue%20hour%2C%208k%20resolution%2C%20sharp%20focus%2C%20commercially%20usable?width=1024&height=1024&nologo=true&seed=4758",
+      "license": "CC0 1.0 Universal",
+      "tags": [
+        "travel",
+        "city skyline architecture"
+      ]
+    }
+  ]
+}
