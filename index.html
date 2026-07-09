@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stock Photos - Free AI-Generated Stock Photography</title>
+    <meta name="description" content="Free AI-generated stock photos for commercial and personal use. No attribution required. CC0 licensed.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            color: #1a202c;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        /* Search Section */
+        .search-section {
+            max-width: 700px;
+            margin: -2.5rem auto 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 60px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .search-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 1.25rem 2rem;
+            border: none;
+            font-size: 1.1rem;
+            outline: none;
+            background: transparent;
+        }
+
+        .search-box button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1.25rem 2.5rem;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-box button:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .category-btn {
+            padding: 0.65rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #4a5568;
+            transition: all 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            transform: scale(1.05);
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .image-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .image-info {
+            padding: 1.25rem;
+        }
+
+        .image-info h3 {
+            font-size: 1rem;
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .image-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .size-info {
+            color: #a0aec0;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: #718096;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e2e8f0;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+        }
+
+        footer a {
+            color: #90cdf4;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg) scale(1.2);
+        }
+
+        .modal-details {
+            background: white;
+            color: #1a202c;
+            padding: 2rem;
+            margin-top: 1rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .image-grid { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎨 AI Stock Photos</h1>
+    <p>Free AI-Generated Stock Photography • Powered by Stable Diffusion XL</p>
+    <div class="badges">
+        <span class="badge">✨ 100% FREE</span>
+        <span class="badge">📄 CC0 LICENSED</span>
+        <span class="badge">🚀 NO ATTRIBUTION</span>
+        <span class="badge">💼 COMMERCIAL USE OK</span>
+    </div>
+</header>
+
+<div class="search-section">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for perfect stock photos...">
+        <button onclick="searchImages()">🔍 Search</button>
+    </div>
+</div>
+
+<main>
+    <!-- Statistics -->
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-value" id="totalImages">--</div>
+            <div class="stat-label">Total Photos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="totalCategories">--</div>
+            <div class="stat-label">Categories</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">Daily</div>
+            <div class="stat-label">Auto Updates</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">$0</div>
+            <div class="stat-label">Cost Forever</div>
+        </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="categories">
+        <button class="category-btn active" onclick="filterByCategory('all')">🌟 All</button>
+        <button class="category-btn" onclick="filterByCategory('business')">💼 Business</button>
+        <button class="category-btn" onclick="filterByCategory('nature')">🌿 Nature</button>
+        <button class="category-btn" onclick="filterByCategory('technology')">💻 Technology</button>
+        <button class="category-btn" onclick="filterByCategory('people')">👥 People</button>
+        <button class="category-btn" onclick="filterByCategory('abstract')">🎨 Abstract</button>
+        <button class="category-btn" onclick="filterByCategory('food')">🍕 Food</button>
+        <button class="category-btn" onclick="filterByCategory('travel')">✈️ Travel</button>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="image-grid" id="imageGrid">
+        <div class="loading">
+            <div class="spinner"></div>
+            <h2>Loading Amazing AI Photos...</h2>
+            <p>Generated by Stable Diffusion XL</p>
+        </div>
+    </div>
+
+    <!-- Load More -->
+    <div style="text-align: center; margin-top: 3rem;">
+        <button id="loadMoreBtn" onclick="loadMore()" style="
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: none;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+        ">Load More Photos</button>
+    </div>
+</main>
+
+<!-- Image Preview Modal -->
+<div class="modal" id="imageModal" onclick="closeModal(event)">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img id="modalImage" src="" alt="Preview">
+        <div class="modal-details">
+            <h2 id="modalTitle">AI Generated Stock Photo</h2>
+            <p id="modalPrompt" style="color: #718096; margin: 1rem 0;"></p>
+            <a id="downloadLink" href="" download class="download-btn">⬇️ Download Free Photo</a>
+            <br><br>
+            <p style="font-size: 0.9rem; color: #a0aec0;">
+                License: CC0 1.0 Universal (Public Domain)<br>
+                Use freely for personal & commercial projects!
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <h3>🚀 AI Stock Photo API</h3>
+    <p>Powered by <strong>Stable Diffusion XL</strong> | Hosted on <strong>GitHub Pages</strong></p>
+    <p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><strong>CC0 1.0 Universal (Public Domain)</strong></a></p>
+    
+    <div class="footer-links">
+        <a href="/api/info">API Documentation</a>
+        <a href="/api/images">Browse All Images</a>
+        <a href="https://github.com/aiopentec/ai-stock-photo-api" target="_blank">GitHub Repo</a>
+    </div>
+    
+    <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+        Images are AI-generated. Use responsibly.<br>
+        © 2024 AI Stock Photo API • Made with ❤️ and Automation
+    </p>
+</footer>
+
+<script>
+// Global state
+let currentPage = 1;
+let currentCategory = 'all';
+const IMAGES_PER_PAGE = 20;
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+    loadStats();
+    loadImages();
+});
+
+// Load statistics
+async function loadStats() {
+    try {
+        const response = await fetch('/api/info');
+        const data = await response.json();
+        
+        document.getElementById('totalImages').textContent = 
+            data.total_images?.toLocaleString() || 'Loading...';
+        document.getElementById('totalCategories').textContent = 
+            Object.keys(data.statistics?.categories || {}).length || '9';
+    } catch (e) {
+        console.log('Stats loading...');
+    }
+}
+
+// Load images from API
+async function loadImages(append = false) {
+    const grid = document.getElementById('imageGrid');
+    
+    if (!append) {
+        grid.innerHTML = '<div class="loading"><div class="spinner"></div><h2>Loading Amazing AI Photos...</h2><p>This may take a moment...</p></div>';
+    }
+    
+    try {
+        let url = `/api/images?page=${currentPage}&per_page=${IMAGES_PER_PAGE}`;
+        
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        const images = data.images || [];
+        
+        if (!append && images.length === 0) {
+            grid.innerHTML = `
+                <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">🎨 Generating Your First Photos!</h2>
+                    <p style="font-size: 1.1rem; color: #718096;">Images are being created now. Check back in a few minutes!</p>
+                    <p style="margin-top: 1rem;"><a href="/api/info" style="color: #667eea;">Check API Status →</a></p>
+                </div>`;
+            return;
+        }
+        
+        if (!append) renderImages(images);
+        else appendImages(images);
+        
+        // Show/hide load more
+        document.getElementById('loadMoreBtn').style.display = 
+            data.has_next ? 'inline-block' : 'none';
+            
+    } catch (error) {
+        grid.innerHTML = `
+            <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">🔧 Setting Things Up...</h2>
+                <p style="color: #718096;">Your AI stock photo platform is almost ready!</p>
+                <p style="margin-top: 1rem;">Run the workflow manually to generate first images.</p>
+            </div>`;
+    }
+}
+
+function renderImages(images) {
+    const grid = document.getElementById('imageGrid');
+    
+    grid.innerHTML = images.map(img => `
+        <div class="image-card" onclick="openModal('${img.url || img.relative_url}', '${(img.prompt || '').replace(/'/g, "\\'")}', '${img.filename || ''}')">
+            <img src="${img.thumbnail_url || img.relative_url}" alt="${img.prompt || 'AI generated'}" loading="lazy"
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23edf2f7%22 width=%22400%22 height=%22300%22/><text fill=%22%23a0aec0%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>Generating...</text></svg>'">
+            <div class="image-info">
+                <h3 title="${img.prompt || ''}">${img.source_keyword || img.prompt?.substring(0, 40) || 'Beautiful AI Photo'}</h3>
+                <div class="image-meta">
+                    <span class="tag">${img.category || 'General'}</span>
+                    <span class="size-info">${img.size_kb || '?'} KB</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function appendImages(images) {
+    const grid = document.getElementById('imageGrid');
+    const newCards = images.map(img => `
+        <div class="image-card" onclick="openModal('${img.url || img.relative_url}', '${(img.prompt || '').replace(/'/g, "\\'")}', '${img.filename || ''}')">
+            <img src="${img.thumbnail_url || img.relative_url}" alt="${img.prompt || 'AI generated'}" loading="lazy">
+            <div class="image-info">
+                <h3>${img.source_keyword || 'AI Photo'}</h3>
+                <div class="image-meta">
+                    <span class="tag">${img.category || 'General'}</span>
+                    <span>${img.size_kb || '?'} KB</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    grid.insertAdjacentHTML('beforeend', newCards);
+}
+
+// Search functionality
+function searchImages() {
+    const query = document.getElementById('searchInput').value.trim();
+    alert('Search: ' + query + '\n\n💡 Full search coming soon!\nFor now, browse all photos below.');
+}
+
+document.getElementById('searchInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') searchImages();
+});
+
+// Filter by category
+function filterByCategory(category) {
+    currentCategory = category;
+    currentPage = 1;
+    
+    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    loadImages();
+}
+
+// Load more pagination
+function loadMore() {
+    currentPage++;
+    loadImages(true);
+}
+
+// Modal functions
+function openModal(imageUrl, prompt, filename) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalPrompt = document.getElementById('modalPrompt');
+    const downloadLink = document.getElementById('downloadLink');
+    
+    const fullUrl = imageUrl.startsWith('http') ? imageUrl : window.location.origin + imageUrl;
+    
+    modalImg.src = fullUrl;
+    modalTitle.textContent = filename || 'AI Generated Masterpiece';
+    modalPrompt.textContent = prompt || '';
+    downloadLink.href = fullUrl;
+    downloadLink.download = filename || 'stock-photo.png';
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(event) {
+    if (event && event.target !== event.currentTarget) return;
+    document.getElementById('imageModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+});
+</script>
+
+</body>
+</html>
