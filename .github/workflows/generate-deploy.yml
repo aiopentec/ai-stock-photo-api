@@ -49,9 +49,9 @@ jobs:
         run: |
           python scripts/generate_images.py \
             --keywords-file data/trending_keywords.json \
-            --count ${{ github.event.inputs.image_count || '20' }} \
+            --count ${{ github.event.inputs.image_count || '5' }} \
             --output-dir images \
-            --metadata-dir data/generated
+            --token $HF_TOKEN
       
       - name: Update API index
         run: python scripts/update_api_index.py --images-dir images --api-dir api
