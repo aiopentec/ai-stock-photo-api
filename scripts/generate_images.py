@@ -1,112 +1,227 @@
-﻿#!/usr/bin/env python3
-"""Generate AI images using Hugging Face"""
-import argparse, json, os, random, sys, time, requests
+#!/usr/bin/env python3
+"""
+Generate AI stock photos using Pollinations.ai (Free, No API Key Required!)
+"""
+
+import argparse
+import json
+import os
+import sys
+import time
+import requests
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any
+import urllib.parse
 
-CONFIG = {
-    'api_url': 'https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0',
-    'max_retries': 3,
-    'retry_delay': 5,
-    'default_size': (1024, 1024),
-    'steps': 30,
-    'guidance': 7.5
-}
+# Pollinations.ai - FREE AI Image Generation (No API key needed!)
+POLLINATIONS_API = "https://image.pollinations.ai/prompt"
 
-def generate_image(prompt: str, token: str, seed: int = None) -> Dict:
-    seed = seed or random.randint(0, 2147483647)
-    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
-    payload = {
-        "inputs": prompt,
-        "parameters": {
-            "negative_prompt": "blurry, low quality, distorted",
-            "num_inference_steps": CONFIG['steps'],
-            "guidance_scale": CONFIG['guidance'],
-            "seed": seed,
-            "width": CONFIG['default_size'][0],
-            "height": CONFIG['default_size'][1]
+def generate_image_url(prompt: str, width: int = 1024, height: int = 1024) -> str:
+    """
+    Generate image using Pollinations.ai free API.
+    Returns URL to the generated image.
+    """
+    # Encode prompt for URL
+    encoded_prompt = urllib.parse.quote(prompt)
+    
+    # Build URL with parameters
+    url = f"{POLLINATIONS_API}/{encoded_prompt}?width={width}&height={height}&nologo=true&seed={int(time.time()) % 10000}"
+    
+    return url
+
+def download_image(url: str, output_path: Path) -> Dict[str, Any]:
+    """
+    Download image from URL to local file.
+    """
+    try:
+        print(f"  ⬇️ Downloading from API...")
+        
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (AI Stock Photo Bot)'
         }
+        
+        response = requests.get(url, headers=headers, timeout=120)
+        
+        if response.status_code == 200:
+            # Ensure directory exists
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            # Save image
+            with open(output_path, 'wb') as f:
+                f.write(response.content)
+            
+            file_size = len(response.content)
+            
+            return {
+                'success': True,
+                'filepath': str(output_path),
+                'filename': output_path.name,
+                'size_bytes': file_size,
+                'size_kb': round(file_size / 1024, 2),
+                'url': url
+            }
+        else:
+            return {
+                'success': False,
+                'error': f"HTTP {response.status_code}",
+                'url': url
+            }
+            
+    except Exception as e:
+        return {
+            'success': False,
+            'error': str(e),
+            'url': url
+        }
+
+def create_optimized_prompt(keyword: str, category: str = "general") -> str:
+    """Create professional stock photo prompt."""
+    
+    category_enhancements = {
+        'business': "professional corporate photography, modern office, business people, soft lighting",
+        'nature': "stunning landscape photography, golden hour, National Geographic quality, vibrant colors",
+        'technology': "futuristic technology, clean minimal design, product photography, blue lighting",
+        'food': "appetizing food photography, restaurant quality, warm ambient light, gourmet presentation",
+        'people': "diverse group of people, lifestyle photography, authentic moment, natural expression",
+        'abstract': "abstract geometric art, gradient colors, contemporary design, minimalist composition",
+        'travel': "iconic travel destination, wanderlust photography, blue hour, architectural beauty",
+        'education': "bright learning environment, student studying, knowledge concept, academic setting",
+        'health': "fitness and wellness, active lifestyle, yoga meditation, healthy living"
     }
     
-    for attempt in range(CONFIG['max_retries']):
-        try:
-            print(f"  Generating (attempt {attempt+1}/{CONFIG['max_retries']})...")
-            resp = requests.post(CONFIG['api_url'], headers=headers, json=payload, timeout=180)
-            
-            if resp.status_code == 200:
-                return {'success': True, 'image_data': resp.content, 'prompt': prompt, 
-                        'seed': seed, 'size': len(resp.content), 'time': time.time()}
-            elif resp.status_code == 503:
-                wait = resp.json().get('estimated_time', CONFIG['retry_delay'])
-                print(f"  Model loading, waiting {wait}s...")
-                time.sleep(wait)
-            elif resp.status_code == 429:
-                print(f"  Rate limited, waiting...")
-                time.sleep(CONFIG['retry_delay'] * 2)
-            else:
-                print(f"  Error {resp.status_code}")
-                if attempt < CONFIG['max_retries'] - 1:
-                    time.sleep(CONFIG['retry_delay'])
-        except Exception as e:
-            print(f"  Exception: {e}")
-            time.sleep(CONFIG['retry_delay'])
+    enhancement = category_enhancements.get(category, "high quality professional photography")
     
-    return {'success': False, 'error': 'Failed after retries'}
+    prompt = f"Professional stock photo of {keyword}, {enhancement}, 8k resolution, sharp focus, commercially usable, Unsplash style, award-winning photography"
+    
+    return prompt
 
-def save_image(result: Dict, output_dir: Path) -> Dict:
-    if not result.get('success'): return result
-    output_dir.mkdir(parents=True, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{ts}_{result['seed']}.png"
-    filepath = output_dir / filename
-    with open(filepath, 'wb') as f:
-        f.write(result['image_data'])
-    result['filename'] = filename
-    result['filepath'] = str(filepath)
-    print(f"  Saved: {filename} ({result['size']/1024:.1f}KB)")
-    return result
-
-def create_prompt(keyword: str, category: str) -> str:
-    return f"Professional stock photo of {keyword}, high quality, 8k resolution, commercial photography, sharp focus, Unsplash-style aesthetic"
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--keywords-file', '-k', default='data/trending_keywords.json')
-    parser.add_argument('--count', '-c', type=int, default=20)
-    parser.add_argument('--output-dir', '-o', default='images')
-    parser.add_argument('--token', '-t', default=None)
-    args = parser.parse_args()
+def batch_generate_images(
+    keywords: List[Dict[str, Any]], 
+    output_dir: Path, 
+    count: int = 5
+) -> Dict[str, Any]:
+    """Generate multiple images."""
     
-    token = args.token or os.environ.get('HF_TOKEN')
-    if not token:
-        print("❌ HF_TOKEN required!")
-        return 1
-    
-    with open(args.keywords_file) as f:
-        data = json.load(f)
-    keywords = data.get('keywords', [])
-    
-    print(f"\nGenerating {args.count} images from {len(keywords)} keywords...\n")
+    print(f"\n{'='*60}")
+    print(f"🎨 GENERATING {count} STOCK PHOTOS")
+    print(f"   Using: Pollinations.ai (FREE, No API Key)")
+    print(f"{'='*60}\n")
     
     results = []
-    for i, kw in enumerate(keywords[:args.count]):
-        print(f"[{i+1}/{args.count}] {kw['keyword']} ({kw['category']})")
-        prompt = create_prompt(kw['keyword'], kw['category'])
-        result = generate_image(prompt, token)
-        result = save_image(result, Path(args.output_dir))
-        result.update({'keyword': kw['keyword'], 'category': kw['category']})
-        results.append(result)
-        time.sleep(2)
+    successful = 0
+    
+    for i, kw_data in enumerate(keywords[:count]):
+        keyword = kw_data['keyword']
+        category = kw_data.get('category', 'general')
+        
+        print(f"\n[{i+1}/{min(count, len(keywords))}] 📷 {keyword}")
+        print(f"   Category: {category}")
+        
+        # Create optimized prompt
+        prompt = create_optimized_prompt(keyword, category)
+        print(f"   Prompt: {prompt[:80]}...")
+        
+        # Generate URL
+        img_url = generate_image_url(prompt)
+        
+        # Create filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        safe_keyword = "".join(c if c.isalnum() else "_" for c in keyword[:20])
+        filename = f"{timestamp}_{safe_keyword}.png"
+        filepath = output_dir / filename
+        
+        # Download image
+        result = download_image(img_url, filepath)
+        
+        if result['success']:
+            successful += 1
+            result.update({
+                'keyword': keyword,
+                'category': category,
+                'prompt': prompt,
+                'source_url': result.get('url', ''),
+                'relative_path': str(filepath.relative_to(Path.cwd())),
+                'license': 'CC0 1.0 Universal',
+                'tags': [category, keyword.lower()]
+            })
+            results.append(result)
+            
+            print(f"   ✅ Success! ({result['size_kb']} KB)")
+        else:
+            print(f"   ❌ Failed: {result.get('error', 'Unknown')}")
+            results.append({
+                'success': False,
+                'keyword': keyword,
+                'error': result.get('error'),
+                'url': result.get('url', '')
+            })
+        
+        # Small delay between downloads
+        if i < count - 1:
+            time.sleep(1)
+    
+    # Summary
+    print(f"\n{'='*60}")
+    print(f"✅ GENERATION COMPLETE")
+    print(f"   Successful: {successful}/{count}")
+    print(f"   Total size: {sum(r.get('size_bytes', 0) for r in results if r.get('success')) / 1024:.1f} KB")
+    print('='*60)
+    
+    return {
+        'generated_at': datetime.now().isoformat(),
+        'total_requested': count,
+        'successful': successful,
+        'failed': count - successful,
+        'service_used': 'pollinations.ai',
+        'results': results
+    }
+
+def main():
+    parser = argparse.ArgumentParser(description='Generate AI stock photos (FREE)')
+    parser.add_argument('--keywords-file', '-k', default='data/trending_keywords.json')
+    parser.add_argument('--count', '-c', type=int, default=5)
+    parser.add_argument('--output-dir', '-o', default='images')
+    args = parser.parse_args()
+    
+    # Load keywords
+    try:
+        with open(args.keywords_file, 'r') as f:
+            data = json.load(f)
+        keywords = data.get('keywords', [])
+    except:
+        # Fallback keywords if file missing
+        keywords = [
+            {'keyword': 'modern office workspace', 'category': 'business'},
+            {'keyword': 'mountain landscape sunset', 'category': 'nature'},
+            {'keyword': 'artificial intelligence technology', 'category': 'technology'},
+            {'keyword': 'diverse team collaboration', 'category': 'people'},
+            {'keyword': 'abstract geometric pattern', 'category': 'abstract'}
+        ]
+    
+    if not keywords:
+        print("❌ No keywords found!")
+        return 1
+    
+    print(f"📂 Loaded {len(keywords)} keywords")
+    
+    # Generate images
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    results = batch_generate_images(keywords, output_dir, args.count)
     
     # Save metadata
-    meta = {'generated_at': datetime.now().isoformat(), 'results': results}
-    Path('data/generated').mkdir(exist_ok=True)
-    with open(f'data/generated/batch_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json', 'w') as f:
-        json.dump(meta, f, indent=2, default=str)
+    meta_dir = Path('data/generated')
+    meta_dir.mkdir(parents=True, exist_ok=True)
     
-    success = sum(1 for r in results if r.get('success'))
-    print(f"\n✅ Done! Generated {success}/{args.count} images")
-    return 0
+    meta_file = meta_dir / f"batch_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    with open(meta_file, 'w') as f:
+        json.dump(results, f, indent=2, default=str)
+    
+    print(f"\n💾 Metadata saved: {meta_file}")
+    
+    return 0 if results['successful'] > 0 else 1
 
-if __name__ == '__main__': sys.exit(main())
+if __name__ == '__main__':
+    sys.exit(main())
