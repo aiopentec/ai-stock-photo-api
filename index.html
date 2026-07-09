@@ -482,39 +482,44 @@ function renderImages(images) {
     const grid = document.getElementById('imageGrid');
     
     console.log(`🎨 Rendering ${images.length} images...`);
-    console.log('📍 Current page:', window.location.href);
+    
+    // Build base URL for raw GitHub content
+    const rawBase = 'https://raw.githubusercontent.com/aiopentec/ai-stock-photo-api/main/';
+    const pagesBase = window.location.origin + '/';
     
     grid.innerHTML = images.map((img, index) => {
-        // Get URL from API data
-        let imgUrl = img.url || img.relative_url || '';
-        
-        // CRITICAL FIX: Build ABSOLUTE URL for GitHub Pages subdirectory
-        if (!imgUrl.startsWith('http')) {
-            // Remove leading slash if present
-            imgUrl = imgUrl.replace(/^\//, '');
-            // Prepend full origin + base path
-            imgUrl = window.location.origin + '/' + imgUrl;
-        }
-        
-        console.log(`   [${index + 1}] Image URL: ${imgUrl}`);
-        
-        // Generate display name
-        const displayName = img.filename 
-            ? img.filename.replace('.png', '').replace(/_/g, ' ').substring(0, 35)
+        // Get filename from API data
+        const filename = img.filename || '';
+        const displayName = filename 
+            ? filename.replace('.png', '').replace(/_/g, ' ').substring(0, 35)
             : `AI Photo ${index + 1}`;
             
         const category = img.source_category || 'General';
         const size = img.size_kb ? img.size_kb + ' KB' : 'HD';
         
+        // Try multiple URL strategies in order of reliability
+        const imgUrl = `${pagesBase}images/${filename}`;
+        
+        console.log(`   [${index + 1}] ${displayName}`);
+        console.log(`       URL: ${imgUrl}`);
+        
         return `
-        <div class="image-card" onclick="openModal('${imgUrl}', '${displayName}', '${img.filename || ''}')">
-            <img src="${imgUrl}" alt="${displayName}" loading="lazy"
-                 srcset="${imgUrl} 1x"
-                 onerror="
-                    console.error('❌ Failed:', '${imgUrl}');
-                    this.onerror = null;
-                    this.src = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2224%22>⚠️ Load Error</text></svg>';
-                 ">
+        <div class="image-card" onclick="openModal('${imgUrl}', '${displayName}', '${filename}')">
+            <img 
+                src="${imgUrl}" 
+                alt="${displayName}" 
+                loading="lazy"
+                style="width: 100%; height: 240px; object-fit: cover;"
+                onerror="
+                    console.warn('⚠️ Failed:', '${imgUrl}');
+                    this.src = '${rawBase}images/${filename}';
+                    this.onerror = function() {
+                        console.error('❌ Also failed:', '${rawBase}images/${filename}');
+                        this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjNjY3ZWVhIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIvPjx0ZXh0IGZpbGw9IndoaXRlIiB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSIyNCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+RijwvdGV4dD48L3N2Zz4=';
+                        this.onerror = null;
+                    }
+                "
+            >
             <div class="image-info">
                 <h3 title="${displayName}">${displayName}</h3>
                 <div class="image-meta">
@@ -572,10 +577,10 @@ function openModal(imageUrl, title, filename) {
     const modalTitle = document.getElementById('modalTitle');
     const downloadLink = document.getElementById('downloadLink');
     
-    // Ensure absolute URL for download
+    // Ensure absolute URL
     let absUrl = imageUrl;
     if (!absUrl.startsWith('http')) {
-        absUrl = window.location.origin + (absUrl.startsWith('/') ? '' : '/') + absUrl;
+        absUrl = window.location.origin + '/' + absUrl.replace(/^\//, '');
     }
     
     modalImg.src = absUrl;
