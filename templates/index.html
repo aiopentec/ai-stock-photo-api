@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Stock Photos - Free</title>
+    <style>
+        body { font-family: Arial; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; background: linear-gradient(135deg, #2563eb, #1e40af); color: white; padding: 40px; border-radius: 12px; margin-bottom: 30px; }
+        .search-box { display: flex; max-width: 600px; margin: -30px auto 30px; }
+        .search-box input { flex: 1; padding: 15px 20px; border: none; border-radius: 25px 0 0 25px; font-size: 16px; }
+        .search-box button { padding: 15px 30px; background: #2563eb; color: white; border: none; border-radius: 0 25px 25px 0; cursor: pointer; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-info { padding: 15px; }
+        .badge { display: inline-block; background: #f1f5f9; padding: 4px 12px; border-radius: 15px; font-size: 13px; margin: 4px; }
+        footer { text-align: center; padding: 30px; color: #64748b; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎨 AI Stock Photos</h1>
+        <p>Free AI-generated stock photography • No attribution needed • Commercial use OK</p>
+        <div>
+            <span class="badge">✨ 100% Free</span>
+            <span class="badge">📄 CC0 Licensed</span>
+            <span class="badge">🚀 Daily Updates</span>
+        </div>
+    </header>
+    
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for photos...">
+        <button onclick="searchPhotos()">Search</button>
+    </div>
+    
+    <div class="grid" id="imageGrid"></div>
+    
+    <footer>
+        <p>Powered by Stable Diffusion XL | Hosted on GitHub Pages | Licensed under CC0 1.0</p>
+    </footer>
+
+    <script>
+        async function loadImages() {
+            const grid = document.getElementById('imageGrid');
+            try {
+                const resp = await fetch('/api/images');
+                const data = await resp.json();
+                
+                if (data.images && data.images.length > 0) {
+                    grid.innerHTML = data.images.map(img => 
+                        <div class="card">
+                            <img src="" alt="" loading="lazy">
+                            <div class="card-info">
+                                <strong></strong><br>
+                                <span class="badge"></span>
+                                <span class="badge"> KB</span>
+                            </div>
+                        </div>
+                    ).join('');
+                } else {
+                    grid.innerHTML = '<p style="text-align:center;grid-column:1/-1;">Loading images... Check back soon!</p>';
+                }
+            } catch(e) {
+                grid.innerHTML = '<p style="text-align:center;grid-column:1/-1;">Connect to API or add HF_TOKEN to start generating</p>';
+            }
+        }
+        
+        async function searchPhotos() {
+            const query = document.getElementById('searchInput').value;
+            // Implement search logic here
+            alert('Search: ' + query);
+        }
+        
+        loadImages();
+    </script>
+</body>
+</html>

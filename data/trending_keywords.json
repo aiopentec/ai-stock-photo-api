@@ -1,0 +1,58 @@
+﻿{
+    "metadata":  {
+                     "total":  10,
+                     "fetched_at":  "i12o8601"
+                 },
+    "keywords":  [
+                     {
+                         "keyword":  "business meeting",
+                         "rank":  1,
+                         "category":  "business"
+                     },
+                     {
+                         "keyword":  "nature landscape",
+                         "rank":  2,
+                         "category":  "nature"
+                     },
+                     {
+                         "keyword":  "modern technology",
+                         "rank":  3,
+                         "category":  "technology"
+                     },
+                     {
+                         "keyword":  "diverse team",
+                         "rank":  4,
+                         "category":  "people"
+                     },
+                     {
+                         "keyword":  "abstract background",
+                         "rank":  5,
+                         "category":  "abstract"
+                     },
+                     {
+                         "keyword":  "healthy food",
+                         "rank":  6,
+                         "category":  "food"
+                     },
+                     {
+                         "keyword":  "city architecture",
+                         "rank":  7,
+                         "category":  "travel"
+                     },
+                     {
+                         "keyword":  "online learning",
+                         "rank":  8,
+                         "category":  "education"
+                     },
+                     {
+                         "keyword":  "yoga fitness",
+                         "rank":  9,
+                         "category":  "health"
+                     },
+                     {
+                         "keyword":  "startup office",
+                         "rank":  10,
+                         "category":  "business"
+                     }
+                 ]
+}
