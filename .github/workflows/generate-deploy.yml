@@ -48,15 +48,14 @@ jobs:
         run: python scripts/fetch_keywords.py --output data/trending_keywords.json
       
       - name: Generate images
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          cd $GITHUB_WORKSPACE
+          mkdir -p images
           python scripts/generate_images.py \
             --keywords-file data/trending_keywords.json \
             --count ${{ github.event.inputs.image_count || '5' }} \
-            --output-dir images \
-            --token $HF_TOKEN
-      
+            --output-dir images
+                  
       - name: Update API index
         run: python scripts/update_api_index.py --images-dir images --api-dir api
       
