@@ -571,19 +571,35 @@ async function loadImages(append = false) {
 function renderImages(images) {
     const grid = document.getElementById('imageGrid');
     
-    grid.innerHTML = images.map(img => `
-        <div class="image-card" onclick="openModal('${img.url || img.relative_url}', '${(img.prompt || '').replace(/'/g, "\\'")}', '${img.filename || ''}')">
-            <img src="${img.thumbnail_url || img.relative_url}" alt="${img.prompt || 'AI generated'}" loading="lazy"
-                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23edf2f7%22 width=%22400%22 height=%22300%22/><text fill=%22%23a0aec0%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>Generating...</text></svg>'">
+    // Build base URL dynamically
+    const baseUrl = window.location.origin;
+    
+    grid.innerHTML = images.map(img => {
+        // Try multiple possible URL patterns
+        let imgUrl = img.url || img.relative_url || '';
+        let thumbUrl = img.thumbnail_url || img.url || img.relative_url || '';
+        
+        // Ensure absolute URLs
+        if (imgUrl && !imgUrl.startsWith('http')) {
+            imgUrl = baseUrl + (imgUrl.startsWith('/') ? '' : '/') + imgUrl;
+        }
+        if (thumbUrl && !thumbUrl.startsWith('http')) {
+            thumbUrl = baseUrl + (thumbUrl.startsWith('/') ? '' : '/') + thumbUrl;
+        }
+        
+        return `
+        <div class="image-card" onclick="openModal('${imgUrl}', '${(img.prompt || '').replace(/'/g, "\\'")}', '${img.filename || ''}')">
+            <img src="${thumbUrl}" alt="${img.prompt || 'AI generated stock photo'}" loading="lazy"
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>🎨 AI Photo</text></svg>'">
             <div class="image-info">
-                <h3 title="${img.prompt || ''}">${img.source_keyword || img.prompt?.substring(0, 40) || 'Beautiful AI Photo'}</h3>
+                <h3 title="${img.prompt || ''}">${img.source_keyword || img.prompt?.substring(0, 45) || 'Beautiful AI Stock Photo'}</h3>
                 <div class="image-meta">
                     <span class="tag">${img.category || 'General'}</span>
-                    <span class="size-info">${img.size_kb || '?'} KB</span>
+                    <span class="size-info">${img.size_kb ? img.size_kb + ' KB' : 'HD'}</span>
                 </div>
             </div>
         </div>
-    `).join('');
+    `}).join('');
 }
 
 function appendImages(images) {
