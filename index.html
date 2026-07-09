@@ -7,12 +7,8 @@
     <meta name="description" content="Free AI-generated stock photos for commercial and personal use. No attribution required. CC0 licensed.">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -20,7 +16,6 @@
             color: #1a202c;
         }
 
-        /* Header */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -60,7 +55,6 @@
             border: 2px solid rgba(255,255,255,0.3);
         }
 
-        /* Search Section */
         .search-section {
             max-width: 700px;
             margin: -2.5rem auto 3rem;
@@ -102,18 +96,12 @@
             transition: all 0.3s;
         }
 
-        .search-box button:hover {
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-        }
-
-        /* Main Content */
         main {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
 
-        /* Stats Bar */
         .stats-bar {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -149,7 +137,6 @@
             margin-top: 0.25rem;
         }
 
-        /* Categories */
         .categories {
             display: flex;
             justify-content: center;
@@ -177,7 +164,6 @@
             transform: scale(1.05);
         }
 
-        /* Image Grid */
         .image-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -245,29 +231,6 @@
             font-weight: 500;
         }
 
-        /* Loading State */
-        .loading {
-            text-align: center;
-            padding: 4rem;
-            color: #718096;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid #e2e8f0;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1.5rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Footer */
         footer {
             background: #1a202c;
             color: white;
@@ -282,19 +245,6 @@
             font-weight: 600;
         }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -317,12 +267,6 @@
             max-width: 90vw;
             max-height: 90vh;
             position: relative;
-            animation: zoomIn 0.3s ease-out;
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
         }
 
         .modal-content img {
@@ -341,12 +285,6 @@
             cursor: pointer;
             background: none;
             border: none;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .modal-close:hover {
-            transform: rotate(90deg) scale(1.2);
         }
 
         .modal-details {
@@ -375,7 +313,6 @@
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
             .image-grid { grid-template-columns: 1fr; }
@@ -387,7 +324,7 @@
 
 <header>
     <h1>🎨 AI Stock Photos</h1>
-    <p>Free AI-Generated Stock Photography • Powered by Stable Diffusion XL</p>
+    <p>Free AI-Generated Stock Photography • Powered by Pollinations.ai</p>
     <div class="badges">
         <span class="badge">✨ 100% FREE</span>
         <span class="badge">📄 CC0 LICENSED</span>
@@ -407,12 +344,12 @@
     <!-- Statistics -->
     <div class="stats-bar">
         <div class="stat-card">
-            <div class="stat-value" id="totalImages">--</div>
+            <div class="stat-value" id="totalPhotos">--</div>
             <div class="stat-label">Total Photos</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value" id="totalCategories">--</div>
-            <div class="stat-label">Categories</div>
+            <div class="stat-value" id="totalSize">--</div>
+            <div class="stat-label">Total Size</div>
         </div>
         <div class="stat-card">
             <div class="stat-value">Daily</div>
@@ -438,28 +375,11 @@
 
     <!-- Image Grid -->
     <div class="image-grid" id="imageGrid">
-        <div class="loading">
-            <div class="spinner"></div>
-            <h2>Loading Amazing AI Photos...</h2>
-            <p>Generated by Stable Diffusion XL</p>
+        <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
+            <div style="font-size: 3rem;">⏳</div>
+            <h2 style="margin: 1rem 0;">Loading Your AI Photos...</h2>
+            <p style="color: #718096; font-size: 1.1rem;">Fetching 25 beautiful stock photos...</p>
         </div>
-    </div>
-
-    <!-- Load More -->
-    <div style="text-align: center; margin-top: 3rem;">
-        <button id="loadMoreBtn" onclick="loadMore()" style="
-            padding: 1rem 3rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 700;
-            display: none;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s;
-        ">Load More Photos</button>
     </div>
 </main>
 
@@ -483,14 +403,8 @@
 
 <footer>
     <h3>🚀 AI Stock Photo API</h3>
-    <p>Powered by <strong>Stable Diffusion XL</strong> | Hosted on <strong>GitHub Pages</strong></p>
+    <p>Powered by <strong>Pollinations.ai</strong> | Hosted on <strong>GitHub Pages</strong></p>
     <p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><strong>CC0 1.0 Universal (Public Domain)</strong></a></p>
-    
-    <div class="footer-links">
-        <a href="/api/info">API Documentation</a>
-        <a href="/api/images">Browse All Images</a>
-        <a href="https://github.com/aiopentec/ai-stock-photo-api" target="_blank">GitHub Repo</a>
-    </div>
     
     <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
         Images are AI-generated. Use responsibly.<br>
@@ -500,129 +414,134 @@
 
 <script>
 // Global state
-let currentPage = 1;
-let currentCategory = 'all';
-const IMAGES_PER_PAGE = 20;
+let allImages = [];
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
-    loadStats();
+    console.log('🎨 Page loaded, fetching images...');
     loadImages();
 });
 
-// Load statistics
-async function loadStats() {
-    try {
-        const response = await fetch('/api/info');
-        const data = await response.json();
-        
-        document.getElementById('totalImages').textContent = 
-            data.total_images?.toLocaleString() || 'Loading...';
-        document.getElementById('totalCategories').textContent = 
-            Object.keys(data.statistics?.categories || {}).length || '9';
-    } catch (e) {
-        console.log('Stats loading...');
-    }
-}
-
 // Load images from API
-async function loadImages(append = false) {
+async function loadImages() {
     const grid = document.getElementById('imageGrid');
-    
-    if (!append) {
-        grid.innerHTML = '<div class="loading"><div class="spinner"></div><h2>Loading Amazing AI Photos...</h2><p>This may take a moment...</p></div>';
-    }
+    const baseUrl = window.location.origin;
     
     try {
-        let url = `/api/images?page=${currentPage}&per_page=${IMAGES_PER_PAGE}`;
+        console.log('📡 Fetching from:', baseUrl + '/api/images.json');
         
-        const response = await fetch(url);
+        const response = await fetch('/api/images.json');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
         const data = await response.json();
+        
+        console.log('✅ API Response:', data);
+        console.log('📊 Total images:', data.total_images || data.images?.length);
         
         const images = data.images || [];
+        allImages = images;
         
-        if (!append && images.length === 0) {
+        if (images.length === 0) {
             grid.innerHTML = `
                 <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
-                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">🎨 Generating Your First Photos!</h2>
-                    <p style="font-size: 1.1rem; color: #718096;">Images are being created now. Check back in a few minutes!</p>
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">🔧 Generating First Photos...</h2>
+                    <p style="color: #718096;">Run the workflow manually to generate first images.</p>
                     <p style="margin-top: 1rem;"><a href="/api/info" style="color: #667eea;">Check API Status →</a></p>
                 </div>`;
             return;
         }
         
-        if (!append) renderImages(images);
-        else appendImages(images);
+        // Update stats
+        document.getElementById('totalPhotos').textContent = images.length;
         
-        // Show/hide load more
-        document.getElementById('loadMoreBtn').style.display = 
-            data.has_next ? 'inline-block' : 'none';
-            
+        // Calculate total size
+        const totalSizeKB = images.reduce((sum, img) => sum + (img.size_kb || 0), 0);
+        const totalSizeMB = (totalSizeKB / 1024).toFixed(1);
+        document.getElementById('totalSize').textContent = totalSizeMB + ' MB';
+        
+        // Render images
+        renderImages(images);
+        
     } catch (error) {
+        console.error('❌ Error loading images:', error);
         grid.innerHTML = `
             <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem;">🔧 Setting Things Up...</h2>
-                <p style="color: #718096;">Your AI stock photo platform is almost ready!</p>
-                <p style="margin-top: 1rem;">Run the workflow manually to generate first images.</p>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #e53e3e;">⚠️ Error Loading Photos</h2>
+                <p style="color: #718096; margin-bottom: 1rem;">${error.message}</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Debug info:</strong><br>
+                    API URL: ${baseUrl}/api/images.json<br>
+                    Make sure this URL returns valid JSON.
+                </p>
             </div>`;
     }
 }
 
 function renderImages(images) {
     const grid = document.getElementById('imageGrid');
-    
-    // Build base URL dynamically
     const baseUrl = window.location.origin;
     
-    grid.innerHTML = images.map(img => {
-        // Try multiple possible URL patterns
+    console.log(`🎨 Rendering ${images.length} images...`);
+    
+    grid.innerHTML = images.map((img, index) => {
+        // Build absolute URL from relative path
         let imgUrl = img.url || img.relative_url || '';
-        let thumbUrl = img.thumbnail_url || img.url || img.relative_url || '';
         
-        // Ensure absolute URLs
-        if (imgUrl && !imgUrl.startsWith('http')) {
+        // Ensure it's absolute
+        if (!imgUrl.startsWith('http')) {
             imgUrl = baseUrl + (imgUrl.startsWith('/') ? '' : '/') + imgUrl;
         }
-        if (thumbUrl && !thumbUrl.startsWith('http')) {
-            thumbUrl = baseUrl + (thumbUrl.startsWith('/') ? '' : '/') + thumbUrl;
-        }
+        
+        // Generate display name from filename
+        const displayName = img.filename 
+            ? img.filename.replace('.png', '').replace(/_/g, ' ')
+            : `AI Photo ${index + 1}`;
+            
+        // Get category or default
+        const category = img.source_category || 'General';
+        
+        // Get size or default
+        const size = img.size_kb ? img.size_kb + ' KB' : 'HD';
+        
+        console.log(`   [${index + 1}] ${displayName} (${category}) - ${imgUrl}`);
         
         return `
-        <div class="image-card" onclick="openModal('${imgUrl}', '${(img.prompt || '').replace(/'/g, "\\'")}', '${img.filename || ''}')">
-            <img src="${thumbUrl}" alt="${img.prompt || 'AI generated stock photo'}" loading="lazy"
-                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>🎨 AI Photo</text></svg>'">
+        <div class="image-card" onclick="openModal('${imgUrl}', '${displayName}', '${img.filename || ''}')">
+            <img src="${imgUrl}" alt="${displayName}" loading="lazy"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23667eea%22 width=%22400%22 height=%22300%22/><text fill=%22white%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22>🎨 Loading...</text></svg>'">
             <div class="image-info">
-                <h3 title="${img.prompt || ''}">${img.source_keyword || img.prompt?.substring(0, 45) || 'Beautiful AI Stock Photo'}</h3>
+                <h3 title="${displayName}">${displayName}</h3>
                 <div class="image-meta">
-                    <span class="tag">${img.category || 'General'}</span>
-                    <span class="size-info">${img.size_kb ? img.size_kb + ' KB' : 'HD'}</span>
+                    <span class="tag">${category}</span>
+                    <span class="size-info">${size}</span>
                 </div>
             </div>
         </div>
     `}).join('');
-}
-
-function appendImages(images) {
-    const grid = document.getElementById('imageGrid');
-    const newCards = images.map(img => `
-        <div class="image-card" onclick="openModal('${img.url || img.relative_url}', '${(img.prompt || '').replace(/'/g, "\\'")}', '${img.filename || ''}')">
-            <img src="${img.thumbnail_url || img.relative_url}" alt="${img.prompt || 'AI generated'}" loading="lazy">
-            <div class="image-info">
-                <h3>${img.source_keyword || 'AI Photo'}</h3>
-                <div class="image-meta">
-                    <span class="tag">${img.category || 'General'}</span>
-                    <span>${img.size_kb || '?'} KB</span>
-                </div>
-            </div>
-        </div>
-    `).join('');
-    grid.insertAdjacentHTML('beforeend', newCards);
+    
+    console.log('✅ All images rendered!');
 }
 
 // Search functionality
 function searchImages() {
-    const query = document.getElementById('searchInput').value.trim();
-    alert('Search: ' + query + '\n\n💡 Full search coming soon!\nFor now, browse all photos below.');
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    
+    if (!query) {
+        renderImages(allImages);
+        return;
+    }
+    
+    const filtered = allImages.filter(img => {
+        const name = (img.filename || '').toLowerCase();
+        const keyword = (img.source_keyword || '').toLowerCase();
+        const prompt = (img.prompt || '').toLowerCase();
+        return name.includes(query) || keyword.includes(query) || prompt.includes(query);
+    });
+    
+    renderImages(filtered);
 }
 
 document.getElementById('searchInput').addEventListener('keypress', (e) => {
@@ -632,34 +551,30 @@ document.getElementById('searchInput').addEventListener('keypress', (e) => {
 // Filter by category
 function filterByCategory(category) {
     currentCategory = category;
-    currentPage = 1;
     
     document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
     
-    loadImages();
-}
-
-// Load more pagination
-function loadMore() {
-    currentPage++;
-    loadImages(true);
+    if (category === 'all') {
+        renderImages(allImages);
+    } else {
+        const filtered = allImages.filter(img => 
+            (img.source_category || 'general').toLowerCase() === category.toLowerCase()
+        );
+        renderImages(filtered);
+    }
 }
 
 // Modal functions
-function openModal(imageUrl, prompt, filename) {
+function openModal(imageUrl, title, filename) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const modalTitle = document.getElementById('modalTitle');
-    const modalPrompt = document.getElementById('modalPrompt');
     const downloadLink = document.getElementById('downloadLink');
     
-    const fullUrl = imageUrl.startsWith('http') ? imageUrl : window.location.origin + imageUrl;
-    
-    modalImg.src = fullUrl;
-    modalTitle.textContent = filename || 'AI Generated Masterpiece';
-    modalPrompt.textContent = prompt || '';
-    downloadLink.href = fullUrl;
+    modalImg.src = imageUrl;
+    modalTitle.textContent = title || 'AI Generated Masterpiece';
+    downloadLink.href = imageUrl;
     downloadLink.download = filename || 'stock-photo.png';
     
     modal.classList.add('active');
