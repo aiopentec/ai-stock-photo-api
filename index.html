@@ -1,396 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Stock Photos - Free AI-Generated Stock Photography</title>
-    <meta name="description" content="Free AI-generated stock photos for commercial and personal use. No attribution required.">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            color: #1a202c;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Stock Photos — Free AI-Generated Photography</title>
+<meta name="description" content="Free AI-generated stock photos. Browse, download, and copy prompts. New images added weekly.">
+<style>
+/* ── RESET & BASE ──────────────────────────────────────────────────────── */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --purple:#667eea;--purple2:#764ba2;
+  --pink:#f093fb;--red:#f5576c;
+  --dark:#1a202c;--gray:#718096;--light-gray:#e2e8f0;
+  --card-radius:18px;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:#f0f2f8;min-height:100vh;color:var(--dark);}
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
+/* ── HEADER ───────────────────────────────────────────────────────────── */
+header{
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  color:#fff;padding:2.5rem 1rem 5rem;text-align:center;
+}
+header h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;margin-bottom:.4rem;
+  text-shadow:0 2px 8px rgba(0,0,0,.2);}
+header p{font-size:1.1rem;opacity:.9;margin-bottom:1.25rem;}
+.badges{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;}
+.badge{background:rgba(255,255,255,.18);backdrop-filter:blur(8px);
+  padding:.4rem 1.1rem;border-radius:50px;font-size:.82rem;font-weight:600;
+  border:1.5px solid rgba(255,255,255,.28);}
 
-        header h1 { font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
-        header p  { font-size: 1.25rem; opacity: 0.95; margin-bottom: 1.5rem; }
+/* ── SEARCH ───────────────────────────────────────────────────────────── */
+.search-wrap{max-width:680px;margin:-2.8rem auto 0;position:relative;
+  z-index:10;padding:0 1rem;}
+.search-box{display:flex;background:#fff;border-radius:60px;
+  box-shadow:0 12px 35px rgba(0,0,0,.15);overflow:hidden;
+  transition:box-shadow .3s,transform .3s;}
+.search-box:focus-within{box-shadow:0 18px 45px rgba(0,0,0,.2);
+  transform:translateY(-2px);}
+.search-box input{flex:1;padding:1.1rem 1.6rem;border:none;font-size:1rem;
+  outline:none;background:transparent;min-width:0;}
+.search-box button{background:linear-gradient(135deg,var(--purple),var(--purple2));
+  color:#fff;border:none;padding:1.1rem 1.8rem;cursor:pointer;font-weight:700;
+  font-size:.95rem;white-space:nowrap;}
+.surprise-btn{display:block;text-align:center;margin-top:.9rem;
+  background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);
+  color:#fff;padding:.5rem 1.4rem;border-radius:30px;cursor:pointer;
+  font-size:.88rem;font-weight:600;transition:background .2s;width:fit-content;
+  margin-left:auto;margin-right:auto;}
+.surprise-btn:hover{background:rgba(255,255,255,.28);}
 
-        .badges { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
-        .badge {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
+/* ── MAIN ─────────────────────────────────────────────────────────────── */
+main{max-width:1400px;margin:0 auto;padding:2.5rem 1rem 4rem;}
 
-        /* ── SEARCH ─────────────────────────────────────────────────── */
-        .search-section {
-            max-width: 700px;
-            margin: -2.5rem auto 3rem;
-            position: relative;
-            z-index: 10;
-            padding: 0 1rem;
-        }
+/* ── STATS ────────────────────────────────────────────────────────────── */
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1.2rem;margin:2.5rem 0 2rem;}
+.stat-card{background:#fff;padding:1.3rem;border-radius:14px;text-align:center;
+  box-shadow:0 3px 12px rgba(0,0,0,.07);transition:transform .25s;}
+.stat-card:hover{transform:translateY(-4px);}
+.stat-value{font-size:2.1rem;font-weight:800;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;}
+.stat-label{color:var(--gray);font-size:.82rem;font-weight:600;margin-top:.2rem;}
 
-        .search-box {
-            display: flex;
-            background: white;
-            border-radius: 60px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+/* ── LICENSE NOTE ─────────────────────────────────────────────────────── */
+.license-note{background:#fffbeb;border:1px solid #f6d860;border-radius:10px;
+  padding:.8rem 1.1rem;margin-bottom:1.8rem;font-size:.84rem;color:#744210;
+  line-height:1.5;}
 
-        .search-box:hover { transform: translateY(-2px); box-shadow: 0 20px 45px rgba(0,0,0,0.2); }
-        .search-box input { flex: 1; padding: 1.25rem 2rem; border: none; font-size: 1.1rem; outline: none; background: transparent; }
-        .search-box button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; border: none;
-            padding: 1.25rem 2.5rem;
-            cursor: pointer; font-weight: 700; font-size: 1rem;
-            transition: all 0.3s;
-        }
+/* ── CATEGORIES ───────────────────────────────────────────────────────── */
+.categories{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem;}
+.cat-btn{padding:.55rem 1.2rem;border:2px solid var(--light-gray);background:#fff;
+  border-radius:30px;cursor:pointer;font-weight:600;font-size:.85rem;
+  color:#4a5568;transition:all .25s;white-space:nowrap;}
+.cat-btn:hover{border-color:var(--purple);color:var(--purple);}
+.cat-btn.active{background:linear-gradient(135deg,var(--purple),var(--purple2));
+  color:#fff;border-color:transparent;}
+.cat-count{font-size:.75rem;opacity:.75;margin-left:.3rem;}
 
-        /* ── MAIN ───────────────────────────────────────────────────── */
-        main { max-width: 1400px; margin: 0 auto; padding: 2rem 1rem; }
+/* ── GRID ─────────────────────────────────────────────────────────────── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.8rem;}
 
-        .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
-        .stat-card {
-            background: white; padding: 1.5rem; border-radius: 16px;
-            text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        .stat-card:hover { transform: translateY(-5px); }
-        .stat-value {
-            font-size: 2.5rem; font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .stat-label { color: #718096; font-weight: 600; margin-top: 0.25rem; }
+/* ── SKELETON ─────────────────────────────────────────────────────────── */
+.skeleton-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;
+  box-shadow:0 4px 15px rgba(0,0,0,.07);}
+.skel-img{height:220px;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);
+  background-size:200% 100%;animation:shimmer 1.4s infinite;}
+.skel-line{height:14px;border-radius:6px;margin:1rem 1.2rem .6rem;
+  background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);
+  background-size:200% 100%;animation:shimmer 1.4s infinite;}
+.skel-line.short{width:55%;margin-top:0;}
+@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
 
-        /* ── CATEGORIES ─────────────────────────────────────────────── */
-        .categories { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-        .category-btn {
-            padding: 0.65rem 1.5rem; border: 2px solid #e2e8f0; background: white;
-            border-radius: 30px; cursor: pointer; font-weight: 600; color: #4a5568; transition: all 0.3s;
-        }
-        .category-btn:hover, .category-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; border-color: transparent; transform: scale(1.05);
-        }
+/* ── IMAGE CARD ───────────────────────────────────────────────────────── */
+.image-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,.09);
+  transition:transform .35s cubic-bezier(.175,.885,.32,1.275),
+             box-shadow .35s;cursor:pointer;}
+.image-card:hover{transform:translateY(-8px) scale(1.01);
+  box-shadow:0 16px 40px rgba(0,0,0,.16);}
+.card-img-wrap{position:relative;overflow:hidden;}
+.card-img-wrap img{width:100%;height:220px;object-fit:cover;display:block;
+  transition:transform .5s;}
+.image-card:hover .card-img-wrap img{transform:scale(1.06);}
 
-        /* ── GRID ───────────────────────────────────────────────────── */
-        .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+/* ── CARD OVERLAY (hover buttons) ────────────────────────────────────── */
+.card-overlay{position:absolute;inset:0;background:rgba(0,0,0,.52);
+  display:flex;align-items:center;justify-content:center;gap:.9rem;
+  opacity:0;transition:opacity .25s;}
+.image-card:hover .card-overlay{opacity:1;}
+.ov-btn{background:#fff;border:none;border-radius:50%;width:46px;height:46px;
+  font-size:1.15rem;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.3);
+  transition:transform .2s,background .2s;}
+.ov-btn:hover{transform:scale(1.15);}
+.ov-btn.fav-on{background:var(--red);color:#fff;}
 
-        .image-card {
-            background: white; border-radius: 20px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-        .image-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
-        .image-card img { width: 100%; height: 240px; object-fit: cover; display: block; transition: transform 0.5s; }
-        .image-card:hover img { transform: scale(1.08); }
+.card-info{padding:1rem 1.1rem;}
+.card-title{font-size:.92rem;font-weight:600;color:var(--dark);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:.6rem;}
+.card-meta{display:flex;justify-content:space-between;align-items:center;}
+.tag{background:linear-gradient(135deg,var(--pink),var(--red));color:#fff;
+  padding:.28rem .8rem;border-radius:20px;font-size:.75rem;font-weight:600;}
+.card-size{color:#a0aec0;font-size:.8rem;font-weight:500;}
 
-        .image-info { padding: 1.25rem; }
-        .image-info h3 {
-            font-size: 1rem; color: #2d3748; margin-bottom: 0.75rem;
-            overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600;
-        }
-        .image-meta { display: flex; justify-content: space-between; align-items: center; }
-        .tag { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-        .size-info { color: #a0aec0; font-size: 0.85rem; font-weight: 500; }
+/* ── EMPTY STATE ──────────────────────────────────────────────────────── */
+.empty{grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--gray);}
+.empty .emoji{font-size:3rem;margin-bottom:1rem;}
+.empty h2{margin-bottom:.6rem;}
 
-        /* ── MODAL ──────────────────────────────────────────────────── */
-        .modal {
-            display: none; position: fixed; z-index: 9999;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
-            align-items: center; justify-content: center;
-            backdrop-filter: blur(10px);
-        }
-        .modal.active { display: flex; }
-        .modal-content { max-width: 90vw; max-height: 90vh; position: relative; }
-        .modal-content img { max-width: 100%; max-height: 85vh; border-radius: 12px; box-shadow: 0 25px 80px rgba(0,0,0,0.5); }
-        .modal-close { position: absolute; top: -50px; right: 0; color: white; font-size: 3rem; cursor: pointer; background: none; border: none; }
-        .modal-details { background: white; color: #1a202c; padding: 2rem; margin-top: 1rem; border-radius: 12px; text-align: center; }
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 0.9rem 2rem; border-radius: 30px;
-            text-decoration: none; font-weight: 700; margin-top: 1rem; transition: all 0.3s;
-        }
-        .download-btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
+/* ── MODAL ────────────────────────────────────────────────────────────── */
+.modal{display:none;position:fixed;inset:0;z-index:9000;
+  background:rgba(10,10,20,.88);backdrop-filter:blur(12px);
+  align-items:center;justify-content:center;padding:1rem;}
+.modal.open{display:flex;}
+.modal-inner{background:#fff;border-radius:20px;overflow:hidden;
+  display:flex;max-width:960px;width:100%;max-height:90vh;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.modal-img-side{flex:1.4;min-width:0;position:relative;background:#0f0f0f;}
+.modal-img-side img{width:100%;height:100%;object-fit:contain;display:block;max-height:90vh;}
+.modal-info-side{flex:1;min-width:260px;padding:1.8rem;overflow-y:auto;
+  display:flex;flex-direction:column;gap:1rem;}
+.modal-close{position:absolute;top:.8rem;right:.8rem;background:rgba(255,255,255,.15);
+  border:none;color:#fff;font-size:1.5rem;width:38px;height:38px;border-radius:50%;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;z-index:10;}
+.modal-close:hover{background:rgba(255,255,255,.3);}
+.modal-arrow{position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.13);border:none;color:#fff;font-size:1.6rem;
+  width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;
+  align-items:center;justify-content:center;transition:background .2s;z-index:10;}
+.modal-arrow:hover{background:rgba(255,255,255,.28);}
+.modal-arrow.prev{left:.8rem;}
+.modal-arrow.next{right:.8rem;}
+.modal-counter{position:absolute;bottom:.8rem;left:50%;
+  transform:translateX(-50%);background:rgba(0,0,0,.55);
+  color:#fff;font-size:.8rem;padding:.3rem .8rem;border-radius:20px;}
 
-        /* ── LICENSE NOTE ───────────────────────────────────────────── */
-        .license-note {
-            background: #fffbeb; border: 1px solid #f6d860; border-radius: 10px;
-            padding: 0.9rem 1.25rem; margin-bottom: 2rem; font-size: 0.88rem; color: #744210;
-        }
+.modal-title{font-size:1.2rem;font-weight:700;color:var(--dark);}
+.modal-cat{display:inline-block;font-size:.78rem;font-weight:600;
+  background:linear-gradient(135deg,var(--pink),var(--red));
+  color:#fff;padding:.25rem .75rem;border-radius:20px;margin-top:.2rem;}
+.modal-size{font-size:.82rem;color:var(--gray);}
+.prompt-label{font-size:.78rem;font-weight:700;color:var(--gray);
+  text-transform:uppercase;letter-spacing:.06em;}
+.prompt-box{background:#f7f8fa;border-radius:10px;padding:.8rem;
+  font-size:.82rem;color:#4a5568;line-height:1.55;max-height:120px;
+  overflow-y:auto;}
+.modal-actions{display:flex;flex-direction:column;gap:.7rem;margin-top:.4rem;}
+.action-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.75rem 1rem;border-radius:10px;border:none;font-size:.88rem;
+  font-weight:600;cursor:pointer;transition:all .2s;}
+.action-btn.primary{background:linear-gradient(135deg,var(--purple),var(--purple2));
+  color:#fff;}
+.action-btn.primary:hover{opacity:.88;transform:translateY(-1px);}
+.action-btn.secondary{background:#f0f2f8;color:var(--dark);}
+.action-btn.secondary:hover{background:var(--light-gray);}
+.action-btn.fav-btn.fav-on{background:#fff0f3;color:var(--red);
+  border:1.5px solid var(--red);}
+.license-mini{font-size:.75rem;color:#a0aec0;line-height:1.5;margin-top:auto;}
 
-        /* ── FOOTER ─────────────────────────────────────────────────── */
-        footer { background: #1a202c; color: white; text-align: center; padding: 3rem 1rem; margin-top: 5rem; }
-        footer a { color: #90cdf4; text-decoration: none; font-weight: 600; }
+/* ── TOAST ────────────────────────────────────────────────────────────── */
+#toast{position:fixed;bottom:2rem;left:50%;
+  transform:translateX(-50%) translateY(80px);
+  background:var(--dark);color:#fff;padding:.7rem 1.4rem;
+  border-radius:30px;font-size:.88rem;font-weight:600;
+  z-index:99999;pointer-events:none;
+  transition:transform .35s cubic-bezier(.175,.885,.32,1.275),opacity .35s;
+  opacity:0;white-space:nowrap;}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .image-grid { grid-template-columns: 1fr; }
-            .stats-bar { grid-template-columns: 1fr 1fr; }
-        }
-    </style>
+/* ── BACK TO TOP ──────────────────────────────────────────────────────── */
+#backTop{position:fixed;bottom:2rem;right:1.5rem;
+  background:linear-gradient(135deg,var(--purple),var(--purple2));
+  color:#fff;border:none;width:44px;height:44px;border-radius:50%;
+  font-size:1.2rem;cursor:pointer;box-shadow:0 4px 14px rgba(102,126,234,.45);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;}
+#backTop.visible{opacity:1;pointer-events:auto;}
+#backTop:hover{transform:translateY(-3px);}
+
+/* ── FOOTER ───────────────────────────────────────────────────────────── */
+footer{background:var(--dark);color:#fff;text-align:center;
+  padding:2.5rem 1rem;margin-top:2rem;}
+footer a{color:#90cdf4;text-decoration:none;font-weight:600;}
+footer p{margin:.5rem 0;font-size:.9rem;opacity:.8;}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────────────── */
+@media(max-width:720px){
+  .modal-inner{flex-direction:column;max-height:95vh;}
+  .modal-img-side img{max-height:55vw;object-fit:cover;}
+  .modal-info-side{min-width:0;padding:1.2rem;}
+  .modal-arrow.prev{left:.4rem;}
+  .modal-arrow.next{right:.4rem;}
+  .grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:1fr;}
+  .stats-bar{grid-template-columns:1fr 1fr;}
+}
+</style>
 </head>
 <body>
 
 <header>
-    <h1>🎨 AI Stock Photos</h1>
-    <p>Free AI-Generated Stock Photography • Powered by Pollinations.ai</p>
-    <div class="badges">
-        <span class="badge">✨ 100% FREE</span>
-        <span class="badge">🚀 NO SIGN-UP</span>
-        <span class="badge">💼 AI GENERATED</span>
-        <span class="badge">🔄 WEEKLY UPDATES</span>
-    </div>
+  <h1>🎨 AI Stock Photos</h1>
+  <p>Free AI-Generated Photography &bull; New images weekly</p>
+  <div class="badges">
+    <span class="badge">✨ 100% FREE</span>
+    <span class="badge">🚀 NO SIGN-UP</span>
+    <span class="badge">💾 INSTANT DOWNLOAD</span>
+    <span class="badge">📋 COPY PROMPT</span>
+  </div>
 </header>
 
-<div class="search-section">
-    <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search for perfect stock photos...">
-        <button onclick="searchImages()">🔍 Search</button>
-    </div>
+<div class="search-wrap">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search photos by keyword...">
+    <button onclick="searchImages()">Search</button>
+  </div>
+  <button class="surprise-btn" onclick="surpriseMe()">🎲 Surprise me</button>
 </div>
 
 <main>
-    <div class="stats-bar">
-        <div class="stat-card">
-            <div class="stat-value" id="totalPhotos">--</div>
-            <div class="stat-label">Total Photos</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value" id="totalSize">--</div>
-            <div class="stat-label">Total Size</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">Weekly</div>
-            <div class="stat-label">Auto Updates</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-value">$0</div>
-            <div class="stat-label">Cost Forever</div>
-        </div>
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-value" id="statTotal">--</div>
+      <div class="stat-label">Total Photos</div>
     </div>
+    <div class="stat-card">
+      <div class="stat-value" id="statSize">--</div>
+      <div class="stat-label">Total Size</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="statFavs">0</div>
+      <div class="stat-label">Your Favorites</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">Free</div>
+      <div class="stat-label">Forever</div>
+    </div>
+  </div>
 
-    <div class="license-note">
-        ⚠️ <strong>Licensing note:</strong> these images are AI-generated via Pollinations.ai.
-        Output licensing depends on the underlying model used per request.
-        Verify suitability for your specific use case before commercial publication.
-    </div>
+  <div class="license-note">
+    ⚠️ <strong>Licensing:</strong> Images are AI-generated via Pollinations.ai.
+    Output licensing depends on the underlying model per request.
+    Verify suitability for your specific commercial use case before publishing.
+  </div>
 
-    <div class="categories">
-        <button class="category-btn active" onclick="filterByCategory('all', this)">🌟 All</button>
-        <button class="category-btn" onclick="filterByCategory('business', this)">💼 Business</button>
-        <button class="category-btn" onclick="filterByCategory('nature', this)">🌿 Nature</button>
-        <button class="category-btn" onclick="filterByCategory('technology', this)">💻 Technology</button>
-        <button class="category-btn" onclick="filterByCategory('people', this)">👥 People</button>
-        <button class="category-btn" onclick="filterByCategory('abstract', this)">🎨 Abstract</button>
-        <button class="category-btn" onclick="filterByCategory('food', this)">🍕 Food</button>
-        <button class="category-btn" onclick="filterByCategory('travel', this)">✈️ Travel</button>
-    </div>
+  <div class="categories" id="catBar">
+    <button class="cat-btn active" data-cat="all" onclick="filterCat('all',this)">🌟 All<span class="cat-count" id="cnt-all"></span></button>
+    <button class="cat-btn" data-cat="business"   onclick="filterCat('business',this)">💼 Business<span class="cat-count" id="cnt-business"></span></button>
+    <button class="cat-btn" data-cat="nature"     onclick="filterCat('nature',this)">🌿 Nature<span class="cat-count" id="cnt-nature"></span></button>
+    <button class="cat-btn" data-cat="technology" onclick="filterCat('technology',this)">💻 Technology<span class="cat-count" id="cnt-technology"></span></button>
+    <button class="cat-btn" data-cat="people"     onclick="filterCat('people',this)">🤝 People<span class="cat-count" id="cnt-people"></span></button>
+    <button class="cat-btn" data-cat="abstract"   onclick="filterCat('abstract',this)">🎨 Abstract<span class="cat-count" id="cnt-abstract"></span></button>
+    <button class="cat-btn" data-cat="food"       onclick="filterCat('food',this)">🍽️ Food<span class="cat-count" id="cnt-food"></span></button>
+    <button class="cat-btn" data-cat="travel"     onclick="filterCat('travel',this)">✈️ Travel<span class="cat-count" id="cnt-travel"></span></button>
+    <button class="cat-btn" data-cat="favorites"  onclick="filterCat('favorites',this)">❤️ Favorites<span class="cat-count" id="cnt-favorites"></span></button>
+  </div>
 
-    <div class="image-grid" id="imageGrid">
-        <div style="text-align:center;grid-column:1/-1;padding:4rem;">
-            <div style="font-size:3rem;">⏳</div>
-            <h2 style="margin:1rem 0;">Loading Your AI Photos...</h2>
-            <p style="color:#718096;font-size:1.1rem;">Fetching stock photos...</p>
-        </div>
-    </div>
+  <div class="grid" id="grid"></div>
 </main>
 
 <!-- Modal -->
-<div class="modal" id="imageModal" onclick="closeModalOnBackdrop(event)">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-        <img id="modalImage" src="" alt="Preview">
-        <div class="modal-details">
-            <h2 id="modalTitle">AI Generated Stock Photo</h2>
-            <p id="modalPrompt" style="color:#718096;margin:1rem 0;font-size:0.9rem;"></p>
-            <a id="downloadLink" href="" download class="download-btn">⬇️ Download Free Photo</a>
-            <br><br>
-            <p style="font-size:0.85rem;color:#a0aec0;">
-                AI-generated via Pollinations.ai • Verify licensing for your use case
-            </p>
-        </div>
+<div class="modal" id="modal" onclick="onModalBackdrop(event)">
+  <div class="modal-inner" id="modalInner">
+    <div class="modal-img-side" id="modalImgSide">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <button class="modal-arrow prev" onclick="prevImg()">&#8249;</button>
+      <button class="modal-arrow next" onclick="nextImg()">&#8250;</button>
+      <img id="modalImg" src="" alt="">
+      <div class="modal-counter" id="modalCounter"></div>
     </div>
+    <div class="modal-info-side">
+      <div>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-cat" id="modalCat"></div>
+      </div>
+      <div class="modal-size" id="modalSize"></div>
+      <div>
+        <div class="prompt-label">Prompt used</div>
+        <div class="prompt-box" id="modalPrompt"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="action-btn primary" onclick="downloadCurrent()">⬇️ Download Image</button>
+        <button class="action-btn secondary" onclick="copyPrompt()">📋 Copy Prompt</button>
+        <button class="action-btn secondary" onclick="copyUrl()">🔗 Copy Image URL</button>
+        <button class="action-btn secondary fav-btn" id="modalFavBtn" onclick="toggleFavCurrent()">♥ Add to Favorites</button>
+      </div>
+      <div class="license-mini">
+        AI-generated via Pollinations.ai &bull; Verify licensing for commercial use
+      </div>
+    </div>
+  </div>
 </div>
 
+<div id="toast"></div>
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <footer>
-    <h3>🚀 AI Stock Photo API</h3>
-    <p>Powered by <strong>Pollinations.ai</strong> | Hosted on <strong>GitHub Pages</strong></p>
-    <p style="margin-top:2rem;font-size:0.9rem;opacity:0.7;">
-        Images are AI-generated. Use responsibly.<br>
-        © 2025 AI Stock Photo API • Made with ❤️ and Automation
-    </p>
+  <p><strong>AI Stock Photos</strong> &bull; Powered by <a href="https://pollinations.ai" target="_blank">Pollinations.ai</a></p>
+  <p>Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a> &bull; Built with automation</p>
+  <p style="margin-top:1rem;opacity:.55;font-size:.8rem;">Images are AI-generated. Use responsibly. &copy; 2025 AI Stock Photo API</p>
 </footer>
 
 <script>
-// ── State ────────────────────────────────────────────────────────────────────
-let allImages = [];
+// ── STATE ──────────────────────────────────────────────────────────────
+var allImages    = [];
+var displayImages= [];
+var currentIndex = -1;
+var favorites    = [];
+var toastTimer   = null;
+var base = '';
 
-// ── Boot ─────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', loadImages);
+// ── INIT ───────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  base = (window.location.origin + window.location.pathname)
+           .replace(/\/[^/]*$/, '');
 
-// ── Load images.json ─────────────────────────────────────────────────────────
-async function loadImages() {
-    const grid = document.getElementById('imageGrid');
+  loadFavorites();
+  renderSkeletons(8);
+  loadImages();
 
-    try {
-        const response = await fetch('api/images.json');
-        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+  document.getElementById('searchInput').addEventListener('keypress', function(e){
+    if(e.key === 'Enter') searchImages();
+  });
 
-        const data = await response.json();
-        allImages = data.images || [];
-
-        if (allImages.length === 0) {
-            grid.innerHTML = `
-                <div style="text-align:center;grid-column:1/-1;padding:4rem;">
-                    <h2>🔧 Generating First Photos...</h2>
-                    <p style="color:#718096;margin-top:1rem;">
-                        Run the GitHub Actions workflow to generate images,<br>
-                        or trigger it manually from the Actions tab.
-                    </p>
-                </div>`;
-            return;
-        }
-
-        // Stats
-        document.getElementById('totalPhotos').textContent = allImages.length;
-        const totalKB = allImages.reduce((s, img) => s + (img.size_kb || 0), 0);
-        document.getElementById('totalSize').textContent = (totalKB / 1024).toFixed(1) + ' MB';
-
-        renderImages(allImages);
-
-    } catch (err) {
-        grid.innerHTML = `
-            <div style="text-align:center;grid-column:1/-1;padding:4rem;">
-                <h2 style="color:#e53e3e;">⚠️ Could not load photos</h2>
-                <p style="color:#718096;margin-top:1rem;">${err.message}</p>
-                <p style="margin-top:1rem;font-size:0.9rem;">
-                    Expected: <code>api/images.json</code><br>
-                    Run the generation workflow to create it.
-                </p>
-            </div>`;
-    }
-}
-
-// ── Render ────────────────────────────────────────────────────────────────────
-function renderImages(images) {
-    const grid = document.getElementById('imageGrid');
-
-    if (images.length === 0) {
-        grid.innerHTML = `<div style="text-align:center;grid-column:1/-1;padding:3rem;color:#718096;">No photos match that filter.</div>`;
-        return;
-    }
-
-    const base = window.location.origin + window.location.pathname.replace(/\/$/, '');
-
-    grid.innerHTML = images.map((img, i) => {
-        const filename    = img.filename || '';
-        const displayName = filename
-            ? filename.replace(/\.png$/i, '').replace(/_/g, ' ').substring(0, 40)
-            : `AI Photo ${i + 1}`;
-        const category = img.source_category || 'general';
-        const sizeLabel = img.size_kb ? img.size_kb + ' KB' : 'HD';
-        const imgUrl   = `${base}/images/${filename}`;
-        // Safe-encode values for inline onclick (avoid quote injection)
-        const safeTitle    = displayName.replace(/'/g, "\\'");
-        const safeFilename = filename.replace(/'/g, "\\'");
-
-        return `
-        <div class="image-card" onclick="openModal('${imgUrl}', '${safeTitle}', '${safeFilename}', '${img.prompt || ''}')">
-            <img src="${imgUrl}" alt="${displayName}" loading="lazy"
-                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjNjY3ZWVhIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIvPjx0ZXh0IGZpbGw9IndoaXRlIiB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSIyMCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+RijwvdGV4dD48L3N2Zz4=';this.onerror=null;">
-            <div class="image-info">
-                <h3 title="${displayName}">${displayName}</h3>
-                <div class="image-meta">
-                    <span class="tag">${category}</span>
-                    <span class="size-info">${sizeLabel}</span>
-                </div>
-            </div>
-        </div>`;
-    }).join('');
-}
-
-// ── Search ────────────────────────────────────────────────────────────────────
-function searchImages() {
-    const q = document.getElementById('searchInput').value.trim().toLowerCase();
-    if (!q) { renderImages(allImages); return; }
-    const filtered = allImages.filter(img =>
-        (img.filename || '').toLowerCase().includes(q) ||
-        (img.source_keyword || '').toLowerCase().includes(q)
-    );
-    renderImages(filtered);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('searchInput').addEventListener('keypress', e => {
-        if (e.key === 'Enter') searchImages();
-    });
+  window.addEventListener('scroll', function(){
+    var btn = document.getElementById('backTop');
+    if(window.scrollY > 500){ btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  });
 });
 
-// ── Category filter ───────────────────────────────────────────────────────────
-// NOTE: the original code passed `event` implicitly from onclick — that
-// doesn't work reliably cross-browser. The button is now passed explicitly.
-function filterByCategory(category, btn) {
-    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
+// ── LOAD ───────────────────────────────────────────────────────────────
+function loadImages() {
+  fetch('api/images.json?t=' + Date.now())
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data){
+      allImages = data.images || [];
 
-    const filtered = category === 'all'
-        ? allImages
-        : allImages.filter(img =>
-            (img.source_category || '').toLowerCase() === category.toLowerCase()
-          );
+      document.getElementById('statTotal').textContent = allImages.length || '--';
+      var kb = allImages.reduce(function(s,i){ return s+(i.size_kb||0); }, 0);
+      document.getElementById('statSize').textContent =
+        allImages.length ? (kb/1024).toFixed(1)+' MB' : '--';
 
-    renderImages(filtered);
+      updateCounts();
+      displayImages = allImages.slice();
+      renderImages(displayImages);
+    })
+    .catch(function(err){
+      document.getElementById('grid').innerHTML =
+        '<div class="empty"><div class="emoji">⚠️</div>' +
+        '<h2>Could not load photos</h2>' +
+        '<p>' + err.message + '</p>' +
+        '<p style="margin-top:.8rem;font-size:.85rem;">Run the GitHub Actions workflow to generate <code>api/images.json</code>.</p></div>';
+    });
 }
 
-// ── Modal ─────────────────────────────────────────────────────────────────────
-function openModal(imageUrl, title, filename, prompt) {
-    document.getElementById('modalImage').src   = imageUrl;
-    document.getElementById('modalTitle').textContent  = title || 'AI Generated Stock Photo';
-    document.getElementById('modalPrompt').textContent = prompt ? `Prompt: "${prompt}"` : '';
-    document.getElementById('downloadLink').href     = imageUrl;
-    document.getElementById('downloadLink').download = filename || 'stock-photo.png';
+// ── SKELETONS ─────────────────────────────────────────────────────────
+function renderSkeletons(n) {
+  var html = '';
+  for(var i=0;i<n;i++){
+    html += '<div class="skeleton-card">' +
+            '<div class="skel-img"></div>' +
+            '<div class="skel-line"></div>' +
+            '<div class="skel-line short"></div>' +
+            '<div style="height:.8rem"></div></div>';
+  }
+  document.getElementById('grid').innerHTML = html;
+}
 
-    document.getElementById('imageModal').classList.add('active');
-    document.body.style.overflow = 'hidden';
+// ── RENDER CARDS ──────────────────────────────────────────────────────
+function renderImages(images) {
+  if(!images.length){
+    document.getElementById('grid').innerHTML =
+      '<div class="empty"><div class="emoji">🔍</div>' +
+      '<h2>No photos found</h2>' +
+      '<p>Try a different search or category.</p></div>';
+    return;
+  }
+
+  var html = '';
+  for(var i=0;i<images.length;i++){
+    html += makeCard(images[i], i);
+  }
+  document.getElementById('grid').innerHTML = html;
+}
+
+function makeCard(img, idx) {
+  var url      = base + '/images/' + img.filename;
+  var title    = (img.source_keyword||img.filename||'AI Photo')
+                   .replace(/[_-]/g,' ');
+  var title35  = title.length > 35 ? title.slice(0,35)+'…' : title;
+  var cat      = img.source_category || 'general';
+  var size     = img.size_kb ? img.size_kb + ' KB' : 'HD';
+  var favClass = isFav(img.filename) ? 'ov-btn fav-on' : 'ov-btn';
+  var favIcon  = isFav(img.filename) ? '♥' : '♡';
+
+  return '<div class="image-card" onclick="openModal('+idx+')">' +
+    '<div class="card-img-wrap">' +
+      '<img src="'+url+'" alt="'+escAttr(title)+'" loading="lazy" ' +
+           'onerror="this.style.background=\'#dde\';this.src=\'data:image/svg+xml,<svg xmlns=\\\'http://www.w3.org/2000/svg\\\' width=\\\'60\\\' height=\\\'60\\\'><text y=\\\'40\\\' font-size=\\\'40\\\'>🖼</text></svg>\';this.onerror=null;">' +
+      '<div class="card-overlay">' +
+        '<button class="'+favClass+'" title="Favorite" ' +
+          'onclick="event.stopPropagation();toggleFav(\''+escAttr(img.filename)+'\',this)">'+favIcon+'</button>' +
+        '<button class="ov-btn" title="Download" ' +
+          'onclick="event.stopPropagation();dlImage(\''+escAttr(url)+'\',\''+escAttr(img.filename)+'\')">⬇</button>' +
+        '<button class="ov-btn" title="View" onclick="event.stopPropagation();openModal('+idx+')">🔍</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="card-info">' +
+      '<div class="card-title" title="'+escAttr(title)+'">'+escHtml(title35)+'</div>' +
+      '<div class="card-meta">' +
+        '<span class="tag">'+escHtml(cat)+'</span>' +
+        '<span class="card-size">'+size+'</span>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+// ── SEARCH ────────────────────────────────────────────────────────────
+function searchImages() {
+  var q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if(!q){ displayImages = allImages.slice(); }
+  else {
+    displayImages = allImages.filter(function(img){
+      return (img.source_keyword||'').toLowerCase().includes(q) ||
+             (img.source_category||'').toLowerCase().includes(q) ||
+             (img.filename||'').toLowerCase().includes(q);
+    });
+  }
+  // deactivate category buttons
+  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelector('[data-cat="all"]').classList.add('active');
+  renderImages(displayImages);
+}
+
+// ── CATEGORY FILTER ───────────────────────────────────────────────────
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+
+  if(cat === 'all'){
+    displayImages = allImages.slice();
+  } else if(cat === 'favorites'){
+    displayImages = allImages.filter(function(img){ return isFav(img.filename); });
+  } else {
+    displayImages = allImages.filter(function(img){
+      return (img.source_category||'').toLowerCase() === cat;
+    });
+  }
+  renderImages(displayImages);
+}
+
+function updateCounts() {
+  var cats = ['business','nature','technology','people','abstract','food','travel'];
+  var el = document.getElementById('cnt-all');
+  if(el) el.textContent = allImages.length ? ' ('+allImages.length+')' : '';
+  cats.forEach(function(c){
+    var el = document.getElementById('cnt-'+c);
+    if(!el) return;
+    var n = allImages.filter(function(i){ return (i.source_category||'') === c; }).length;
+    el.textContent = n ? ' ('+n+')' : '';
+  });
+  updateFavCount();
+}
+
+function updateFavCount() {
+  var el = document.getElementById('cnt-favorites');
+  if(el) el.textContent = favorites.length ? ' ('+favorites.length+')' : '';
+  document.getElementById('statFavs').textContent = favorites.length;
+}
+
+// ── FAVORITES ─────────────────────────────────────────────────────────
+function loadFavorites() {
+  try { favorites = JSON.parse(localStorage.getItem('ai_stock_favs') || '[]'); }
+  catch(e){ favorites = []; }
+}
+function saveFavorites() {
+  try { localStorage.setItem('ai_stock_favs', JSON.stringify(favorites)); }
+  catch(e){}
+}
+function isFav(filename) { return favorites.indexOf(filename) > -1; }
+function toggleFav(filename, btn) {
+  var idx = favorites.indexOf(filename);
+  if(idx > -1){
+    favorites.splice(idx,1);
+    if(btn){ btn.classList.remove('fav-on'); btn.textContent='♡'; }
+    showToast('Removed from favorites');
+  } else {
+    favorites.push(filename);
+    if(btn){ btn.classList.add('fav-on'); btn.textContent='♥'; }
+    showToast('Added to favorites ♥');
+  }
+  saveFavorites();
+  updateFavCount();
+  updateModalFavBtn();
+}
+
+// ── MODAL ─────────────────────────────────────────────────────────────
+function openModal(idx) {
+  currentIndex = idx;
+  renderModal();
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function renderModal() {
+  var img   = displayImages[currentIndex];
+  var url   = base + '/images/' + img.filename;
+  var title = (img.source_keyword || img.filename || 'AI Photo').replace(/[_-]/g,' ');
+
+  document.getElementById('modalImg').src        = url;
+  document.getElementById('modalImg').alt        = title;
+  document.getElementById('modalTitle').textContent = title.replace(/\b\w/g,function(c){ return c.toUpperCase(); });
+  document.getElementById('modalCat').textContent   = img.source_category || 'general';
+  document.getElementById('modalSize').textContent  =
+    img.size_kb ? img.size_kb + ' KB  •  ' + (img.width||'--') + ' × ' + (img.height||'--') + ' px' : '';
+  document.getElementById('modalPrompt').textContent = img.prompt || 'No prompt available.';
+  document.getElementById('modalCounter').textContent =
+    (currentIndex+1) + ' / ' + displayImages.length;
+
+  updateModalFavBtn();
+}
+
+function updateModalFavBtn() {
+  if(currentIndex < 0 || currentIndex >= displayImages.length) return;
+  var img = displayImages[currentIndex];
+  var btn = document.getElementById('modalFavBtn');
+  if(isFav(img.filename)){
+    btn.textContent = '♥ Remove Favorite';
+    btn.classList.add('fav-on');
+  } else {
+    btn.textContent = '♡ Add to Favorites';
+    btn.classList.remove('fav-on');
+  }
 }
 
 function closeModal() {
-    document.getElementById('imageModal').classList.remove('active');
-    document.body.style.overflow = 'auto';
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
-// Only close when clicking the dark backdrop, not the content inside it
-function closeModalOnBackdrop(event) {
-    if (event.target === document.getElementById('imageModal')) closeModal();
+function onModalBackdrop(e) {
+  if(e.target === document.getElementById('modal')) closeModal();
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+function nextImg() {
+  currentIndex = (currentIndex + 1) % displayImages.length;
+  renderModal();
+}
+function prevImg() {
+  currentIndex = (currentIndex - 1 + displayImages.length) % displayImages.length;
+  renderModal();
+}
+
+// ── DOWNLOAD ──────────────────────────────────────────────────────────
+function dlImage(url, filename) {
+  fetch(url)
+    .then(function(r){ return r.blob(); })
+    .then(function(blob){
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename || 'stock-photo.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 5000);
+      showToast('Download started!');
+    })
+    .catch(function(){
+      // cross-origin fallback: open in new tab
+      window.open(url, '_blank');
+      showToast('Opened in new tab — right-click to save');
+    });
+}
+
+function downloadCurrent() {
+  if(currentIndex < 0) return;
+  var img = displayImages[currentIndex];
+  dlImage(base + '/images/' + img.filename, img.filename);
+}
+
+// ── COPY ACTIONS ──────────────────────────────────────────────────────
+function copyPrompt() {
+  if(currentIndex < 0) return;
+  var text = displayImages[currentIndex].prompt || '';
+  navigator.clipboard.writeText(text)
+    .then(function(){ showToast('Prompt copied to clipboard!'); })
+    .catch(function(){ showToast('Could not copy — try manually'); });
+}
+
+function copyUrl() {
+  if(currentIndex < 0) return;
+  var img = displayImages[currentIndex];
+  var url = base + '/images/' + img.filename;
+  navigator.clipboard.writeText(url)
+    .then(function(){ showToast('Image URL copied!'); })
+    .catch(function(){ showToast('Could not copy — try manually'); });
+}
+
+// ── FAVORITES (modal) ─────────────────────────────────────────────────
+function toggleFavCurrent() {
+  if(currentIndex < 0) return;
+  toggleFav(displayImages[currentIndex].filename, null);
+  updateModalFavBtn();
+}
+
+// ── SURPRISE ME ───────────────────────────────────────────────────────
+function surpriseMe() {
+  if(!allImages.length){ showToast('No images loaded yet'); return; }
+  displayImages = allImages.slice();
+  var idx = Math.floor(Math.random() * displayImages.length);
+  renderImages(displayImages);
+  openModal(idx);
+}
+
+// ── TOAST ─────────────────────────────────────────────────────────────
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2600);
+}
+
+// ── KEYBOARD ──────────────────────────────────────────────────────────
+document.addEventListener('keydown', function(e){
+  var open = document.getElementById('modal').classList.contains('open');
+  if(!open) return;
+  if(e.key === 'Escape')      closeModal();
+  else if(e.key === 'ArrowRight') nextImg();
+  else if(e.key === 'ArrowLeft')  prevImg();
+  else if(e.key === 'f' || e.key === 'F') toggleFavCurrent();
+});
+
+// ── UTILS ─────────────────────────────────────────────────────────────
+function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escAttr(s){ return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 </script>
-
 </body>
 </html>

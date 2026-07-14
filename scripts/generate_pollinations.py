@@ -1,49 +1,27 @@
 #!/usr/bin/env python3
 """
-generate_pollinations.py
+generate_pollinations.py  (v2 — improved quality)
 
-Generates stock photos via Pollinations.ai (no API key, no account, no cost)
-and writes api/images.json in the exact schema the existing index.html expects:
-
-  {
-    "total_images": N,
-    "generated_at": "...",
-    "images": [
-      {
-        "filename":        "business_remote_work_1.png",
-        "source_keyword":  "remote work",
-        "source_category": "business",
-        "size_kb":         312,
-        "width":           1280,
-        "height":          853,
-        "prompt":          "...",
-        "seed":            42
-      },
-      ...
-    ]
-  }
-
-Pollinations endpoint:
-  https://image.pollinations.ai/prompt/{encoded_prompt}
-  ?width=1280&height=853&seed={seed}&model=flux-realism&nologo=true&enhance=false
-
-- `flux-realism` produces the most stock-photo-like output of the available
-   free models. Switch to `flux` for more stylised images.
-- `nologo=true`  suppresses the Pollinations watermark overlay.
-- `enhance=false` skips their prompt-rewriting layer so you get exactly
-   what you asked for, which matters for consistent stock photo framing.
-- No rate-limit header is published; 1 request / 2s is safe in practice.
-
-LICENSE NOTE: Pollinations routes requests across multiple open models.
-The licensing of output images therefore depends on which model handled
-each request — Pollinations does not contractually guarantee a specific
-output license. The CC0 badge in index.html is NOT safe as written.
-Replace it with: "AI-generated — verify licensing for your specific use"
-until you pin to a model with confirmed permissive output terms.
+Key changes from v1:
+  - MODEL switched from flux-realism -> flux
+    flux-realism amplifies anatomy issues on people; flux handles mixed
+    scenes more reliably and produces sharper overall results.
+  - enhance=true  lets Pollinations' prompt-improvement layer run.
+    Previous enhance=false gave us exactly what we wrote, which was not
+    enough for consistent stock-photo quality.
+  - nofeed=true  keeps generated images out of the public Pollinations feed.
+  - QUALITY_SUFFIX appended to every prompt: sharp focus, high resolution,
+    no blur, no distortion. Explicit beats implicit every time.
+  - "shallow depth of field" removed from ALL prompts — it directly causes
+    the blur complaints and is inappropriate for stock photo use anyway.
+  - People category COMPLETELY rewritten to use close-ups of hands, feet,
+    and silhouettes. Full-face/full-body prompts hit the worst failure modes
+    of every diffusion model. Avoiding faces sidesteps this entirely while
+    producing images that are actually more useful as stock photos.
+  - Image size bumped to 1344x896 (still 3:2, slightly larger for quality).
 """
 
 import json
-import os
 import re
 import time
 import urllib.parse
@@ -51,73 +29,115 @@ import urllib.request
 from pathlib import Path
 from datetime import datetime, timezone
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT  = Path(__file__).resolve().parent.parent
 IMAGES_DIR = REPO_ROOT / "images"
 API_DIR    = REPO_ROOT / "api"
 INDEX_PATH = API_DIR / "images.json"
 
-POLLINATIONS_BASE = "https://image.pollinations.ai/prompt/{prompt}?width={w}&height={h}&seed={seed}&model={model}&nologo=true&enhance=false"
+POLLINATIONS_BASE = (
+    "https://image.pollinations.ai/prompt/{prompt}"
+    "?width={w}&height={h}&seed={seed}&model={model}"
+    "&nologo=true&enhance=true&nofeed=true"
+)
 
-IMAGE_WIDTH  = 1280
-IMAGE_HEIGHT = 853    # 3:2 ratio — standard landscape stock photo
-MODEL        = "flux-realism"
-PAUSE_SECS   = 2.5   # between requests; don't hammer the free endpoint
+IMAGE_WIDTH  = 1344
+IMAGE_HEIGHT = 896
+MODEL        = "flux"
+PAUSE_SECS   = 3.0
 
-# ---------------------------------------------------------------------------
-# Keyword catalogue — maps each category to a list of (keyword, prompt) pairs.
-# Prompt wording is intentional: "professional stock photograph" + framing
-# cues consistently push flux-realism toward clean, usable results over
-# stylised art. Keep prompts under ~200 chars for reliable URL encoding.
-# ---------------------------------------------------------------------------
+# Appended to every prompt. Spelling these out explicitly matters.
+QUALITY_SUFFIX = (
+    ", sharp focus, high resolution, 4k, professional quality, "
+    "no blur, no distortion, no watermark, no text"
+)
+
 CATALOGUE = {
     "business": [
-        ("remote work",         "professional stock photograph of a person working on a laptop at home, natural window light, modern desk, shallow depth of field, no text"),
-        ("team meeting",        "professional stock photograph of a diverse business team in a bright conference room, candid discussion, modern office, no text"),
-        ("startup office",      "professional stock photograph of an open-plan startup office with people collaborating, natural light, plants, no text"),
-        ("business handshake",  "professional stock photograph of two people shaking hands in a modern office, trust and partnership, bright background, no text"),
-        ("entrepreneur",        "professional stock photograph of a confident entrepreneur at a standing desk, city view through window, no text"),
+        ("remote work",
+         "overhead flat lay of a laptop, coffee cup, notebook and pen on a clean white desk, morning light from window, minimal"),
+        ("team collaboration",
+         "top-down view of diverse hands pointing at architectural blueprints on a conference table, planning session, natural light"),
+        ("startup office",
+         "wide shot of a bright modern open-plan office with standing desks, plants, large windows, empty, clean and airy"),
+        ("business growth",
+         "close-up of a hand drawing an upward arrow on a whiteboard with coloured markers, minimal background"),
+        ("entrepreneur desk",
+         "flat lay of a minimalist workspace: laptop, glasses, succulent plant, notebook on oak desk, warm morning light"),
     ],
     "nature": [
-        ("forest path",         "professional stock photograph of a sunlit forest path with dappled light through trees, peaceful, shallow depth of field, no people"),
-        ("mountain lake",       "professional stock photograph of a calm alpine lake reflecting surrounding mountains at golden hour, no people, no text"),
-        ("wildflower meadow",   "professional stock photograph of a wildflower meadow in summer light, bees, natural colours, wide angle, no text"),
-        ("ocean waves",         "professional stock photograph of gentle waves on a sandy beach at sunrise, soft pastel sky, no people, no text"),
-        ("urban garden",        "professional stock photograph of a small community garden in a city, raised beds, vegetables, warm light, no text"),
+        ("forest path",
+         "sunlit forest path with tall trees and dappled golden light filtering through leaves, peaceful, no people"),
+        ("mountain lake",
+         "calm alpine lake perfectly reflecting surrounding snow-capped mountains at golden hour, no people, wide angle"),
+        ("wildflower meadow",
+         "vast wildflower meadow in summer with red poppies and yellow flowers, blue sky, wide angle, no people"),
+        ("ocean sunrise",
+         "gentle waves washing over smooth sand on a beach at sunrise, soft pastel pink and orange sky, no people"),
+        ("urban garden",
+         "raised vegetable garden beds in a sunny urban backyard with tomatoes and herbs growing, warm afternoon light, no people"),
     ],
     "technology": [
-        ("circuit board",       "professional macro stock photograph of a green circuit board with components, sharp details, bokeh background, no text"),
-        ("ai data center",      "professional stock photograph of a modern server room with blue LED lighting, rows of servers, no people, no text"),
-        ("coding screen",       "professional stock photograph of code on a monitor screen with dark theme, blurred developer in background, no text"),
-        ("smartphone flat lay", "professional stock photograph of a modern smartphone and coffee cup flat lay on white desk, minimal, no text on screen"),
-        ("wireless network",    "professional stock photograph of wifi router glowing on a desk in a home office, soft bokeh background, no text"),
+        ("circuit board macro",
+         "extreme macro photograph of a green circuit board with gold components and copper traces, vivid detail, dark background"),
+        ("server room",
+         "modern data center corridor with blue LED-lit server racks receding into the distance, dramatic lighting, no people"),
+        ("code on screen",
+         "close-up of a dark-themed code editor on a monitor showing colourful syntax-highlighted code, slight glow, no people"),
+        ("smartphone flatlay",
+         "flat lay of a modern smartphone face-down next to a coffee cup and succulent on a white marble surface, minimal"),
+        ("smart home devices",
+         "collection of smart home devices arranged on a white table: speaker, tablet, smart bulb, cable, overhead shot"),
     ],
     "people": [
-        ("woman reading",       "professional stock photograph of a young woman reading a book in a cosy armchair by a window, warm light, no text"),
-        ("friends laughing",    "professional stock photograph of a diverse group of friends laughing together outdoors in a park, candid, natural light, no text"),
-        ("senior couple",       "professional stock photograph of a happy senior couple walking in a park holding hands, autumn leaves, warm light, no text"),
-        ("student studying",    "professional stock photograph of a university student studying with books and laptop in a library, focused, no text"),
-        ("chef cooking",        "professional stock photograph of a chef preparing food in a professional kitchen, action shot, warm light, no text"),
+        # Rewritten entirely: close-ups of hands/feet/silhouettes only.
+        # This sidesteps diffusion model anatomy failures completely
+        # while producing more versatile, high-demand stock images.
+        ("reading hands",
+         "close-up of relaxed hands holding an open paperback book, sunlight falling across the pages, warm tones, wooden armchair arm visible"),
+        ("creative hands",
+         "close-up of hands sketching in a spiral notebook with a fine pen, wooden desk, natural window light, coffee cup in soft background blur"),
+        ("connection hands",
+         "overhead close-up of two pairs of hands gently clasped together on a light oak table, warm afternoon sunlight"),
+        ("typing hands",
+         "close-up of hands typing on a slim laptop keyboard, clean white desk, soft indoor light, minimal"),
+        ("chef hands",
+         "close-up of hands slicing a ripe red tomato on a wooden chopping board, professional kitchen counter, natural light"),
     ],
     "abstract": [
-        ("colourful smoke",     "professional abstract stock photograph of colourful smoke swirls against black background, purple orange teal, artistic, no text"),
-        ("geometric shapes",    "professional abstract stock photograph of clean geometric shapes in soft pastel colours, minimal, studio lighting, no text"),
-        ("water ripples",       "professional abstract macro stock photograph of water ripples in metallic blue tones, meditative, no text"),
-        ("bokeh lights",        "professional abstract stock photograph of golden bokeh lights on dark background, festive, shallow depth of field, no text"),
-        ("paper texture",       "professional stock photograph of layered torn paper texture in white and cream tones, minimal, flat lay, no text"),
+        ("colour smoke",
+         "swirling purple, orange and teal coloured smoke against a pure black background, flowing, artistic, studio"),
+        ("geometric minimal",
+         "arrangement of clean pastel geometric shapes — circles, triangles, rectangles — on white background, studio lighting"),
+        ("water macro",
+         "extreme macro of water droplets on a glass surface refracting coloured light, jewel tones, black background"),
+        ("bokeh golden",
+         "out-of-focus golden bokeh circles on a dark background, warm and festive, smooth gradient"),
+        ("paper layers",
+         "neatly arranged layers of torn white and cream paper textures, overhead flat lay, soft shadows, minimal"),
     ],
     "food": [
-        ("avocado toast",       "professional food stock photograph of avocado toast on sourdough with poached egg, overhead shot, bright natural light, no text"),
-        ("coffee flat white",   "professional food stock photograph of a flat white coffee with latte art in ceramic cup, cafe setting, warm bokeh, no text"),
-        ("fresh salad bowl",    "professional food stock photograph of a colourful grain bowl with vegetables, overhead shot on marble surface, natural light, no text"),
-        ("farmers market",      "professional stock photograph of fresh vegetables at a farmers market stall, colourful produce, natural light, no text"),
-        ("sourdough bread",     "professional food stock photograph of a freshly baked sourdough loaf on a wooden board, rustic kitchen, warm light, no text"),
+        ("avocado toast",
+         "overhead flat lay of avocado toast on sourdough with poached egg, microgreens and chilli flakes, white ceramic plate, bright natural light"),
+        ("latte art",
+         "close-up of a flat white coffee with a leaf latte art pattern in a wide ceramic cup on a wooden cafe table, warm tones"),
+        ("grain bowl",
+         "overhead flat lay of a colourful grain bowl with roasted vegetables, chickpeas and tahini on a light grey surface, natural light"),
+        ("farmers market",
+         "overhead flat lay of fresh seasonal vegetables — carrots, tomatoes, courgettes — on a wooden market table, vibrant colours"),
+        ("sourdough loaf",
+         "close-up of a freshly baked sourdough loaf with a cracked scored crust on a dark wooden board, warm kitchen light"),
     ],
     "travel": [
-        ("cobblestone street",  "professional travel stock photograph of a charming cobblestone street in a European village, golden hour, no people, no text"),
-        ("airport terminal",    "professional stock photograph of a modern airport terminal with large windows and sunlight, travellers walking, no text"),
-        ("road trip highway",   "professional travel stock photograph of an empty highway through desert landscape at sunset, dramatic sky, no text"),
-        ("tropical beach hut",  "professional travel stock photograph of an overwater bungalow in clear turquoise tropical water, aerial view, no text"),
-        ("city skyline night",  "professional travel stock photograph of a city skyline reflected in water at night, long exposure, no text"),
+        ("cobblestone village",
+         "charming narrow cobblestone street lined with flower boxes in a European village, golden hour light, no people"),
+        ("airport terminal",
+         "wide angle interior of a bright modern airport terminal with floor-to-ceiling windows and natural light, no people, airy"),
+        ("desert highway",
+         "straight empty two-lane highway cutting through red desert landscape toward distant mountains at sunset, dramatic sky"),
+        ("tropical water",
+         "aerial view of an overwater bungalow in impossibly clear turquoise tropical water, white sand visible below, no people"),
+        ("city reflection",
+         "city skyline perfectly reflected in a still river at blue hour, long exposure, lights streaking, no people"),
     ],
 }
 
@@ -127,7 +147,8 @@ def slugify(text: str) -> str:
 
 
 def build_url(prompt: str, seed: int) -> str:
-    encoded = urllib.parse.quote(prompt, safe="")
+    full_prompt = prompt + QUALITY_SUFFIX
+    encoded = urllib.parse.quote(full_prompt, safe="")
     return POLLINATIONS_BASE.format(
         prompt=encoded,
         w=IMAGE_WIDTH,
@@ -138,16 +159,16 @@ def build_url(prompt: str, seed: int) -> str:
 
 
 def fetch_image(url: str, dest_path: Path, retries: int = 3) -> int | None:
-    """Download image to dest_path, return file size in KB or None on failure."""
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "stock-photo-bot/1.0"})
-            with urllib.request.urlopen(req, timeout=60) as resp:
+            req = urllib.request.Request(
+                url, headers={"User-Agent": "stock-photo-bot/2.0"}
+            )
+            with urllib.request.urlopen(req, timeout=90) as resp:
                 data = resp.read()
 
-            # Reject obviously truncated or blank responses
             if len(data) < 10_000:
-                print(f"    [warn] attempt {attempt+1}: response too small ({len(data)} bytes), retrying")
+                print(f"    [warn] attempt {attempt+1}: too small ({len(data)} bytes)")
                 time.sleep(PAUSE_SECS * 2)
                 continue
 
@@ -155,7 +176,7 @@ def fetch_image(url: str, dest_path: Path, retries: int = 3) -> int | None:
             return len(data) // 1024
 
         except Exception as exc:
-            print(f"    [warn] attempt {attempt+1} failed: {exc}")
+            print(f"    [warn] attempt {attempt+1}: {exc}")
             time.sleep(PAUSE_SECS * 2)
 
     return None
@@ -175,10 +196,9 @@ def main():
     API_DIR.mkdir(parents=True, exist_ok=True)
 
     index = load_existing_index()
-    existing_filenames = {img["filename"] for img in index["images"]}
-
+    existing = {img["filename"] for img in index["images"]}
     new_entries = []
-    seed = 1000  # deterministic starting seed; incremented per image
+    seed = 2000  # new seed range so v2 prompts don't collide with v1 files
 
     for category, items in CATALOGUE.items():
         print(f"\n── {category.upper()} ──")
@@ -186,48 +206,38 @@ def main():
         for keyword, prompt in items:
             filename = f"{category}_{slugify(keyword)}_1.png"
 
-            if filename in existing_filenames:
-                print(f"  [skip] {filename} already in index")
+            if filename in existing:
+                print(f"  [skip] {filename}")
                 seed += 1
                 continue
 
-            dest_path = IMAGES_DIR / filename
-            url = build_url(prompt, seed)
-
-            print(f"  [gen]  {keyword}")
-            print(f"         seed={seed}  →  {filename}")
-
-            size_kb = fetch_image(url, dest_path)
+            print(f"  [gen]  {keyword}  (seed={seed})")
+            size_kb = fetch_image(build_url(prompt, seed), IMAGES_DIR / filename)
 
             if size_kb is None:
-                print(f"  [fail] {filename} — skipped after retries")
+                print(f"  [fail] {filename}")
             else:
-                entry = {
+                new_entries.append({
                     "filename":        filename,
                     "source_keyword":  keyword,
                     "source_category": category,
                     "size_kb":         size_kb,
                     "width":           IMAGE_WIDTH,
                     "height":          IMAGE_HEIGHT,
-                    "prompt":          prompt,
+                    "prompt":          prompt + QUALITY_SUFFIX,
                     "seed":            seed,
-                }
-                new_entries.append(entry)
+                })
                 print(f"  [ok]   {size_kb} KB")
 
             seed += 1
             time.sleep(PAUSE_SECS)
 
-    # Merge and write index
     index["images"].extend(new_entries)
     index["total_images"] = len(index["images"])
     index["generated_at"] = datetime.now(timezone.utc).isoformat()
-
     INDEX_PATH.write_text(json.dumps(index, indent=2))
 
-    print(f"\n✓ Done: {len(new_entries)} new images")
-    print(f"  Total in index: {index['total_images']}")
-    print(f"  Written to:     {INDEX_PATH}")
+    print(f"\nDone: {len(new_entries)} new  |  {index['total_images']} total")
 
 
 if __name__ == "__main__":
