@@ -570,11 +570,12 @@ function filterByCategory(category) {
         filtered = allImages;
         console.log(`   Showing all ${allImages.length} images`);
     } else {
+        const catLower = category.toLowerCase();
         filtered = allImages.filter(img => {
-            const imgCategory = (img.source_category || 'general').toLowerCase();
-            const match = imgCategory === category.toLowerCase() || 
-                         imgCategory.includes(category.toLowerCase());
-            return match;
+            const imgCat = (img.source_category || 'general').toLowerCase();
+            return imgCat === catLower || 
+                   imgCat.includes(catLower) ||
+                   (img.prompt || '').toLowerCase().includes(catLower);
         });
         console.log(`   Found ${filtered.length} images for "${category}"`);
     }
