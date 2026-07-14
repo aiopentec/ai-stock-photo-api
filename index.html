@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Stock Photos - Free AI-Generated Stock Photography</title>
-    <meta name="description" content="Free AI-generated stock photos for commercial and personal use. No attribution required. CC0 licensed.">
+    <meta name="description" content="Free AI-generated stock photos for commercial and personal use. No attribution required.">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,27 +24,10 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
+        header h1 { font-size: 3rem; margin-bottom: 0.5rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        header p  { font-size: 1.25rem; opacity: 0.95; margin-bottom: 1.5rem; }
 
-        header p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            margin-bottom: 1.5rem;
-        }
-
-        .badges {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
+        .badges { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
         .badge {
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
@@ -55,11 +38,13 @@
             border: 2px solid rgba(255,255,255,0.3);
         }
 
+        /* ── SEARCH ─────────────────────────────────────────────────── */
         .search-section {
             max-width: 700px;
             margin: -2.5rem auto 3rem;
             position: relative;
             z-index: 10;
+            padding: 0 1rem;
         }
 
         .search-box {
@@ -71,247 +56,96 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .search-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.2);
-        }
-
-        .search-box input {
-            flex: 1;
-            padding: 1.25rem 2rem;
-            border: none;
-            font-size: 1.1rem;
-            outline: none;
-            background: transparent;
-        }
-
+        .search-box:hover { transform: translateY(-2px); box-shadow: 0 20px 45px rgba(0,0,0,0.2); }
+        .search-box input { flex: 1; padding: 1.25rem 2rem; border: none; font-size: 1.1rem; outline: none; background: transparent; }
         .search-box button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
+            color: white; border: none;
             padding: 1.25rem 2.5rem;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1rem;
+            cursor: pointer; font-weight: 700; font-size: 1rem;
             transition: all 0.3s;
         }
 
-        main {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
+        /* ── MAIN ───────────────────────────────────────────────────── */
+        main { max-width: 1400px; margin: 0 auto; padding: 2rem 1rem; }
 
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
+        .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
         .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background: white; padding: 1.5rem; border-radius: 16px;
+            text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
+        .stat-card:hover { transform: translateY(-5px); }
         .stat-value {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.5rem; font-weight: 800;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
+        .stat-label { color: #718096; font-weight: 600; margin-top: 0.25rem; }
 
-        .stat-label {
-            color: #718096;
-            font-weight: 600;
-            margin-top: 0.25rem;
-        }
-
-        .categories {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
+        /* ── CATEGORIES ─────────────────────────────────────────────── */
+        .categories { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
         .category-btn {
-            padding: 0.65rem 1.5rem;
-            border: 2px solid #e2e8f0;
-            background: white;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #4a5568;
-            transition: all 0.3s;
+            padding: 0.65rem 1.5rem; border: 2px solid #e2e8f0; background: white;
+            border-radius: 30px; cursor: pointer; font-weight: 600; color: #4a5568; transition: all 0.3s;
         }
-
-        .category-btn:hover,
-        .category-btn.active {
+        .category-btn:hover, .category-btn.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-color: transparent;
-            transform: scale(1.05);
+            color: white; border-color: transparent; transform: scale(1.05);
         }
 
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-        }
+        /* ── GRID ───────────────────────────────────────────────────── */
+        .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
 
         .image-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
+            background: white; border-radius: 20px; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
         }
+        .image-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .image-card img { width: 100%; height: 240px; object-fit: cover; display: block; transition: transform 0.5s; }
+        .image-card:hover img { transform: scale(1.08); }
 
-        .image-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-        }
-
-        .image-card img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s;
-        }
-
-        .image-card:hover img {
-            transform: scale(1.08);
-        }
-
-        .image-info {
-            padding: 1.25rem;
-        }
-
+        .image-info { padding: 1.25rem; }
         .image-info h3 {
-            font-size: 1rem;
-            color: #2d3748;
-            margin-bottom: 0.75rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-weight: 600;
+            font-size: 1rem; color: #2d3748; margin-bottom: 0.75rem;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600;
         }
+        .image-meta { display: flex; justify-content: space-between; align-items: center; }
+        .tag { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .size-info { color: #a0aec0; font-size: 0.85rem; font-weight: 500; }
 
-        .image-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .tag {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 0.35rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .size-info {
-            color: #a0aec0;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        footer {
-            background: #1a202c;
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 5rem;
-        }
-
-        footer a {
-            color: #90cdf4;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
+        /* ── MODAL ──────────────────────────────────────────────────── */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            display: none; position: fixed; z-index: 9999;
+            left: 0; top: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.95);
-            align-items: center;
-            justify-content: center;
+            align-items: center; justify-content: center;
             backdrop-filter: blur(10px);
         }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            max-width: 90vw;
-            max-height: 90vh;
-            position: relative;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-            max-height: 85vh;
-            border-radius: 12px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        .modal-details {
-            background: white;
-            color: #1a202c;
-            padding: 2rem;
-            margin-top: 1rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-
+        .modal.active { display: flex; }
+        .modal-content { max-width: 90vw; max-height: 90vh; position: relative; }
+        .modal-content img { max-width: 100%; max-height: 85vh; border-radius: 12px; box-shadow: 0 25px 80px rgba(0,0,0,0.5); }
+        .modal-close { position: absolute; top: -50px; right: 0; color: white; font-size: 3rem; cursor: pointer; background: none; border: none; }
+        .modal-details { background: white; color: #1a202c; padding: 2rem; margin-top: 1rem; border-radius: 12px; text-align: center; }
         .download-btn {
             display: inline-block;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.9rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            margin-top: 1rem;
-            transition: all 0.3s;
+            color: white; padding: 0.9rem 2rem; border-radius: 30px;
+            text-decoration: none; font-weight: 700; margin-top: 1rem; transition: all 0.3s;
+        }
+        .download-btn:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
+
+        /* ── LICENSE NOTE ───────────────────────────────────────────── */
+        .license-note {
+            background: #fffbeb; border: 1px solid #f6d860; border-radius: 10px;
+            padding: 0.9rem 1.25rem; margin-bottom: 2rem; font-size: 0.88rem; color: #744210;
         }
 
-        .download-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
+        /* ── FOOTER ─────────────────────────────────────────────────── */
+        footer { background: #1a202c; color: white; text-align: center; padding: 3rem 1rem; margin-top: 5rem; }
+        footer a { color: #90cdf4; text-decoration: none; font-weight: 600; }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
@@ -327,9 +161,9 @@
     <p>Free AI-Generated Stock Photography • Powered by Pollinations.ai</p>
     <div class="badges">
         <span class="badge">✨ 100% FREE</span>
-        <span class="badge">📄 CC0 LICENSED</span>
-        <span class="badge">🚀 NO ATTRIBUTION</span>
-        <span class="badge">💼 COMMERCIAL USE OK</span>
+        <span class="badge">🚀 NO SIGN-UP</span>
+        <span class="badge">💼 AI GENERATED</span>
+        <span class="badge">🔄 WEEKLY UPDATES</span>
     </div>
 </header>
 
@@ -341,7 +175,6 @@
 </div>
 
 <main>
-    <!-- Statistics -->
     <div class="stats-bar">
         <div class="stat-card">
             <div class="stat-value" id="totalPhotos">--</div>
@@ -352,7 +185,7 @@
             <div class="stat-label">Total Size</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value">Daily</div>
+            <div class="stat-value">Weekly</div>
             <div class="stat-label">Auto Updates</div>
         </div>
         <div class="stat-card">
@@ -361,41 +194,44 @@
         </div>
     </div>
 
-    <!-- Category Filters -->
-    <div class="categories">
-        <button class="category-btn active" onclick="filterByCategory('all')">🌟 All</button>
-        <button class="category-btn" onclick="filterByCategory('business')">💼 Business</button>
-        <button class="category-btn" onclick="filterByCategory('nature')">🌿 Nature</button>
-        <button class="category-btn" onclick="filterByCategory('technology')">💻 Technology</button>
-        <button class="category-btn" onclick="filterByCategory('people')">👥 People</button>
-        <button class="category-btn" onclick="filterByCategory('abstract')">🎨 Abstract</button>
-        <button class="category-btn" onclick="filterByCategory('food')">🍕 Food</button>
-        <button class="category-btn" onclick="filterByCategory('travel')">✈️ Travel</button>
+    <div class="license-note">
+        ⚠️ <strong>Licensing note:</strong> these images are AI-generated via Pollinations.ai.
+        Output licensing depends on the underlying model used per request.
+        Verify suitability for your specific use case before commercial publication.
     </div>
 
-    <!-- Image Grid -->
+    <div class="categories">
+        <button class="category-btn active" onclick="filterByCategory('all', this)">🌟 All</button>
+        <button class="category-btn" onclick="filterByCategory('business', this)">💼 Business</button>
+        <button class="category-btn" onclick="filterByCategory('nature', this)">🌿 Nature</button>
+        <button class="category-btn" onclick="filterByCategory('technology', this)">💻 Technology</button>
+        <button class="category-btn" onclick="filterByCategory('people', this)">👥 People</button>
+        <button class="category-btn" onclick="filterByCategory('abstract', this)">🎨 Abstract</button>
+        <button class="category-btn" onclick="filterByCategory('food', this)">🍕 Food</button>
+        <button class="category-btn" onclick="filterByCategory('travel', this)">✈️ Travel</button>
+    </div>
+
     <div class="image-grid" id="imageGrid">
-        <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
-            <div style="font-size: 3rem;">⏳</div>
-            <h2 style="margin: 1rem 0;">Loading Your AI Photos...</h2>
-            <p style="color: #718096; font-size: 1.1rem;">Fetching 25 beautiful stock photos...</p>
+        <div style="text-align:center;grid-column:1/-1;padding:4rem;">
+            <div style="font-size:3rem;">⏳</div>
+            <h2 style="margin:1rem 0;">Loading Your AI Photos...</h2>
+            <p style="color:#718096;font-size:1.1rem;">Fetching stock photos...</p>
         </div>
     </div>
 </main>
 
-<!-- Image Preview Modal -->
-<div class="modal" id="imageModal" onclick="closeModal(event)">
+<!-- Modal -->
+<div class="modal" id="imageModal" onclick="closeModalOnBackdrop(event)">
     <div class="modal-content">
         <button class="modal-close" onclick="closeModal()">&times;</button>
         <img id="modalImage" src="" alt="Preview">
         <div class="modal-details">
             <h2 id="modalTitle">AI Generated Stock Photo</h2>
-            <p id="modalPrompt" style="color: #718096; margin: 1rem 0;"></p>
+            <p id="modalPrompt" style="color:#718096;margin:1rem 0;font-size:0.9rem;"></p>
             <a id="downloadLink" href="" download class="download-btn">⬇️ Download Free Photo</a>
             <br><br>
-            <p style="font-size: 0.9rem; color: #a0aec0;">
-                License: CC0 1.0 Universal (Public Domain)<br>
-                Use freely for personal & commercial projects!
+            <p style="font-size:0.85rem;color:#a0aec0;">
+                AI-generated via Pollinations.ai • Verify licensing for your use case
             </p>
         </div>
     </div>
@@ -404,217 +240,156 @@
 <footer>
     <h3>🚀 AI Stock Photo API</h3>
     <p>Powered by <strong>Pollinations.ai</strong> | Hosted on <strong>GitHub Pages</strong></p>
-    <p style="margin-top: 1rem;">Licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank"><strong>CC0 1.0 Universal (Public Domain)</strong></a></p>
-    
-    <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+    <p style="margin-top:2rem;font-size:0.9rem;opacity:0.7;">
         Images are AI-generated. Use responsibly.<br>
-        © 2024 AI Stock Photo API • Made with ❤️ and Automation
+        © 2025 AI Stock Photo API • Made with ❤️ and Automation
     </p>
 </footer>
 
 <script>
-// Global state
+// ── State ────────────────────────────────────────────────────────────────────
 let allImages = [];
 
-// Initialize on load
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('🎨 Page loaded, fetching images...');
-    loadImages();
-});
+// ── Boot ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', loadImages);
 
-// Load images from API
+// ── Load images.json ─────────────────────────────────────────────────────────
 async function loadImages() {
     const grid = document.getElementById('imageGrid');
-    
+
     try {
-        console.log('📡 Fetching images...');
-        
-        // Use RELATIVE path (works on github.io/REPO-NAME/)
         const response = await fetch('api/images.json');
-        
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        
+        if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+
         const data = await response.json();
-        
-        console.log('✅ API Response:', data);
-        console.log('📊 Total images:', data.total_images || data.images?.length);
-        
-        const images = data.images || [];
-        allImages = images;
-        
-        if (images.length === 0) {
+        allImages = data.images || [];
+
+        if (allImages.length === 0) {
             grid.innerHTML = `
-                <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
-                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">🔧 Generating First Photos...</h2>
-                    <p style="color: #718096;">Run the workflow manually to generate first images.</p>
+                <div style="text-align:center;grid-column:1/-1;padding:4rem;">
+                    <h2>🔧 Generating First Photos...</h2>
+                    <p style="color:#718096;margin-top:1rem;">
+                        Run the GitHub Actions workflow to generate images,<br>
+                        or trigger it manually from the Actions tab.
+                    </p>
                 </div>`;
             return;
         }
-        
-        // Update stats
-        document.getElementById('totalPhotos').textContent = images.length;
-        
-        // Calculate total size
-        const totalSizeKB = images.reduce((sum, img) => sum + (img.size_kb || 0), 0);
-        const totalSizeMB = (totalSizeKB / 1024).toFixed(1);
-        document.getElementById('totalSize').textContent = totalSizeMB + ' MB';
-        
-        // Render images
-        renderImages(images);
-        
-    } catch (error) {
-        console.error('❌ Error loading images:', error);
+
+        // Stats
+        document.getElementById('totalPhotos').textContent = allImages.length;
+        const totalKB = allImages.reduce((s, img) => s + (img.size_kb || 0), 0);
+        document.getElementById('totalSize').textContent = (totalKB / 1024).toFixed(1) + ' MB';
+
+        renderImages(allImages);
+
+    } catch (err) {
         grid.innerHTML = `
-            <div style="text-align: center; grid-column: 1/-1; padding: 4rem;">
-                <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #e53e3e;">⚠️ Error Loading Photos</h2>
-                <p style="color: #718096; margin-bottom: 1rem;">${error.message}</p>
-                <p style="margin-top: 1rem;">
-                    Trying to load: <code>api/images.json</code><br>
-                    Current URL: <code>${window.location.href}</code>
+            <div style="text-align:center;grid-column:1/-1;padding:4rem;">
+                <h2 style="color:#e53e3e;">⚠️ Could not load photos</h2>
+                <p style="color:#718096;margin-top:1rem;">${err.message}</p>
+                <p style="margin-top:1rem;font-size:0.9rem;">
+                    Expected: <code>api/images.json</code><br>
+                    Run the generation workflow to create it.
                 </p>
             </div>`;
     }
 }
 
+// ── Render ────────────────────────────────────────────────────────────────────
 function renderImages(images) {
     const grid = document.getElementById('imageGrid');
-    
-    console.log(`🎨 Rendering ${images.length} images...`);
-    
-    // Build base URL for raw GitHub content
-    const rawBase = 'https://raw.githubusercontent.com/aiopentec/ai-stock-photo-api/main/';
-    const pagesBase = window.location.origin + '/';
-    
-    grid.innerHTML = images.map((img, index) => {
-        // Get filename from API data
-        const filename = img.filename || '';
-        const displayName = filename 
-            ? filename.replace('.png', '').replace(/_/g, ' ').substring(0, 35)
-            : `AI Photo ${index + 1}`;
-            
-        const category = img.source_category || 'General';
-        const size = img.size_kb ? img.size_kb + ' KB' : 'HD';
-        
-        // Try multiple URL strategies in order of reliability
-        const imgUrl = `${pagesBase}images/${filename}`;
-        
-        console.log(`   [${index + 1}] ${displayName}`);
-        console.log(`       URL: ${imgUrl}`);
-        
+
+    if (images.length === 0) {
+        grid.innerHTML = `<div style="text-align:center;grid-column:1/-1;padding:3rem;color:#718096;">No photos match that filter.</div>`;
+        return;
+    }
+
+    const base = window.location.origin + window.location.pathname.replace(/\/$/, '');
+
+    grid.innerHTML = images.map((img, i) => {
+        const filename    = img.filename || '';
+        const displayName = filename
+            ? filename.replace(/\.png$/i, '').replace(/_/g, ' ').substring(0, 40)
+            : `AI Photo ${i + 1}`;
+        const category = img.source_category || 'general';
+        const sizeLabel = img.size_kb ? img.size_kb + ' KB' : 'HD';
+        const imgUrl   = `${base}/images/${filename}`;
+        // Safe-encode values for inline onclick (avoid quote injection)
+        const safeTitle    = displayName.replace(/'/g, "\\'");
+        const safeFilename = filename.replace(/'/g, "\\'");
+
         return `
-        <div class="image-card" onclick="openModal('${imgUrl}', '${displayName}', '${filename}')">
-            <img 
-                src="${imgUrl}" 
-                alt="${displayName}" 
-                loading="lazy"
-                style="width: 100%; height: 240px; object-fit: cover;"
-                onerror="
-                    console.warn('⚠️ Failed:', '${imgUrl}');
-                    this.src = '${rawBase}images/${filename}';
-                    this.onerror = function() {
-                        console.error('❌ Also failed:', '${rawBase}images/${filename}');
-                        this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjNjY3ZWVhIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIvPjx0ZXh0IGZpbGw9IndoaXRlIiB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSIyNCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+RijwvdGV4dD48L3N2Zz4=';
-                        this.onerror = null;
-                    }
-                "
-            >
+        <div class="image-card" onclick="openModal('${imgUrl}', '${safeTitle}', '${safeFilename}', '${img.prompt || ''}')">
+            <img src="${imgUrl}" alt="${displayName}" loading="lazy"
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjNjY3ZWVhIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIvPjx0ZXh0IGZpbGw9IndoaXRlIiB4PSI1MCUiIHk9IjUwJSIgZm9udC1zaXplPSIyMCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+8J+RijwvdGV4dD48L3N2Zz4=';this.onerror=null;">
             <div class="image-info">
                 <h3 title="${displayName}">${displayName}</h3>
                 <div class="image-meta">
                     <span class="tag">${category}</span>
-                    <span class="size-info">${size}</span>
+                    <span class="size-info">${sizeLabel}</span>
                 </div>
             </div>
-        </div>
-    `}).join('');
-    
-    console.log('✅ All images rendered!');
+        </div>`;
+    }).join('');
 }
 
-// Search functionality
+// ── Search ────────────────────────────────────────────────────────────────────
 function searchImages() {
-    const query = document.getElementById('searchInput').value.trim().toLowerCase();
-    
-    if (!query) {
-        renderImages(allImages);
-        return;
-    }
-    
-    const filtered = allImages.filter(img => {
-        const name = (img.filename || '').toLowerCase();
-        const keyword = (img.source_keyword || '').toLowerCase();
-        return name.includes(query) || keyword.includes(query);
-    });
-    
+    const q = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (!q) { renderImages(allImages); return; }
+    const filtered = allImages.filter(img =>
+        (img.filename || '').toLowerCase().includes(q) ||
+        (img.source_keyword || '').toLowerCase().includes(q)
+    );
     renderImages(filtered);
 }
 
-document.getElementById('searchInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') searchImages();
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('searchInput').addEventListener('keypress', e => {
+        if (e.key === 'Enter') searchImages();
+    });
 });
 
-// Filter by category
-function filterByCategory(category) {
-    console.log('🏷️ Filtering by:', category);
-    
-    // Update button states
-    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) event.target.classList.add('active');
-    
-    // Filter images
-    let filtered;
-    
-    if (category === 'all') {
-        filtered = allImages;
-        console.log(`   Showing all ${allImages.length} images`);
-    } else {
-        const catLower = category.toLowerCase();
-        filtered = allImages.filter(img => {
-            const imgCat = (img.source_category || 'general').toLowerCase();
-            return imgCat === catLower || 
-                   imgCat.includes(catLower) ||
-                   (img.prompt || '').toLowerCase().includes(catLower);
-        });
-        console.log(`   Found ${filtered.length} images for "${category}"`);
-    }
-    
+// ── Category filter ───────────────────────────────────────────────────────────
+// NOTE: the original code passed `event` implicitly from onclick — that
+// doesn't work reliably cross-browser. The button is now passed explicitly.
+function filterByCategory(category, btn) {
+    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const filtered = category === 'all'
+        ? allImages
+        : allImages.filter(img =>
+            (img.source_category || '').toLowerCase() === category.toLowerCase()
+          );
+
     renderImages(filtered);
 }
-}
 
-// Modal functions
-function openModal(imageUrl, title, filename) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const downloadLink = document.getElementById('downloadLink');
-    
-    // Ensure absolute URL
-    let absUrl = imageUrl;
-    if (!absUrl.startsWith('http')) {
-        absUrl = window.location.origin + '/' + absUrl.replace(/^\//, '');
-    }
-    
-    modalImg.src = absUrl;
-    modalTitle.textContent = title || 'AI Generated Masterpiece';
-    downloadLink.href = absUrl;
-    downloadLink.download = filename || 'stock-photo.png';
-    
-    modal.classList.add('active');
+// ── Modal ─────────────────────────────────────────────────────────────────────
+function openModal(imageUrl, title, filename, prompt) {
+    document.getElementById('modalImage').src   = imageUrl;
+    document.getElementById('modalTitle').textContent  = title || 'AI Generated Stock Photo';
+    document.getElementById('modalPrompt').textContent = prompt ? `Prompt: "${prompt}"` : '';
+    document.getElementById('downloadLink').href     = imageUrl;
+    document.getElementById('downloadLink').download = filename || 'stock-photo.png';
+
+    document.getElementById('imageModal').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
-function closeModal(event) {
-    if (event && event.target !== event.currentTarget) return;
+function closeModal() {
     document.getElementById('imageModal').classList.remove('active');
     document.body.style.overflow = 'auto';
 }
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-});
+// Only close when clicking the dark backdrop, not the content inside it
+function closeModalOnBackdrop(event) {
+    if (event.target === document.getElementById('imageModal')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 
 </body>
