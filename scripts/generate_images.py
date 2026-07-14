@@ -80,6 +80,20 @@ def create_optimized_prompt(keyword: str, category: str = "general") -> str:
     
     return prompt
 
+def validate_image_quality(image_data: bytes, min_size_kb: int = 20, max_size_kb: int = 500) -> bool:
+    """Basic quality validation."""
+    size_kb = len(image_data) / 1024
+    
+    # Too small = likely error or broken
+    if size_kb < min_size_kb:
+        print(f"   ⚠️ Image too small ({size_kb:.1f} KB < {min_size_kb} KB), regenerating...")
+        return False
+    
+    # Too large = might be corrupted
+    if size_kb > max_size_kb:
+        print(f"   ⚠️ Image too large ({size_kb:.1f} KB > {max
+
+
 def batch_generate_images(keywords: List[Dict[str, Any]], output_dir: Path, count: int = 5) -> Dict[str, Any]:
     """Generate multiple images."""
     
