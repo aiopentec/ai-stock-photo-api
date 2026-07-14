@@ -1,5 +1,5 @@
-﻿name: AI Stock Photo Generator
- 
+name: AI Stock Photo Generator
+
 permissions:
   contents: write
 
@@ -9,11 +9,11 @@ on:
   workflow_dispatch:
     inputs:
       image_count:
-        description: 'Number of images to generate'
+        description: 'Number of images to generate (not yet wired - all catalogue items run)'
         required: false
         default: '20'
       category:
-        description: 'Category filter (optional)'
+        description: 'Category filter (not yet wired - all categories run)'
         required: false
         default: 'all'
   push:
@@ -25,45 +25,31 @@ on:
 jobs:
   generate-images:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pytrends requests Pillow python-dotenv
-      
-      - name: Fetch keywords
-        run: python scripts/fetch_keywords.py --output data/trending_keywords.json
-      
+
+      # generate_pollinations.py uses only stdlib (urllib, json, re, pathlib).
+      # No API key, no pytrends, no Pillow needed.
       - name: Generate images
         run: |
-          cd $GITHUB_WORKSPACE
-          mkdir -p images
-          python scripts/generate_images.py \
-            --keywords-file data/trending_keywords.json \
-            --count ${{ github.event.inputs.image_count || '5' }} \
-            --output-dir images
-                  
-      - name: Update API index
-        run: python scripts/update_api_index.py --images-dir images --api-dir api
-      
+          mkdir -p images api
+          python scripts/generate_pollinations.py
+
       - name: Commit changes
         run: |
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
-          git add .
+          git add images/ api/images.json
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M')
           git commit -m "Generated stock photos - $TIMESTAMP" || exit 0
           git push
@@ -77,7 +63,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v4
