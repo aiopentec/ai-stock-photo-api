@@ -1,5 +1,76 @@
 {
-  "total_images": 0,
-  "generated_at": null,
-  "images": []
+  "total_images": 7,
+  "generated_at": "2026-07-15T05:46:37.284852+00:00",
+  "images": [
+    {
+      "filename": "abstract_water_macro_1.png",
+      "source_keyword": "water macro",
+      "source_category": "abstract",
+      "size_kb": 70,
+      "width": 1344,
+      "height": 896,
+      "prompt": "extreme macro of water droplets on a glass surface refracting coloured light, jewel tones, black background, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2023
+    },
+    {
+      "filename": "business_entrepreneur_desk_1.png",
+      "source_keyword": "entrepreneur desk",
+      "source_category": "business",
+      "size_kb": 70,
+      "width": 1344,
+      "height": 896,
+      "prompt": "flat lay of a minimalist workspace: laptop, glasses, succulent plant, notebook on oak desk, warm morning light, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2005
+    },
+    {
+      "filename": "business_team_collaboration_1.png",
+      "source_keyword": "team collaboration",
+      "source_category": "business",
+      "size_kb": 99,
+      "width": 1344,
+      "height": 896,
+      "prompt": "top-down view of diverse hands pointing at architectural blueprints on a conference table, planning session, natural light, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2002
+    },
+    {
+      "filename": "food_sourdough_loaf_1.png",
+      "source_keyword": "sourdough loaf",
+      "source_category": "food",
+      "size_kb": 92,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a freshly baked sourdough loaf with a cracked scored crust on a dark wooden board, warm kitchen light, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2030
+    },
+    {
+      "filename": "nature_ocean_sunrise_1.png",
+      "source_keyword": "ocean sunrise",
+      "source_category": "nature",
+      "size_kb": 49,
+      "width": 1344,
+      "height": 896,
+      "prompt": "gentle waves washing over smooth sand on a beach at sunrise, soft pastel pink and orange sky, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2009
+    },
+    {
+      "filename": "people_reading_hands_1.png",
+      "source_keyword": "reading hands",
+      "source_category": "people",
+      "size_kb": 43,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of relaxed hands holding an open paperback book, sunlight falling across the pages, warm tones, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2016
+    },
+    {
+      "filename": "travel_tropical_water_1.png",
+      "source_keyword": "tropical water",
+      "source_category": "travel",
+      "size_kb": 116,
+      "width": 1344,
+      "height": 896,
+      "prompt": "aerial view of an overwater bungalow in impossibly clear turquoise tropical water, white sand visible below, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2034
+    }
+  ]
 }
