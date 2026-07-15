@@ -1,6 +1,6 @@
 {
-  "total_images": 7,
-  "generated_at": "2026-07-15T05:46:37.284852+00:00",
+  "total_images": 13,
+  "generated_at": "2026-07-15T06:13:33.102909+00:00",
   "images": [
     {
       "filename": "abstract_water_macro_1.png",
@@ -71,6 +71,66 @@
       "height": 896,
       "prompt": "aerial view of an overwater bungalow in impossibly clear turquoise tropical water, white sand visible below, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
       "seed": 2034
+    },
+    {
+      "filename": "food_grain_bowl_1.png",
+      "source_keyword": "grain bowl",
+      "source_category": "food",
+      "size_kb": 110,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of a colourful grain bowl with roasted vegetables chickpeas and tahini on a light grey surface, natural light, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2028
+    },
+    {
+      "filename": "nature_forest_path_1.png",
+      "source_keyword": "forest path",
+      "source_category": "nature",
+      "size_kb": 128,
+      "width": 1344,
+      "height": 896,
+      "prompt": "sunlit forest path with tall trees and dappled golden light filtering through leaves, peaceful, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2006
+    },
+    {
+      "filename": "nature_mountain_lake_1.png",
+      "source_keyword": "mountain lake",
+      "source_category": "nature",
+      "size_kb": 85,
+      "width": 1344,
+      "height": 896,
+      "prompt": "calm alpine lake perfectly reflecting surrounding snow-capped mountains at golden hour, no people, wide angle, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2007
+    },
+    {
+      "filename": "people_chef_hands_1.png",
+      "source_keyword": "chef hands",
+      "source_category": "people",
+      "size_kb": 66,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of hands slicing a ripe red tomato on a wooden chopping board, professional kitchen counter, natural light, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2020
+    },
+    {
+      "filename": "technology_server_room_1.png",
+      "source_keyword": "server room",
+      "source_category": "technology",
+      "size_kb": 73,
+      "width": 1344,
+      "height": 896,
+      "prompt": "modern data center corridor with blue LED-lit server racks receding into the distance, dramatic lighting, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2012
+    },
+    {
+      "filename": "travel_desert_highway_1.png",
+      "source_keyword": "desert highway",
+      "source_category": "travel",
+      "size_kb": 76,
+      "width": 1344,
+      "height": 896,
+      "prompt": "straight empty two-lane highway cutting through red desert landscape toward distant mountains at sunset, dramatic sky, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2033
     }
   ]
 }
