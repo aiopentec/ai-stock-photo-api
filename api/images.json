@@ -1,6 +1,6 @@
 {
-  "total_images": 13,
-  "generated_at": "2026-07-15T06:13:33.102909+00:00",
+  "total_images": 18,
+  "generated_at": "2026-07-15T06:27:06.792790+00:00",
   "images": [
     {
       "filename": "abstract_water_macro_1.png",
@@ -131,6 +131,56 @@
       "height": 896,
       "prompt": "straight empty two-lane highway cutting through red desert landscape toward distant mountains at sunset, dramatic sky, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
       "seed": 2033
+    },
+    {
+      "filename": "abstract_paper_layers_1.png",
+      "source_keyword": "paper layers",
+      "source_category": "abstract",
+      "size_kb": 51,
+      "width": 1344,
+      "height": 896,
+      "prompt": "neatly arranged layers of torn white and cream paper textures, overhead flat lay, soft shadows, minimal, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2025
+    },
+    {
+      "filename": "business_startup_office_1.png",
+      "source_keyword": "startup office",
+      "source_category": "business",
+      "size_kb": 93,
+      "width": 1344,
+      "height": 896,
+      "prompt": "wide shot of a bright modern open-plan office with standing desks, plants, large windows, empty, clean and airy, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2003
+    },
+    {
+      "filename": "nature_urban_garden_1.png",
+      "source_keyword": "urban garden",
+      "source_category": "nature",
+      "size_kb": 111,
+      "width": 1344,
+      "height": 896,
+      "prompt": "raised vegetable garden beds in a sunny urban backyard with tomatoes and herbs growing, warm afternoon light, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2010
+    },
+    {
+      "filename": "technology_smart_home_devices_1.png",
+      "source_keyword": "smart home devices",
+      "source_category": "technology",
+      "size_kb": 45,
+      "width": 1344,
+      "height": 896,
+      "prompt": "collection of smart home devices arranged on a white table: speaker, tablet, smart bulb, cable, overhead shot, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2015
+    },
+    {
+      "filename": "travel_cobblestone_village_1.png",
+      "source_keyword": "cobblestone village",
+      "source_category": "travel",
+      "size_kb": 118,
+      "width": 1344,
+      "height": 896,
+      "prompt": "charming narrow cobblestone street lined with flower boxes in a European village, golden hour light, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2031
     }
   ]
 }
