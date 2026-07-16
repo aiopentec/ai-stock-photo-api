@@ -1,6 +1,6 @@
 {
-  "total_images": 18,
-  "generated_at": "2026-07-15T06:27:06.792790+00:00",
+  "total_images": 22,
+  "generated_at": "2026-07-16T06:14:39.392662+00:00",
   "images": [
     {
       "filename": "abstract_water_macro_1.png",
@@ -181,6 +181,46 @@
       "height": 896,
       "prompt": "charming narrow cobblestone street lined with flower boxes in a European village, golden hour light, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
       "seed": 2031
+    },
+    {
+      "filename": "business_business_growth_1.png",
+      "source_keyword": "business growth",
+      "source_category": "business",
+      "size_kb": 36,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a hand drawing an upward arrow on a whiteboard with coloured markers, minimal background, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2004
+    },
+    {
+      "filename": "people_typing_hands_1.png",
+      "source_keyword": "typing hands",
+      "source_category": "people",
+      "size_kb": 45,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of hands typing on a slim laptop keyboard, clean white desk, soft indoor light, minimal, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2019
+    },
+    {
+      "filename": "technology_code_on_screen_1.png",
+      "source_keyword": "code on screen",
+      "source_category": "technology",
+      "size_kb": 63,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a dark-themed code editor on a monitor showing colourful syntax-highlighted code, slight glow, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2013
+    },
+    {
+      "filename": "travel_airport_terminal_1.png",
+      "source_keyword": "airport terminal",
+      "source_category": "travel",
+      "size_kb": 84,
+      "width": 1344,
+      "height": 896,
+      "prompt": "wide angle interior of a bright modern airport terminal with floor-to-ceiling windows and natural light, no people, airy, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2032
     }
   ]
 }
