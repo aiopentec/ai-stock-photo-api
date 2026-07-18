@@ -1,6 +1,6 @@
 {
-  "total_images": 26,
-  "generated_at": "2026-07-17T06:13:20.414244+00:00",
+  "total_images": 29,
+  "generated_at": "2026-07-18T06:01:34.424861+00:00",
   "images": [
     {
       "filename": "abstract_water_macro_1.png",
@@ -261,6 +261,36 @@
       "height": 896,
       "prompt": "city skyline perfectly reflected in a still river at blue hour, long exposure, lights streaking, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
       "seed": 2035
+    },
+    {
+      "filename": "abstract_colour_smoke_1.png",
+      "source_keyword": "colour smoke",
+      "source_category": "abstract",
+      "size_kb": 50,
+      "width": 1344,
+      "height": 896,
+      "prompt": "swirling purple orange and teal coloured smoke against a pure black background, flowing, artistic, studio, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2021
+    },
+    {
+      "filename": "food_farmers_market_1.png",
+      "source_keyword": "farmers market",
+      "source_category": "food",
+      "size_kb": 123,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of fresh seasonal vegetables carrots tomatoes courgettes on a wooden market table, vibrant colours, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2029
+    },
+    {
+      "filename": "technology_circuit_board_macro_1.png",
+      "source_keyword": "circuit board macro",
+      "source_category": "technology",
+      "size_kb": 79,
+      "width": 1344,
+      "height": 896,
+      "prompt": "extreme macro photograph of a green circuit board with gold components and copper traces, vivid detail, dark background, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2011
     }
   ]
 }
