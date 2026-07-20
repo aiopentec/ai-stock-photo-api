@@ -1,6 +1,6 @@
 {
-  "total_images": 29,
-  "generated_at": "2026-07-19T06:28:30.210291+00:00",
+  "total_images": 31,
+  "generated_at": "2026-07-20T06:41:41.248255+00:00",
   "images": [
     {
       "filename": "abstract_water_macro_1.png",
@@ -291,6 +291,26 @@
       "height": 896,
       "prompt": "extreme macro photograph of a green circuit board with gold components and copper traces, vivid detail, dark background, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
       "seed": 2011
+    },
+    {
+      "filename": "abstract_geometric_minimal_1.png",
+      "source_keyword": "geometric minimal",
+      "source_category": "abstract",
+      "size_kb": 27,
+      "width": 1344,
+      "height": 896,
+      "prompt": "arrangement of clean pastel geometric shapes circles triangles rectangles on white background, studio lighting, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2022
+    },
+    {
+      "filename": "food_avocado_toast_1.png",
+      "source_keyword": "avocado toast",
+      "source_category": "food",
+      "size_kb": 108,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of avocado toast on sourdough with poached egg, microgreens and chilli flakes, white ceramic plate, bright natural light, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2026
     }
   ]
 }
