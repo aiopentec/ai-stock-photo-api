@@ -1,6 +1,6 @@
 {
-  "total_images": 31,
-  "generated_at": "2026-07-20T06:41:41.248255+00:00",
+  "total_images": 33,
+  "generated_at": "2026-07-21T06:24:37.743781+00:00",
   "images": [
     {
       "filename": "abstract_water_macro_1.png",
@@ -311,6 +311,26 @@
       "height": 896,
       "prompt": "overhead flat lay of avocado toast on sourdough with poached egg, microgreens and chilli flakes, white ceramic plate, bright natural light, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
       "seed": 2026
+    },
+    {
+      "filename": "food_latte_art_1.png",
+      "source_keyword": "latte art",
+      "source_category": "food",
+      "size_kb": 53,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a flat white coffee with a leaf latte art pattern in a wide ceramic cup on a wooden cafe table, warm tones, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2027
+    },
+    {
+      "filename": "people_connection_hands_1.png",
+      "source_keyword": "connection hands",
+      "source_category": "people",
+      "size_kb": 55,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead close-up of two pairs of hands gently clasped together on a light oak table, warm afternoon sunlight, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2018
     }
   ]
 }
