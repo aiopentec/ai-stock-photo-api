@@ -1,6 +1,6 @@
 {
-  "total_images": 33,
-  "generated_at": "2026-07-21T06:24:37.743781+00:00",
+  "total_images": 35,
+  "generated_at": "2026-07-22T06:24:37.001713+00:00",
   "images": [
     {
       "filename": "abstract_water_macro_1.png",
@@ -331,6 +331,26 @@
       "height": 896,
       "prompt": "overhead close-up of two pairs of hands gently clasped together on a light oak table, warm afternoon sunlight, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
       "seed": 2018
+    },
+    {
+      "filename": "business_remote_work_1.png",
+      "source_keyword": "remote work",
+      "source_category": "business",
+      "size_kb": 51,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of a laptop, coffee cup, notebook and pen on a clean white desk, morning light from window, minimal, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2001
+    },
+    {
+      "filename": "nature_wildflower_meadow_1.png",
+      "source_keyword": "wildflower meadow",
+      "source_category": "nature",
+      "size_kb": 125,
+      "width": 1344,
+      "height": 896,
+      "prompt": "vast wildflower meadow in summer with red poppies and yellow flowers, blue sky, wide angle, no people, sharp focus, high resolution, 4k, professional quality, no blur, no distortion, no watermark, no text",
+      "seed": 2008
     }
   ]
 }
