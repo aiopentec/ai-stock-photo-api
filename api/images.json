@@ -1,6 +1,6 @@
 {
-  "total_images": 19,
-  "generated_at": "2026-07-24T03:41:09.327433+00:00",
+  "total_images": 23,
+  "generated_at": "2026-07-24T06:28:03.061976+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -191,6 +191,46 @@
       "height": 896,
       "prompt": "aerial view of an overwater bungalow in impossibly clear turquoise tropical water, white sand visible below, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3034
+    },
+    {
+      "filename": "nature_wildflower_meadow_1.png",
+      "source_keyword": "wildflower meadow",
+      "source_category": "nature",
+      "size_kb": 120,
+      "width": 1344,
+      "height": 896,
+      "prompt": "vast wildflower meadow in summer with red poppies and yellow flowers, blue sky, wide angle, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3008
+    },
+    {
+      "filename": "people_chef_hands_1.png",
+      "source_keyword": "chef hands",
+      "source_category": "people",
+      "size_kb": 69,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of hands slicing a ripe red tomato on a wooden chopping board in a professional kitchen, fresh basil leaves visible, natural light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3020
+    },
+    {
+      "filename": "technology_smartphone_flatlay_1.png",
+      "source_keyword": "smartphone flatlay",
+      "source_category": "technology",
+      "size_kb": 50,
+      "width": 1344,
+      "height": 896,
+      "prompt": "flat lay of a modern smartphone face-down next to a coffee cup and small succulent on a white marble surface, clean, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3014
+    },
+    {
+      "filename": "travel_city_reflection_1.png",
+      "source_keyword": "city reflection",
+      "source_category": "travel",
+      "size_kb": 63,
+      "width": 1344,
+      "height": 896,
+      "prompt": "city skyline perfectly reflected in a perfectly still river at blue hour, long exposure, light trails, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3035
     }
   ]
 }
