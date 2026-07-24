@@ -1,5 +1,196 @@
 {
-  "total_images": 0,
-  "generated_at": null,
-  "images": []
+  "total_images": 19,
+  "generated_at": "2026-07-24T03:41:09.327433+00:00",
+  "images": [
+    {
+      "filename": "abstract_colour_smoke_1.png",
+      "source_keyword": "colour smoke",
+      "source_category": "abstract",
+      "size_kb": 56,
+      "width": 1344,
+      "height": 896,
+      "prompt": "swirling purple orange and teal coloured smoke against a pure black background, flowing, artistic, studio photography, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3021
+    },
+    {
+      "filename": "abstract_geometric_minimal_1.png",
+      "source_keyword": "geometric minimal",
+      "source_category": "abstract",
+      "size_kb": 29,
+      "width": 1344,
+      "height": 896,
+      "prompt": "arrangement of clean pastel geometric shapes circles triangles rectangles on pure white background, studio lighting, shadows, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3022
+    },
+    {
+      "filename": "abstract_paper_layers_1.png",
+      "source_keyword": "paper layers",
+      "source_category": "abstract",
+      "size_kb": 41,
+      "width": 1344,
+      "height": 896,
+      "prompt": "neatly arranged layers of torn white and cream paper textures, overhead flat lay, subtle soft shadows, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3025
+    },
+    {
+      "filename": "business_business_growth_1.png",
+      "source_keyword": "business growth",
+      "source_category": "business",
+      "size_kb": 30,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a hand drawing a clean upward arrow on a whiteboard with a blue marker, white background, minimal, one hand only, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3004
+    },
+    {
+      "filename": "business_entrepreneur_desk_1.png",
+      "source_keyword": "entrepreneur desk",
+      "source_category": "business",
+      "size_kb": 97,
+      "width": 1344,
+      "height": 896,
+      "prompt": "flat lay of a minimalist workspace: slim laptop, reading glasses, succulent plant, leather notebook on an oak desk, warm morning light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3005
+    },
+    {
+      "filename": "business_remote_work_1.png",
+      "source_keyword": "remote work",
+      "source_category": "business",
+      "size_kb": 53,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of a laptop, coffee cup, notebook and pen on a clean white desk, morning light from window, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3001
+    },
+    {
+      "filename": "business_startup_office_1.png",
+      "source_keyword": "startup office",
+      "source_category": "business",
+      "size_kb": 88,
+      "width": 1344,
+      "height": 896,
+      "prompt": "wide shot of a bright modern open-plan office with standing desks, plants and large windows, empty, clean and airy, golden hour light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3003
+    },
+    {
+      "filename": "food_grain_bowl_1.png",
+      "source_keyword": "grain bowl",
+      "source_category": "food",
+      "size_kb": 125,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of a colourful grain bowl with roasted vegetables, chickpeas, tahini and fresh herbs on a light grey surface, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3028
+    },
+    {
+      "filename": "food_latte_art_1.png",
+      "source_keyword": "latte art",
+      "source_category": "food",
+      "size_kb": 56,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a flat white coffee with a perfect leaf latte art pattern in a wide ceramic cup on a cafe table, warm natural tones, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3027
+    },
+    {
+      "filename": "nature_forest_path_1.png",
+      "source_keyword": "forest path",
+      "source_category": "nature",
+      "size_kb": 111,
+      "width": 1344,
+      "height": 896,
+      "prompt": "sunlit forest path with tall trees and dappled golden light filtering through leaves, peaceful, misty background, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3006
+    },
+    {
+      "filename": "nature_mountain_lake_1.png",
+      "source_keyword": "mountain lake",
+      "source_category": "nature",
+      "size_kb": 80,
+      "width": 1344,
+      "height": 896,
+      "prompt": "calm alpine lake perfectly reflecting surrounding snow-capped mountains at golden hour, no people, wide angle, mirror reflection, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3007
+    },
+    {
+      "filename": "nature_ocean_sunrise_1.png",
+      "source_keyword": "ocean sunrise",
+      "source_category": "nature",
+      "size_kb": 75,
+      "width": 1344,
+      "height": 896,
+      "prompt": "gentle waves washing over smooth sand on a beach at sunrise, soft pastel pink and orange sky, no people, long exposure, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3009
+    },
+    {
+      "filename": "nature_urban_garden_1.png",
+      "source_keyword": "urban garden",
+      "source_category": "nature",
+      "size_kb": 131,
+      "width": 1344,
+      "height": 896,
+      "prompt": "raised vegetable garden beds in a sunny urban backyard with tomatoes, herbs and flowers growing, warm afternoon light, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3010
+    },
+    {
+      "filename": "people_forest_walker_1.png",
+      "source_keyword": "forest walker",
+      "source_category": "people",
+      "size_kb": 82,
+      "width": 1344,
+      "height": 896,
+      "prompt": "person walking away along a misty forest path in autumn, seen from behind, golden leaves, dappled light, cosy jacket, adventure and solitude, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3017
+    },
+    {
+      "filename": "technology_code_on_screen_1.png",
+      "source_keyword": "code on screen",
+      "source_category": "technology",
+      "size_kb": 59,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a dark-themed code editor on a monitor showing colourful syntax-highlighted code, slight blue glow, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3013
+    },
+    {
+      "filename": "technology_smart_home_devices_1.png",
+      "source_keyword": "smart home devices",
+      "source_category": "technology",
+      "size_kb": 53,
+      "width": 1344,
+      "height": 896,
+      "prompt": "collection of smart home devices neatly arranged on a white table: smart speaker, tablet, bulb and cables, overhead shot, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3015
+    },
+    {
+      "filename": "travel_airport_terminal_1.png",
+      "source_keyword": "airport terminal",
+      "source_category": "travel",
+      "size_kb": 88,
+      "width": 1344,
+      "height": 896,
+      "prompt": "wide angle interior of a bright modern airport terminal with floor-to-ceiling windows and dramatic natural light, no people, airy perspective, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3032
+    },
+    {
+      "filename": "travel_desert_highway_1.png",
+      "source_keyword": "desert highway",
+      "source_category": "travel",
+      "size_kb": 79,
+      "width": 1344,
+      "height": 896,
+      "prompt": "straight empty two-lane highway cutting through red desert landscape toward distant mountains at sunset, dramatic cloudscape, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3033
+    },
+    {
+      "filename": "travel_tropical_water_1.png",
+      "source_keyword": "tropical water",
+      "source_category": "travel",
+      "size_kb": 112,
+      "width": 1344,
+      "height": 896,
+      "prompt": "aerial view of an overwater bungalow in impossibly clear turquoise tropical water, white sand visible below, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3034
+    }
+  ]
 }
