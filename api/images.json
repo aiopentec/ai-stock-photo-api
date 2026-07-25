@@ -1,6 +1,6 @@
 {
-  "total_images": 23,
-  "generated_at": "2026-07-24T06:28:03.061976+00:00",
+  "total_images": 26,
+  "generated_at": "2026-07-25T06:19:07.949961+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -231,6 +231,36 @@
       "height": 896,
       "prompt": "city skyline perfectly reflected in a perfectly still river at blue hour, long exposure, light trails, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3035
+    },
+    {
+      "filename": "food_avocado_toast_1.png",
+      "source_keyword": "avocado toast",
+      "source_category": "food",
+      "size_kb": 102,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of avocado toast on sourdough with poached egg, microgreens and chilli flakes, white ceramic plate, bright natural light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3026
+    },
+    {
+      "filename": "people_park_friends_1.png",
+      "source_keyword": "park friends",
+      "source_category": "people",
+      "size_kb": 93,
+      "width": 1344,
+      "height": 896,
+      "prompt": "two friends sitting on a wooden park bench seen from behind, sunny afternoon, autumn trees, easy relaxed conversation, warm light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3018
+    },
+    {
+      "filename": "technology_circuit_board_macro_1.png",
+      "source_keyword": "circuit board macro",
+      "source_category": "technology",
+      "size_kb": 97,
+      "width": 1344,
+      "height": 896,
+      "prompt": "extreme macro photograph of a green circuit board with gold components and copper traces, vivid detail, dark background, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3011
     }
   ]
 }
