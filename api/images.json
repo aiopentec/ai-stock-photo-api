@@ -1,6 +1,6 @@
 {
-  "total_images": 26,
-  "generated_at": "2026-07-25T06:19:07.949961+00:00",
+  "total_images": 29,
+  "generated_at": "2026-07-26T06:37:57.896506+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -261,6 +261,36 @@
       "height": 896,
       "prompt": "extreme macro photograph of a green circuit board with gold components and copper traces, vivid detail, dark background, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3011
+    },
+    {
+      "filename": "abstract_water_macro_1.png",
+      "source_keyword": "water macro",
+      "source_category": "abstract",
+      "size_kb": 64,
+      "width": 1344,
+      "height": 896,
+      "prompt": "extreme macro of water droplets on a glass surface refracting coloured light into jewel tones, black background, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3023
+    },
+    {
+      "filename": "people_window_silhouette_1.png",
+      "source_keyword": "window silhouette",
+      "source_category": "people",
+      "size_kb": 45,
+      "width": 1344,
+      "height": 896,
+      "prompt": "silhouette of a person standing at a large rain-streaked window looking at a misty city below, moody atmospheric light, peaceful, face not visible, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3016
+    },
+    {
+      "filename": "travel_cobblestone_village_1.png",
+      "source_keyword": "cobblestone village",
+      "source_category": "travel",
+      "size_kb": 119,
+      "width": 1344,
+      "height": 896,
+      "prompt": "charming narrow cobblestone street lined with flower boxes in a southern European village, golden hour warm light, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3031
     }
   ]
 }
