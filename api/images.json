@@ -1,6 +1,6 @@
 {
-  "total_images": 29,
-  "generated_at": "2026-07-26T06:37:57.896506+00:00",
+  "total_images": 31,
+  "generated_at": "2026-07-27T07:31:51.417741+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -291,6 +291,26 @@
       "height": 896,
       "prompt": "charming narrow cobblestone street lined with flower boxes in a southern European village, golden hour warm light, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3031
+    },
+    {
+      "filename": "business_team_collaboration_1.png",
+      "source_keyword": "team collaboration",
+      "source_category": "business",
+      "size_kb": 115,
+      "width": 1344,
+      "height": 896,
+      "prompt": "top-down flat lay of large architectural blueprints with technical pens, ruler, compass and coffee cup on a dark oak conference table, professional planning session, no people, no hands, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3002
+    },
+    {
+      "filename": "food_farmers_market_1.png",
+      "source_keyword": "farmers market",
+      "source_category": "food",
+      "size_kb": 131,
+      "width": 1344,
+      "height": 896,
+      "prompt": "overhead flat lay of fresh seasonal vegetables carrots tomatoes courgettes herbs on a wooden market table, vibrant natural colours, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3029
     }
   ]
 }
