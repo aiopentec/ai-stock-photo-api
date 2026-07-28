@@ -1,6 +1,6 @@
 {
-  "total_images": 31,
-  "generated_at": "2026-07-27T07:31:51.417741+00:00",
+  "total_images": 33,
+  "generated_at": "2026-07-28T06:27:12.409782+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -311,6 +311,26 @@
       "height": 896,
       "prompt": "overhead flat lay of fresh seasonal vegetables carrots tomatoes courgettes herbs on a wooden market table, vibrant natural colours, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3029
+    },
+    {
+      "filename": "food_sourdough_loaf_1.png",
+      "source_keyword": "sourdough loaf",
+      "source_category": "food",
+      "size_kb": 81,
+      "width": 1344,
+      "height": 896,
+      "prompt": "close-up of a freshly baked sourdough loaf with a cracked scored crust on a dark wooden board, warm kitchen light, steam rising, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3030
+    },
+    {
+      "filename": "people_cafe_worker_1.png",
+      "source_keyword": "cafe worker",
+      "source_category": "people",
+      "size_kb": 58,
+      "width": 1344,
+      "height": 896,
+      "prompt": "over-the-shoulder view of a person typing on a laptop in a warm independent cafe, coffee cup on table, blurred background, cosy and focused, face not visible, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3019
     }
   ]
 }
