@@ -1,6 +1,6 @@
 {
-  "total_images": 33,
-  "generated_at": "2026-07-28T06:27:12.409782+00:00",
+  "total_images": 35,
+  "generated_at": "2026-07-29T06:31:30.674669+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -331,6 +331,26 @@
       "height": 896,
       "prompt": "over-the-shoulder view of a person typing on a laptop in a warm independent cafe, coffee cup on table, blurred background, cosy and focused, face not visible, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3019
+    },
+    {
+      "filename": "abstract_bokeh_golden_1.png",
+      "source_keyword": "bokeh golden",
+      "source_category": "abstract",
+      "size_kb": 47,
+      "width": 1344,
+      "height": 896,
+      "prompt": "out-of-focus golden bokeh circles on a rich dark background, warm and festive, smooth depth of field, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3024
+    },
+    {
+      "filename": "technology_server_room_1.png",
+      "source_keyword": "server room",
+      "source_category": "technology",
+      "size_kb": 81,
+      "width": 1344,
+      "height": 896,
+      "prompt": "modern data center corridor with blue LED-lit server racks receding into the distance, dramatic lighting, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "seed": 3012
     }
   ]
 }
