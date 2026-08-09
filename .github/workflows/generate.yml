@@ -1,18 +1,22 @@
 name: AI Stock Photo Generator
 
+# Provider routing (automatic):
+#   OPENAI_API_KEY set  →  DALL-E 3       (best quality, ~$0.08/image)
+#   HF_API_TOKEN set    →  HuggingFace    (free, SD 3.5 Medium — known issues)
+#   Neither set         →  Pollinations   (free, FLUX.1-schnell)
+
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 4 * * 1'
   workflow_dispatch:
     inputs:
       regenerate:
-        description: 'Space-separated filenames to regenerate (e.g. people_reading_hands_1.png)'
+        description: 'Filenames to regenerate (space-separated)'
         required: false
         default: ''
-
   push:
     branches: [main]
     paths:
@@ -24,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -35,24 +39,47 @@ jobs:
         with:
           python-version: '3.11'
 
-      # generate_pollinations.py + regenerate.py use only stdlib — no pip needed.
+      - name: Install dependencies
+        run: |
+          pip install requests
+          if [ -n "${{ secrets.OPENAI_API_KEY }}" ]; then
+            pip install openai
+          fi
 
       - name: Regenerate specific images (if requested)
         if: ${{ github.event.inputs.regenerate != '' }}
         run: |
           mkdir -p images api
           python scripts/regenerate.py ${{ github.event.inputs.regenerate }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HF_API_TOKEN:   ${{ secrets.HF_API_TOKEN }}
 
-      - name: Generate new images
+      - name: Generate images
         run: |
           mkdir -p images api
-          python scripts/generate_pollinations.py
+          if [ -n "$OPENAI_API_KEY" ]; then
+            echo "Provider: DALL-E 3"
+            python scripts/generate_dalle.py
+          elif [ -n "$HF_API_TOKEN" ]; then
+            echo "Provider: HuggingFace"
+            python scripts/generate_huggingface.py
+          else
+            echo "Provider: Pollinations"
+            python scripts/generate_pollinations.py
+          fi
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HF_API_TOKEN:   ${{ secrets.HF_API_TOKEN }}
+
+      - name: Generate sitemap
+        run: python scripts/generate_sitemap.py
 
       - name: Commit changes
         run: |
           git config user.email "action@github.com"
-          git config user.name "GitHub Action"
-          git add images/ api/images.json
+          git config user.name  "GitHub Action"
+          git add images/ api/images.json sitemap.xml
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M')
           git commit -m "Generated stock photos - $TIMESTAMP" || exit 0
           git push
@@ -66,7 +93,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v4
