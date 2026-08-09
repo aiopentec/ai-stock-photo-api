@@ -3,229 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Stock Photos — Free AI-Generated Photography</title>
-<meta name="description" content="Free AI-generated stock photos. Browse, download, and copy prompts. New images added weekly.">
-<style>
-/* ── RESET & BASE ──────────────────────────────────────────────────────── */
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --purple:#667eea;--purple2:#764ba2;
-  --pink:#f093fb;--red:#f5576c;
-  --dark:#1a202c;--gray:#718096;--light-gray:#e2e8f0;
-  --card-radius:18px;
-}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  background:#f0f2f8;min-height:100vh;color:var(--dark);}
+<title>Free AI Stock Photos | Commercial Use | DALL-E 3 Generated</title>
+<meta name="description" content="Download free AI-generated stock photos for commercial use. Professional quality images created with DALL-E 3. No attribution required. 35+ photos across business, nature, technology, people, food, abstract and travel.">
+<link rel="canonical" href="https://aiopentec.github.io/ai-stock-photo-api/">
 
-/* ── HEADER ───────────────────────────────────────────────────────────── */
-header{
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
-  color:#fff;padding:2.5rem 1rem 5rem;text-align:center;
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://aiopentec.github.io/ai-stock-photo-api/">
+<meta property="og:title"       content="Free AI Stock Photos — Commercial Use OK">
+<meta property="og:description" content="35+ professional AI-generated stock photos, free for personal and commercial use. Generated with DALL-E 3. New images every week.">
+<meta property="og:image"       content="https://aiopentec.github.io/ai-stock-photo-api/images/nature_forest_path_1.png">
+<meta property="og:site_name"   content="AI Stock Photos">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="Free AI Stock Photos — Commercial Use OK">
+<meta name="twitter:description" content="35+ professional AI-generated stock photos, free for commercial use. New images added weekly.">
+<meta name="twitter:image"       content="https://aiopentec.github.io/ai-stock-photo-api/images/nature_forest_path_1.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://aiopentec.github.io/ai-stock-photo-api/#website",
+      "url": "https://aiopentec.github.io/ai-stock-photo-api/",
+      "name": "AI Stock Photos",
+      "description": "Free AI-generated stock photos for commercial and personal use",
+      "publisher": { "@id": "https://aiopentec.github.io/ai-stock-photo-api/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://aiopentec.github.io/ai-stock-photo-api/#org",
+      "name": "AI Stock Photos",
+      "url": "https://aiopentec.github.io/ai-stock-photo-api/",
+      "sameAs": ["https://github.com/aiopentec/ai-stock-photo-api"]
+    },
+    {
+      "@type": "ImageGallery",
+      "name": "Free AI Stock Photos",
+      "description": "Professional AI-generated stock photos free for commercial use, created with DALL-E 3",
+      "url": "https://aiopentec.github.io/ai-stock-photo-api/",
+      "genre": ["business", "nature", "technology", "people", "abstract", "food", "travel"],
+      "license": "https://openai.com/policies/terms-of-use"
+    }
+  ]
 }
-header h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;margin-bottom:.4rem;
-  text-shadow:0 2px 8px rgba(0,0,0,.2);}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--purple:#667eea;--purple2:#764ba2;--pink:#f093fb;--red:#f5576c;--dark:#1a202c;--gray:#718096;--light-gray:#e2e8f0;--card-radius:18px;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f2f8;min-height:100vh;color:var(--dark);}
+header{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;padding:2.5rem 1rem 5rem;text-align:center;}
+header h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2);}
 header p{font-size:1.1rem;opacity:.9;margin-bottom:1.25rem;}
 .badges{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;}
-.badge{background:rgba(255,255,255,.18);backdrop-filter:blur(8px);
-  padding:.4rem 1.1rem;border-radius:50px;font-size:.82rem;font-weight:600;
-  border:1.5px solid rgba(255,255,255,.28);}
-
-/* ── SEARCH ───────────────────────────────────────────────────────────── */
-.search-wrap{max-width:680px;margin:-2.2rem auto 0;position:relative;
-  z-index:10;padding:0 1rem 1.2rem;}
-.search-box{display:flex;background:#fff;border-radius:60px;
-  box-shadow:0 12px 35px rgba(0,0,0,.15);overflow:hidden;
-  transition:box-shadow .3s,transform .3s;}
-.search-box:focus-within{box-shadow:0 18px 45px rgba(0,0,0,.2);
-  transform:translateY(-2px);}
-.search-box input{flex:1;padding:1.1rem 1.6rem;border:none;font-size:1rem;
-  outline:none;background:transparent;min-width:0;}
-.search-box button{background:linear-gradient(135deg,var(--purple),var(--purple2));
-  color:#fff;border:none;padding:1.1rem 1.8rem;cursor:pointer;font-weight:700;
-  font-size:.95rem;white-space:nowrap;}
-.surprise-btn{display:block;text-align:center;margin-top:.9rem;
-  background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);
-  color:#fff;padding:.5rem 1.4rem;border-radius:30px;cursor:pointer;
-  font-size:.88rem;font-weight:600;transition:background .2s;width:fit-content;
-  margin-left:auto;margin-right:auto;position:relative;z-index:11;}
+.badge{background:rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:.4rem 1.1rem;border-radius:50px;font-size:.82rem;font-weight:600;border:1.5px solid rgba(255,255,255,.28);}
+.search-wrap{max-width:680px;margin:-2.2rem auto 0;position:relative;z-index:10;padding:0 1rem 1.2rem;}
+.search-box{display:flex;background:#fff;border-radius:60px;box-shadow:0 12px 35px rgba(0,0,0,.15);overflow:hidden;transition:box-shadow .3s,transform .3s;}
+.search-box:focus-within{box-shadow:0 18px 45px rgba(0,0,0,.2);transform:translateY(-2px);}
+.search-box input{flex:1;padding:1.1rem 1.6rem;border:none;font-size:1rem;outline:none;background:transparent;min-width:0;}
+.search-box button{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border:none;padding:1.1rem 1.8rem;cursor:pointer;font-weight:700;font-size:.95rem;white-space:nowrap;}
+.surprise-btn{display:block;text-align:center;margin-top:.9rem;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:#fff;padding:.5rem 1.4rem;border-radius:30px;cursor:pointer;font-size:.88rem;font-weight:600;transition:background .2s;width:fit-content;margin-left:auto;margin-right:auto;position:relative;z-index:11;}
 .surprise-btn:hover{background:rgba(255,255,255,.28);}
-
-/* ── MAIN ─────────────────────────────────────────────────────────────── */
 main{max-width:1400px;margin:0 auto;padding:2.5rem 1rem 4rem;}
-
-/* ── STATS ────────────────────────────────────────────────────────────── */
-.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:1.2rem;margin:2.5rem 0 2rem;}
-.stat-card{background:#fff;padding:1.3rem;border-radius:14px;text-align:center;
-  box-shadow:0 3px 12px rgba(0,0,0,.07);transition:transform .25s;}
+.stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;margin:2.5rem 0 2rem;}
+.stat-card{background:#fff;padding:1.3rem;border-radius:14px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.07);transition:transform .25s;}
 .stat-card:hover{transform:translateY(-4px);}
-.stat-value{font-size:2.1rem;font-weight:800;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;}
+.stat-value{font-size:2.1rem;font-weight:800;background:linear-gradient(135deg,var(--purple),var(--purple2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .stat-label{color:var(--gray);font-size:.82rem;font-weight:600;margin-top:.2rem;}
-
-/* ── LICENSE NOTE ─────────────────────────────────────────────────────── */
-.license-note{background:#fffbeb;border:1px solid #f6d860;border-radius:10px;
-  padding:.8rem 1.1rem;margin-bottom:1.8rem;font-size:.84rem;color:#744210;
-  line-height:1.5;}
-
-/* ── CATEGORIES ───────────────────────────────────────────────────────── */
+.license-note{background:#fffbeb;border:1px solid #f6d860;border-radius:10px;padding:.8rem 1.1rem;margin-bottom:1.8rem;font-size:.84rem;color:#744210;line-height:1.5;}
 .categories{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem;}
-.cat-btn{padding:.55rem 1.2rem;border:2px solid var(--light-gray);background:#fff;
-  border-radius:30px;cursor:pointer;font-weight:600;font-size:.85rem;
-  color:#4a5568;transition:all .25s;white-space:nowrap;}
+.cat-btn{padding:.55rem 1.2rem;border:2px solid var(--light-gray);background:#fff;border-radius:30px;cursor:pointer;font-weight:600;font-size:.85rem;color:#4a5568;transition:all .25s;white-space:nowrap;}
 .cat-btn:hover{border-color:var(--purple);color:var(--purple);}
-.cat-btn.active{background:linear-gradient(135deg,var(--purple),var(--purple2));
-  color:#fff;border-color:transparent;}
+.cat-btn.active{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border-color:transparent;}
 .cat-count{font-size:.75rem;opacity:.75;margin-left:.3rem;}
-
-/* ── GRID ─────────────────────────────────────────────────────────────── */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:1.8rem;}
-
-/* ── SKELETON ─────────────────────────────────────────────────────────── */
-.skeleton-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;
-  box-shadow:0 4px 15px rgba(0,0,0,.07);}
-.skel-img{height:220px;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);
-  background-size:200% 100%;animation:shimmer 1.4s infinite;}
-.skel-line{height:14px;border-radius:6px;margin:1rem 1.2rem .6rem;
-  background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);
-  background-size:200% 100%;animation:shimmer 1.4s infinite;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.8rem;}
+.skeleton-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.07);}
+.skel-img{height:220px;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;}
+.skel-line{height:14px;border-radius:6px;margin:1rem 1.2rem .6rem;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;}
 .skel-line.short{width:55%;margin-top:0;}
-@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
-
-/* ── IMAGE CARD ───────────────────────────────────────────────────────── */
-.image-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;
-  box-shadow:0 6px 20px rgba(0,0,0,.09);
-  transition:transform .35s cubic-bezier(.175,.885,.32,1.275),
-             box-shadow .35s;cursor:pointer;}
-.image-card:hover{transform:translateY(-8px) scale(1.01);
-  box-shadow:0 16px 40px rgba(0,0,0,.16);}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.image-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.09);transition:transform .35s cubic-bezier(.175,.885,.32,1.275),box-shadow .35s;cursor:pointer;}
+.image-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 16px 40px rgba(0,0,0,.16);}
 .card-img-wrap{position:relative;overflow:hidden;}
-.card-img-wrap img{width:100%;height:220px;object-fit:cover;display:block;
-  transition:transform .5s;}
+.card-img-wrap img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s;}
 .image-card:hover .card-img-wrap img{transform:scale(1.06);}
-
-/* ── CARD OVERLAY (hover buttons) ────────────────────────────────────── */
-.card-overlay{position:absolute;inset:0;background:rgba(0,0,0,.52);
-  display:flex;align-items:center;justify-content:center;gap:.9rem;
-  opacity:0;transition:opacity .25s;}
+.card-overlay{position:absolute;inset:0;background:rgba(0,0,0,.52);display:flex;align-items:center;justify-content:center;gap:.9rem;opacity:0;transition:opacity .25s;}
 .image-card:hover .card-overlay{opacity:1;}
-.ov-btn{background:#fff;border:none;border-radius:50%;width:46px;height:46px;
-  font-size:1.15rem;cursor:pointer;display:flex;align-items:center;
-  justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.3);
-  transition:transform .2s,background .2s;}
+.ov-btn{background:#fff;border:none;border-radius:50%;width:46px;height:46px;font-size:1.15rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.3);transition:transform .2s,background .2s;}
 .ov-btn:hover{transform:scale(1.15);}
 .ov-btn.fav-on{background:var(--red);color:#fff;}
-
 .card-info{padding:1rem 1.1rem;}
-.card-title{font-size:.92rem;font-weight:600;color:var(--dark);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:.6rem;}
+.card-title{font-size:.92rem;font-weight:600;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:.6rem;}
 .card-meta{display:flex;justify-content:space-between;align-items:center;}
-.tag{background:linear-gradient(135deg,var(--pink),var(--red));color:#fff;
-  padding:.28rem .8rem;border-radius:20px;font-size:.75rem;font-weight:600;}
+.tag{background:linear-gradient(135deg,var(--pink),var(--red));color:#fff;padding:.28rem .8rem;border-radius:20px;font-size:.75rem;font-weight:600;}
 .card-size{color:#a0aec0;font-size:.8rem;font-weight:500;}
-
-/* ── EMPTY STATE ──────────────────────────────────────────────────────── */
 .empty{grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--gray);}
 .empty .emoji{font-size:3rem;margin-bottom:1rem;}
-.empty h2{margin-bottom:.6rem;}
-
-/* ── MODAL ────────────────────────────────────────────────────────────── */
-.modal{display:none;position:fixed;inset:0;z-index:9000;
-  background:rgba(10,10,20,.88);backdrop-filter:blur(12px);
-  align-items:center;justify-content:center;padding:1rem;}
+.modal{display:none;position:fixed;inset:0;z-index:9000;background:rgba(10,10,20,.88);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem;}
 .modal.open{display:flex;}
-.modal-inner{background:#fff;border-radius:20px;overflow:hidden;
-  display:flex;max-width:960px;width:100%;max-height:90vh;
-  box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.modal-inner{background:#fff;border-radius:20px;overflow:hidden;display:flex;max-width:960px;width:100%;max-height:90vh;box-shadow:0 30px 80px rgba(0,0,0,.5);}
 .modal-img-side{flex:1.4;min-width:0;position:relative;background:#0f0f0f;}
 .modal-img-side img{width:100%;height:100%;object-fit:contain;display:block;max-height:90vh;}
-.modal-info-side{flex:1;min-width:260px;padding:1.8rem;overflow-y:auto;
-  display:flex;flex-direction:column;gap:1rem;}
-.modal-close{position:absolute;top:.8rem;right:.8rem;background:rgba(255,255,255,.15);
-  border:none;color:#fff;font-size:1.5rem;width:38px;height:38px;border-radius:50%;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  transition:background .2s;z-index:10;}
+.modal-info-side{flex:1;min-width:260px;padding:1.8rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;}
+.modal-close{position:absolute;top:.8rem;right:.8rem;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.5rem;width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:10;}
 .modal-close:hover{background:rgba(255,255,255,.3);}
-.modal-arrow{position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(255,255,255,.13);border:none;color:#fff;font-size:1.6rem;
-  width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;
-  align-items:center;justify-content:center;transition:background .2s;z-index:10;}
+.modal-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.13);border:none;color:#fff;font-size:1.6rem;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:10;}
 .modal-arrow:hover{background:rgba(255,255,255,.28);}
 .modal-arrow.prev{left:.8rem;}
 .modal-arrow.next{right:.8rem;}
-.modal-counter{position:absolute;bottom:.8rem;left:50%;
-  transform:translateX(-50%);background:rgba(0,0,0,.55);
-  color:#fff;font-size:.8rem;padding:.3rem .8rem;border-radius:20px;}
-
+.modal-counter{position:absolute;bottom:.8rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.55);color:#fff;font-size:.8rem;padding:.3rem .8rem;border-radius:20px;}
 .modal-title{font-size:1.2rem;font-weight:700;color:var(--dark);}
-.modal-cat{display:inline-block;font-size:.78rem;font-weight:600;
-  background:linear-gradient(135deg,var(--pink),var(--red));
-  color:#fff;padding:.25rem .75rem;border-radius:20px;margin-top:.2rem;}
+.modal-cat{display:inline-block;font-size:.78rem;font-weight:600;background:linear-gradient(135deg,var(--pink),var(--red));color:#fff;padding:.25rem .75rem;border-radius:20px;margin-top:.2rem;}
 .modal-size{font-size:.82rem;color:var(--gray);}
-.prompt-label{font-size:.78rem;font-weight:700;color:var(--gray);
-  text-transform:uppercase;letter-spacing:.06em;}
-.prompt-box{background:#f7f8fa;border-radius:10px;padding:.8rem;
-  font-size:.82rem;color:#4a5568;line-height:1.55;max-height:120px;
-  overflow-y:auto;}
+.prompt-label{font-size:.78rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;}
+.prompt-box{background:#f7f8fa;border-radius:10px;padding:.8rem;font-size:.82rem;color:#4a5568;line-height:1.55;max-height:120px;overflow-y:auto;}
 .modal-actions{display:flex;flex-direction:column;gap:.7rem;margin-top:.4rem;}
-.action-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;
-  padding:.75rem 1rem;border-radius:10px;border:none;font-size:.88rem;
-  font-weight:600;cursor:pointer;transition:all .2s;}
-.action-btn.primary{background:linear-gradient(135deg,var(--purple),var(--purple2));
-  color:#fff;}
+.action-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1rem;border-radius:10px;border:none;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.action-btn.primary{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;}
 .action-btn.primary:hover{opacity:.88;transform:translateY(-1px);}
 .action-btn.secondary{background:#f0f2f8;color:var(--dark);}
 .action-btn.secondary:hover{background:var(--light-gray);}
-.action-btn.fav-btn.fav-on{background:#fff0f3;color:var(--red);
-  border:1.5px solid var(--red);}
+.action-btn.fav-btn.fav-on{background:#fff0f3;color:var(--red);border:1.5px solid var(--red);}
 .license-mini{font-size:.75rem;color:#a0aec0;line-height:1.5;margin-top:auto;}
-
-/* ── TOAST ────────────────────────────────────────────────────────────── */
-#toast{position:fixed;bottom:2rem;left:50%;
-  transform:translateX(-50%) translateY(80px);
-  background:var(--dark);color:#fff;padding:.7rem 1.4rem;
-  border-radius:30px;font-size:.88rem;font-weight:600;
-  z-index:99999;pointer-events:none;
-  transition:transform .35s cubic-bezier(.175,.885,.32,1.275),opacity .35s;
-  opacity:0;white-space:nowrap;}
+#toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:.7rem 1.4rem;border-radius:30px;font-size:.88rem;font-weight:600;z-index:99999;pointer-events:none;transition:transform .35s cubic-bezier(.175,.885,.32,1.275),opacity .35s;opacity:0;white-space:nowrap;}
 #toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
-
-/* ── BACK TO TOP ──────────────────────────────────────────────────────── */
-#backTop{position:fixed;bottom:2rem;right:1.5rem;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
-  color:#fff;border:none;width:44px;height:44px;border-radius:50%;
-  font-size:1.2rem;cursor:pointer;box-shadow:0 4px 14px rgba(102,126,234,.45);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;}
+#backTop{position:fixed;bottom:2rem;right:1.5rem;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 14px rgba(102,126,234,.45);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;}
 #backTop.visible{opacity:1;pointer-events:auto;}
 #backTop:hover{transform:translateY(-3px);}
-
-/* ── FOOTER ───────────────────────────────────────────────────────────── */
-footer{background:var(--dark);color:#fff;text-align:center;
-  padding:2.5rem 1rem;margin-top:2rem;}
+footer{background:var(--dark);color:#fff;text-align:center;padding:2.5rem 1rem;margin-top:2rem;}
 footer a{color:#90cdf4;text-decoration:none;font-weight:600;}
 footer p{margin:.5rem 0;font-size:.9rem;opacity:.8;}
-
-/* ── RESPONSIVE ───────────────────────────────────────────────────────── */
-@media(max-width:720px){
-  .modal-inner{flex-direction:column;max-height:95vh;}
-  .modal-img-side img{max-height:55vw;object-fit:cover;}
-  .modal-info-side{min-width:0;padding:1.2rem;}
-  .modal-arrow.prev{left:.4rem;}
-  .modal-arrow.next{right:.4rem;}
-  .grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:480px){
-  .grid{grid-template-columns:1fr;}
-  .stats-bar{grid-template-columns:1fr 1fr;}
-}
+@media(max-width:720px){.modal-inner{flex-direction:column;max-height:95vh;}.modal-img-side img{max-height:55vw;object-fit:cover;}.modal-info-side{min-width:0;padding:1.2rem;}.grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.grid{grid-template-columns:1fr;}.stats-bar{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
-
 <header>
   <h1>🎨 AI Stock Photos</h1>
   <p>Free AI-Generated Photography &bull; New images weekly</p>
@@ -236,7 +152,6 @@ footer p{margin:.5rem 0;font-size:.9rem;opacity:.8;}
     <span class="badge">📋 COPY PROMPT</span>
   </div>
 </header>
-
 <div class="search-wrap">
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search photos by keyword...">
@@ -244,51 +159,29 @@ footer p{margin:.5rem 0;font-size:.9rem;opacity:.8;}
   </div>
   <button class="surprise-btn" onclick="surpriseMe()">🎲 Surprise me</button>
 </div>
-
 <main>
   <div class="stats-bar">
-    <div class="stat-card">
-      <div class="stat-value" id="statTotal">--</div>
-      <div class="stat-label">Total Photos</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value" id="statSize">--</div>
-      <div class="stat-label">Total Size</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value" id="statFavs">0</div>
-      <div class="stat-label">Your Favorites</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-value">Free</div>
-      <div class="stat-label">Forever</div>
-    </div>
+    <div class="stat-card"><div class="stat-value" id="statTotal">--</div><div class="stat-label">Total Photos</div></div>
+    <div class="stat-card"><div class="stat-value" id="statSize">--</div><div class="stat-label">Total Size</div></div>
+    <div class="stat-card"><div class="stat-value" id="statFavs">0</div><div class="stat-label">Your Favorites</div></div>
+    <div class="stat-card"><div class="stat-value">Free</div><div class="stat-label">Forever</div></div>
   </div>
-
-  <div class="license-note">
-    ⚠️ <strong>Licensing:</strong> Images are AI-generated via Pollinations.ai.
-    Output licensing depends on the underlying model per request.
-    Verify suitability for your specific commercial use case before publishing.
-  </div>
-
+  <div class="license-note" style="background:#f0fdf4;border-color:#86efac;color:#14532d;">✅ <strong>Free for commercial use.</strong> Images are generated via OpenAI DALL-E 3. Per <a href="https://openai.com/policies/terms-of-use" target="_blank" style="color:#14532d;">OpenAI's Terms of Service</a>, you own the output and may use it freely for personal and commercial projects. No attribution required.</div>
   <div class="categories" id="catBar">
     <button class="cat-btn active" data-cat="all" onclick="filterCat('all',this)">🌟 All<span class="cat-count" id="cnt-all"></span></button>
-    <button class="cat-btn" data-cat="business"   onclick="filterCat('business',this)">💼 Business<span class="cat-count" id="cnt-business"></span></button>
-    <button class="cat-btn" data-cat="nature"     onclick="filterCat('nature',this)">🌿 Nature<span class="cat-count" id="cnt-nature"></span></button>
+    <button class="cat-btn" data-cat="business" onclick="filterCat('business',this)">💼 Business<span class="cat-count" id="cnt-business"></span></button>
+    <button class="cat-btn" data-cat="nature" onclick="filterCat('nature',this)">🌿 Nature<span class="cat-count" id="cnt-nature"></span></button>
     <button class="cat-btn" data-cat="technology" onclick="filterCat('technology',this)">💻 Technology<span class="cat-count" id="cnt-technology"></span></button>
-    <button class="cat-btn" data-cat="people"     onclick="filterCat('people',this)">🤝 People<span class="cat-count" id="cnt-people"></span></button>
-    <button class="cat-btn" data-cat="abstract"   onclick="filterCat('abstract',this)">🎨 Abstract<span class="cat-count" id="cnt-abstract"></span></button>
-    <button class="cat-btn" data-cat="food"       onclick="filterCat('food',this)">🍽️ Food<span class="cat-count" id="cnt-food"></span></button>
-    <button class="cat-btn" data-cat="travel"     onclick="filterCat('travel',this)">✈️ Travel<span class="cat-count" id="cnt-travel"></span></button>
-    <button class="cat-btn" data-cat="favorites"  onclick="filterCat('favorites',this)">❤️ Favorites<span class="cat-count" id="cnt-favorites"></span></button>
+    <button class="cat-btn" data-cat="people" onclick="filterCat('people',this)">🤝 People<span class="cat-count" id="cnt-people"></span></button>
+    <button class="cat-btn" data-cat="abstract" onclick="filterCat('abstract',this)">🎨 Abstract<span class="cat-count" id="cnt-abstract"></span></button>
+    <button class="cat-btn" data-cat="food" onclick="filterCat('food',this)">🍽️ Food<span class="cat-count" id="cnt-food"></span></button>
+    <button class="cat-btn" data-cat="travel" onclick="filterCat('travel',this)">✈️ Travel<span class="cat-count" id="cnt-travel"></span></button>
+    <button class="cat-btn" data-cat="favorites" onclick="filterCat('favorites',this)">❤️ Favorites<span class="cat-count" id="cnt-favorites"></span></button>
   </div>
-
   <div class="grid" id="grid"></div>
 </main>
-
-<!-- Modal -->
 <div class="modal" id="modal" onclick="onModalBackdrop(event)">
-  <div class="modal-inner" id="modalInner">
+  <div class="modal-inner">
     <div class="modal-img-side" id="modalImgSide">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <button class="modal-arrow prev" onclick="prevImg()">&#8249;</button>
@@ -297,373 +190,156 @@ footer p{margin:.5rem 0;font-size:.9rem;opacity:.8;}
       <div class="modal-counter" id="modalCounter"></div>
     </div>
     <div class="modal-info-side">
-      <div>
-        <div class="modal-title" id="modalTitle"></div>
-        <div class="modal-cat" id="modalCat"></div>
-      </div>
+      <div><div class="modal-title" id="modalTitle"></div><div class="modal-cat" id="modalCat"></div></div>
       <div class="modal-size" id="modalSize"></div>
-      <div>
-        <div class="prompt-label">Prompt used</div>
-        <div class="prompt-box" id="modalPrompt"></div>
-      </div>
+      <div><div class="prompt-label">Prompt used</div><div class="prompt-box" id="modalPrompt"></div></div>
       <div class="modal-actions">
         <button class="action-btn primary" onclick="downloadCurrent()">⬇️ Download Image</button>
         <button class="action-btn secondary" onclick="copyPrompt()">📋 Copy Prompt</button>
         <button class="action-btn secondary" onclick="copyUrl()">🔗 Copy Image URL</button>
-        <button class="action-btn secondary fav-btn" id="modalFavBtn" onclick="toggleFavCurrent()">♥ Add to Favorites</button>
+        <button class="action-btn secondary fav-btn" id="modalFavBtn" onclick="toggleFavCurrent()">♡ Add to Favorites</button>
       </div>
-      <div class="license-mini">
-        AI-generated via Pollinations.ai &bull; Verify licensing for commercial use
-      </div>
+      <div class="license-mini">Generated with DALL-E 3 &bull; Free for commercial use &bull; <a href="about.html" style="color:#a0aec0;">About this project</a></div>
     </div>
   </div>
 </div>
-
 <div id="toast"></div>
 <button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
 <footer>
-  <p><strong>AI Stock Photos</strong> &bull; Powered by <a href="https://pollinations.ai" target="_blank">Pollinations.ai</a></p>
-  <p>Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a> &bull; Built with automation</p>
-  <p style="margin-top:1rem;opacity:.55;font-size:.8rem;">Images are AI-generated. Use responsibly. &copy; 2025 AI Stock Photo API</p>
+  <p><strong>AI Stock Photos</strong></p>
+  <p>Powered by <a href="https://openai.com/dall-e-3" target="_blank">OpenAI DALL-E 3</a> &bull; Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+  <p style="margin-top:1.2rem;">
+    <a href="index.html">Gallery</a> &nbsp;&bull;&nbsp;
+    <a href="about.html">About</a> &nbsp;&bull;&nbsp;
+    <a href="https://github.com/aiopentec/ai-stock-photo-api" target="_blank">GitHub</a>
+  </p>
+  <p style="margin-top:1rem;opacity:.5;font-size:.8rem;">Free for commercial use &bull; Generated weekly via automation &bull; &copy; 2025 AI Stock Photos</p>
 </footer>
-
 <script>
-// ── STATE ──────────────────────────────────────────────────────────────
-var allImages    = [];
-var displayImages= [];
-var currentIndex = -1;
-var favorites    = [];
-var toastTimer   = null;
-var base = '';
-
-// ── INIT ───────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function() {
-  base = (window.location.origin + window.location.pathname)
-           .replace(/\/[^/]*$/, '');
-
-  loadFavorites();
-  renderSkeletons(8);
-  loadImages();
-
-  document.getElementById('searchInput').addEventListener('keypress', function(e){
-    if(e.key === 'Enter') searchImages();
-  });
-
-  window.addEventListener('scroll', function(){
-    var btn = document.getElementById('backTop');
-    if(window.scrollY > 500){ btn.classList.add('visible'); }
-    else { btn.classList.remove('visible'); }
-  });
+var allImages=[],displayImages=[],currentIndex=-1,favorites=[],toastTimer=null,base='';
+document.addEventListener('DOMContentLoaded',function(){
+  base=(window.location.origin+window.location.pathname).replace(/\/[^/]*$/,'');
+  loadFavorites();renderSkeletons(8);loadImages();
+  document.getElementById('searchInput').addEventListener('keypress',function(e){if(e.key==='Enter')searchImages();});
+  window.addEventListener('scroll',function(){document.getElementById('backTop').classList.toggle('visible',window.scrollY>500);});
 });
-
-// ── LOAD ───────────────────────────────────────────────────────────────
-function loadImages() {
-  fetch('api/images.json?t=' + Date.now())
-    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+function loadImages(){
+  fetch('api/images.json?t='+Date.now())
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
     .then(function(data){
-      allImages = data.images || [];
-
-      document.getElementById('statTotal').textContent = allImages.length || '--';
-      var kb = allImages.reduce(function(s,i){ return s+(i.size_kb||0); }, 0);
-      document.getElementById('statSize').textContent =
-        allImages.length ? (kb/1024).toFixed(1)+' MB' : '--';
-
-      updateCounts();
-      displayImages = allImages.slice();
-      renderImages(displayImages);
+      allImages=data.images||[];
+      document.getElementById('statTotal').textContent=allImages.length||'--';
+      var kb=allImages.reduce(function(s,i){return s+(i.size_kb||0);},0);
+      document.getElementById('statSize').textContent=allImages.length?(kb/1024).toFixed(1)+' MB':'--';
+      updateCounts();displayImages=allImages.slice();renderImages(displayImages);
     })
     .catch(function(err){
-      document.getElementById('grid').innerHTML =
-        '<div class="empty"><div class="emoji">⚠️</div>' +
-        '<h2>Could not load photos</h2>' +
-        '<p>' + err.message + '</p>' +
-        '<p style="margin-top:.8rem;font-size:.85rem;">Run the GitHub Actions workflow to generate <code>api/images.json</code>.</p></div>';
+      document.getElementById('grid').innerHTML='<div class="empty"><div class="emoji">⚠️</div><h2>Could not load photos</h2><p>'+err.message+'</p></div>';
     });
 }
-
-// ── SKELETONS ─────────────────────────────────────────────────────────
-function renderSkeletons(n) {
-  var html = '';
-  for(var i=0;i<n;i++){
-    html += '<div class="skeleton-card">' +
-            '<div class="skel-img"></div>' +
-            '<div class="skel-line"></div>' +
-            '<div class="skel-line short"></div>' +
-            '<div style="height:.8rem"></div></div>';
-  }
-  document.getElementById('grid').innerHTML = html;
+function renderSkeletons(n){
+  var h='';for(var i=0;i<n;i++)h+='<div class="skeleton-card"><div class="skel-img"></div><div class="skel-line"></div><div class="skel-line short"></div><div style="height:.8rem"></div></div>';
+  document.getElementById('grid').innerHTML=h;
 }
-
-// ── RENDER CARDS ──────────────────────────────────────────────────────
-function renderImages(images) {
-  if(!images.length){
-    document.getElementById('grid').innerHTML =
-      '<div class="empty"><div class="emoji">🔍</div>' +
-      '<h2>No photos found</h2>' +
-      '<p>Try a different search or category.</p></div>';
-    return;
-  }
-
-  var html = '';
-  for(var i=0;i<images.length;i++){
-    html += makeCard(images[i], i);
-  }
-  document.getElementById('grid').innerHTML = html;
+function renderImages(images){
+  if(!images.length){document.getElementById('grid').innerHTML='<div class="empty"><div class="emoji">🔍</div><h2>No photos found</h2><p>Try a different search or category.</p></div>';return;}
+  var h='';for(var i=0;i<images.length;i++)h+=makeCard(images[i],i);
+  document.getElementById('grid').innerHTML=h;
 }
-
-function makeCard(img, idx) {
-  var url      = base + '/images/' + img.filename;
-  var title    = (img.source_keyword||img.filename||'AI Photo')
-                   .replace(/[_-]/g,' ');
-  var title35  = title.length > 35 ? title.slice(0,35)+'…' : title;
-  var cat      = img.source_category || 'general';
-  var size     = img.size_kb ? img.size_kb + ' KB' : 'HD';
-  var favClass = isFav(img.filename) ? 'ov-btn fav-on' : 'ov-btn';
-  var favIcon  = isFav(img.filename) ? '♥' : '♡';
-
-  return '<div class="image-card" onclick="openModal('+idx+')">' +
-    '<div class="card-img-wrap">' +
-      '<img src="'+url+'" alt="'+escAttr(title)+'" loading="lazy" ' +
-           'onerror="this.style.background=\'#dde\';this.src=\'data:image/svg+xml,<svg xmlns=\\\'http://www.w3.org/2000/svg\\\' width=\\\'60\\\' height=\\\'60\\\'><text y=\\\'40\\\' font-size=\\\'40\\\'>🖼</text></svg>\';this.onerror=null;">' +
-      '<div class="card-overlay">' +
-        '<button class="'+favClass+'" title="Favorite" ' +
-          'onclick="event.stopPropagation();toggleFav(\''+escAttr(img.filename)+'\',this)">'+favIcon+'</button>' +
-        '<button class="ov-btn" title="Download" ' +
-          'onclick="event.stopPropagation();dlImage(\''+escAttr(url)+'\',\''+escAttr(img.filename)+'\')">⬇</button>' +
-        '<button class="ov-btn" title="View" onclick="event.stopPropagation();openModal('+idx+')">🔍</button>' +
-      '</div>' +
-    '</div>' +
-    '<div class="card-info">' +
-      '<div class="card-title" title="'+escAttr(title)+'">'+escHtml(title35)+'</div>' +
-      '<div class="card-meta">' +
-        '<span class="tag">'+escHtml(cat)+'</span>' +
-        '<span class="card-size">'+size+'</span>' +
-      '</div>' +
-    '</div>' +
-  '</div>';
+function makeCard(img,idx){
+  var url=base+'/images/'+img.filename;
+  var title=(img.source_keyword||img.filename||'AI Photo').replace(/[_-]/g,' ');
+  var title35=title.length>35?title.slice(0,35)+'…':title;
+  var cat=img.source_category||'general';
+  var size=img.size_kb?img.size_kb+' KB':'HD';
+  var fon=isFav(img.filename);
+  return '<div class="image-card" onclick="openModal('+idx+')">'
+    +'<div class="card-img-wrap">'
+    +'<img src="'+url+'" alt="'+escAttr(title)+'" loading="lazy" onerror="this.style.background=\'#dde\';this.onerror=null;">'
+    +'<div class="card-overlay">'
+    +'<button class="ov-btn'+(fon?' fav-on':'')+'" title="Favorite" onclick="event.stopPropagation();toggleFav(\''+escAttr(img.filename)+'\',this)">'+(fon?'♥':'♡')+'</button>'
+    +'<button class="ov-btn" title="Download" onclick="event.stopPropagation();dlImage(\''+escAttr(url)+'\',\''+escAttr(img.filename)+'\')">⬇</button>'
+    +'<button class="ov-btn" title="View" onclick="event.stopPropagation();openModal('+idx+')">🔍</button>'
+    +'</div></div>'
+    +'<div class="card-info"><div class="card-title" title="'+escAttr(title)+'">'+escHtml(title35)+'</div>'
+    +'<div class="card-meta"><span class="tag">'+escHtml(cat)+'</span><span class="card-size">'+size+'</span></div></div></div>';
 }
-
-// ── SEARCH ────────────────────────────────────────────────────────────
-function searchImages() {
-  var q = document.getElementById('searchInput').value.trim().toLowerCase();
-  if(!q){ displayImages = allImages.slice(); }
-  else {
-    displayImages = allImages.filter(function(img){
-      return (img.source_keyword||'').toLowerCase().includes(q) ||
-             (img.source_category||'').toLowerCase().includes(q) ||
-             (img.filename||'').toLowerCase().includes(q);
-    });
-  }
-  // deactivate category buttons
-  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+function searchImages(){
+  var q=document.getElementById('searchInput').value.trim().toLowerCase();
+  displayImages=q?allImages.filter(function(img){return(img.source_keyword||'').toLowerCase().includes(q)||(img.source_category||'').toLowerCase().includes(q)||(img.filename||'').toLowerCase().includes(q);}):allImages.slice();
+  document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
   document.querySelector('[data-cat="all"]').classList.add('active');
   renderImages(displayImages);
 }
-
-// ── CATEGORY FILTER ───────────────────────────────────────────────────
-function filterCat(cat, btn) {
-  document.querySelectorAll('.cat-btn').forEach(function(b){ b.classList.remove('active'); });
+function filterCat(cat,btn){
+  document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
   btn.classList.add('active');
-  document.getElementById('searchInput').value = '';
-
-  if(cat === 'all'){
-    displayImages = allImages.slice();
-  } else if(cat === 'favorites'){
-    displayImages = allImages.filter(function(img){ return isFav(img.filename); });
-  } else {
-    displayImages = allImages.filter(function(img){
-      return (img.source_category||'').toLowerCase() === cat;
-    });
-  }
+  document.getElementById('searchInput').value='';
+  if(cat==='all')displayImages=allImages.slice();
+  else if(cat==='favorites')displayImages=allImages.filter(function(img){return isFav(img.filename);});
+  else displayImages=allImages.filter(function(img){return(img.source_category||'').toLowerCase()===cat;});
   renderImages(displayImages);
 }
-
-function updateCounts() {
-  var cats = ['business','nature','technology','people','abstract','food','travel'];
-  var el = document.getElementById('cnt-all');
-  if(el) el.textContent = allImages.length ? ' ('+allImages.length+')' : '';
-  cats.forEach(function(c){
-    var el = document.getElementById('cnt-'+c);
-    if(!el) return;
-    var n = allImages.filter(function(i){ return (i.source_category||'') === c; }).length;
-    el.textContent = n ? ' ('+n+')' : '';
-  });
+function updateCounts(){
+  var cats=['business','nature','technology','people','abstract','food','travel'];
+  var el=document.getElementById('cnt-all');if(el)el.textContent=allImages.length?' ('+allImages.length+')':'';
+  cats.forEach(function(c){var el=document.getElementById('cnt-'+c);if(!el)return;var n=allImages.filter(function(i){return(i.source_category||'')===c;}).length;el.textContent=n?' ('+n+')':'';});
   updateFavCount();
 }
-
-function updateFavCount() {
-  var el = document.getElementById('cnt-favorites');
-  if(el) el.textContent = favorites.length ? ' ('+favorites.length+')' : '';
-  document.getElementById('statFavs').textContent = favorites.length;
+function updateFavCount(){
+  var el=document.getElementById('cnt-favorites');if(el)el.textContent=favorites.length?' ('+favorites.length+')':'';
+  document.getElementById('statFavs').textContent=favorites.length;
 }
-
-// ── FAVORITES ─────────────────────────────────────────────────────────
-function loadFavorites() {
-  try { favorites = JSON.parse(localStorage.getItem('ai_stock_favs') || '[]'); }
-  catch(e){ favorites = []; }
+function loadFavorites(){try{favorites=JSON.parse(localStorage.getItem('ai_stock_favs')||'[]');}catch(e){favorites=[];}}
+function saveFavorites(){try{localStorage.setItem('ai_stock_favs',JSON.stringify(favorites));}catch(e){}}
+function isFav(f){return favorites.indexOf(f)>-1;}
+function toggleFav(filename,btn){
+  var idx=favorites.indexOf(filename);
+  if(idx>-1){favorites.splice(idx,1);if(btn){btn.classList.remove('fav-on');btn.textContent='♡';}showToast('Removed from favorites');}
+  else{favorites.push(filename);if(btn){btn.classList.add('fav-on');btn.textContent='♥';}showToast('Added to favorites ♥');}
+  saveFavorites();updateFavCount();updateModalFavBtn();
 }
-function saveFavorites() {
-  try { localStorage.setItem('ai_stock_favs', JSON.stringify(favorites)); }
-  catch(e){}
-}
-function isFav(filename) { return favorites.indexOf(filename) > -1; }
-function toggleFav(filename, btn) {
-  var idx = favorites.indexOf(filename);
-  if(idx > -1){
-    favorites.splice(idx,1);
-    if(btn){ btn.classList.remove('fav-on'); btn.textContent='♡'; }
-    showToast('Removed from favorites');
-  } else {
-    favorites.push(filename);
-    if(btn){ btn.classList.add('fav-on'); btn.textContent='♥'; }
-    showToast('Added to favorites ♥');
-  }
-  saveFavorites();
-  updateFavCount();
+function openModal(idx){currentIndex=idx;renderModal();document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function renderModal(){
+  var img=displayImages[currentIndex];
+  var url=base+'/images/'+img.filename;
+  var title=(img.source_keyword||img.filename||'AI Photo').replace(/[_-]/g,' ');
+  document.getElementById('modalImg').src=url;
+  document.getElementById('modalImg').alt=title;
+  document.getElementById('modalTitle').textContent=title.replace(/\b\w/g,function(c){return c.toUpperCase();});
+  document.getElementById('modalCat').textContent=img.source_category||'general';
+  document.getElementById('modalSize').textContent=img.size_kb?img.size_kb+' KB  •  '+(img.width||'--')+' × '+(img.height||'--')+' px':'';
+  document.getElementById('modalPrompt').textContent=img.prompt||'No prompt available.';
+  document.getElementById('modalCounter').textContent=(currentIndex+1)+' / '+displayImages.length;
   updateModalFavBtn();
 }
-
-// ── MODAL ─────────────────────────────────────────────────────────────
-function openModal(idx) {
-  currentIndex = idx;
-  renderModal();
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+function updateModalFavBtn(){
+  if(currentIndex<0||currentIndex>=displayImages.length)return;
+  var btn=document.getElementById('modalFavBtn');
+  var on=isFav(displayImages[currentIndex].filename);
+  btn.textContent=on?'♥ Remove Favorite':'♡ Add to Favorites';
+  btn.classList.toggle('fav-on',on);
 }
-
-function renderModal() {
-  var img   = displayImages[currentIndex];
-  var url   = base + '/images/' + img.filename;
-  var title = (img.source_keyword || img.filename || 'AI Photo').replace(/[_-]/g,' ');
-
-  document.getElementById('modalImg').src        = url;
-  document.getElementById('modalImg').alt        = title;
-  document.getElementById('modalTitle').textContent = title.replace(/\b\w/g,function(c){ return c.toUpperCase(); });
-  document.getElementById('modalCat').textContent   = img.source_category || 'general';
-  document.getElementById('modalSize').textContent  =
-    img.size_kb ? img.size_kb + ' KB  •  ' + (img.width||'--') + ' × ' + (img.height||'--') + ' px' : '';
-  document.getElementById('modalPrompt').textContent = img.prompt || 'No prompt available.';
-  document.getElementById('modalCounter').textContent =
-    (currentIndex+1) + ' / ' + displayImages.length;
-
-  updateModalFavBtn();
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+function onModalBackdrop(e){if(e.target===document.getElementById('modal'))closeModal();}
+function nextImg(){currentIndex=(currentIndex+1)%displayImages.length;renderModal();}
+function prevImg(){currentIndex=(currentIndex-1+displayImages.length)%displayImages.length;renderModal();}
+function dlImage(url,filename){
+  fetch(url).then(function(r){return r.blob();}).then(function(blob){
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename||'stock-photo.png';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    setTimeout(function(){URL.revokeObjectURL(a.href);},5000);showToast('Download started!');
+  }).catch(function(){window.open(url,'_blank');showToast('Opened in new tab');});
 }
-
-function updateModalFavBtn() {
-  if(currentIndex < 0 || currentIndex >= displayImages.length) return;
-  var img = displayImages[currentIndex];
-  var btn = document.getElementById('modalFavBtn');
-  if(isFav(img.filename)){
-    btn.textContent = '♥ Remove Favorite';
-    btn.classList.add('fav-on');
-  } else {
-    btn.textContent = '♡ Add to Favorites';
-    btn.classList.remove('fav-on');
-  }
-}
-
-function closeModal() {
-  document.getElementById('modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function onModalBackdrop(e) {
-  if(e.target === document.getElementById('modal')) closeModal();
-}
-
-function nextImg() {
-  currentIndex = (currentIndex + 1) % displayImages.length;
-  renderModal();
-}
-function prevImg() {
-  currentIndex = (currentIndex - 1 + displayImages.length) % displayImages.length;
-  renderModal();
-}
-
-// ── DOWNLOAD ──────────────────────────────────────────────────────────
-function dlImage(url, filename) {
-  fetch(url)
-    .then(function(r){ return r.blob(); })
-    .then(function(blob){
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = filename || 'stock-photo.png';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 5000);
-      showToast('Download started!');
-    })
-    .catch(function(){
-      // cross-origin fallback: open in new tab
-      window.open(url, '_blank');
-      showToast('Opened in new tab — right-click to save');
-    });
-}
-
-function downloadCurrent() {
-  if(currentIndex < 0) return;
-  var img = displayImages[currentIndex];
-  dlImage(base + '/images/' + img.filename, img.filename);
-}
-
-// ── COPY ACTIONS ──────────────────────────────────────────────────────
-function copyPrompt() {
-  if(currentIndex < 0) return;
-  var text = displayImages[currentIndex].prompt || '';
-  navigator.clipboard.writeText(text)
-    .then(function(){ showToast('Prompt copied to clipboard!'); })
-    .catch(function(){ showToast('Could not copy — try manually'); });
-}
-
-function copyUrl() {
-  if(currentIndex < 0) return;
-  var img = displayImages[currentIndex];
-  var url = base + '/images/' + img.filename;
-  navigator.clipboard.writeText(url)
-    .then(function(){ showToast('Image URL copied!'); })
-    .catch(function(){ showToast('Could not copy — try manually'); });
-}
-
-// ── FAVORITES (modal) ─────────────────────────────────────────────────
-function toggleFavCurrent() {
-  if(currentIndex < 0) return;
-  toggleFav(displayImages[currentIndex].filename, null);
-  updateModalFavBtn();
-}
-
-// ── SURPRISE ME ───────────────────────────────────────────────────────
-function surpriseMe() {
-  if(!allImages.length){ showToast('No images loaded yet'); return; }
-  displayImages = allImages.slice();
-  var idx = Math.floor(Math.random() * displayImages.length);
-  renderImages(displayImages);
-  openModal(idx);
-}
-
-// ── TOAST ─────────────────────────────────────────────────────────────
-function showToast(msg) {
-  var t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2600);
-}
-
-// ── KEYBOARD ──────────────────────────────────────────────────────────
-document.addEventListener('keydown', function(e){
-  var open = document.getElementById('modal').classList.contains('open');
-  if(!open) return;
-  if(e.key === 'Escape')      closeModal();
-  else if(e.key === 'ArrowRight') nextImg();
-  else if(e.key === 'ArrowLeft')  prevImg();
-  else if(e.key === 'f' || e.key === 'F') toggleFavCurrent();
-});
-
-// ── UTILS ─────────────────────────────────────────────────────────────
-function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function escAttr(s){ return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function downloadCurrent(){if(currentIndex<0)return;var img=displayImages[currentIndex];dlImage(base+'/images/'+img.filename,img.filename);}
+function copyPrompt(){if(currentIndex<0)return;navigator.clipboard.writeText(displayImages[currentIndex].prompt||'').then(function(){showToast('Prompt copied!');}).catch(function(){showToast('Could not copy');});}
+function copyUrl(){if(currentIndex<0)return;navigator.clipboard.writeText(base+'/images/'+displayImages[currentIndex].filename).then(function(){showToast('URL copied!');}).catch(function(){showToast('Could not copy');});}
+function toggleFavCurrent(){if(currentIndex<0)return;toggleFav(displayImages[currentIndex].filename,null);updateModalFavBtn();}
+function surpriseMe(){if(!allImages.length){showToast('No images loaded yet');return;}displayImages=allImages.slice();renderImages(displayImages);openModal(Math.floor(Math.random()*displayImages.length));}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.remove('show');},2600);}
+document.addEventListener('keydown',function(e){if(!document.getElementById('modal').classList.contains('open'))return;if(e.key==='Escape')closeModal();else if(e.key==='ArrowRight')nextImg();else if(e.key==='ArrowLeft')prevImg();else if(e.key==='f'||e.key==='F')toggleFavCurrent();});
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function escAttr(s){return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 </script>
 </body>
 </html>

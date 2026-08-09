@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aiopentec.github.io/ai-stock-photo-api/sitemap.xml
