@@ -1,6 +1,6 @@
 {
-  "total_images": 35,
-  "generated_at": "2026-07-29T06:31:30.674669+00:00",
+  "total_images": 34,
+  "generated_at": "2026-08-09T07:22:41.341877+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -291,16 +291,6 @@
       "height": 896,
       "prompt": "charming narrow cobblestone street lined with flower boxes in a southern European village, golden hour warm light, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3031
-    },
-    {
-      "filename": "business_team_collaboration_1.png",
-      "source_keyword": "team collaboration",
-      "source_category": "business",
-      "size_kb": 115,
-      "width": 1344,
-      "height": 896,
-      "prompt": "top-down flat lay of large architectural blueprints with technical pens, ruler, compass and coffee cup on a dark oak conference table, professional planning session, no people, no hands, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3002
     },
     {
       "filename": "food_farmers_market_1.png",
