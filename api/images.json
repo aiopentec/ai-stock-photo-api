@@ -1,6 +1,6 @@
 {
   "total_images": 35,
-  "generated_at": "2026-08-10T11:18:20.592979+00:00",
+  "generated_at": "2026-08-10T11:45:35.697517+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -133,16 +133,6 @@
       "seed": 3010
     },
     {
-      "filename": "people_forest_walker_1.png",
-      "source_keyword": "forest walker",
-      "source_category": "people",
-      "size_kb": 82,
-      "width": 1344,
-      "height": 896,
-      "prompt": "person walking away along a misty forest path in autumn, seen from behind, golden leaves, dappled light, cosy jacket, adventure and solitude, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3017
-    },
-    {
       "filename": "technology_code_on_screen_1.png",
       "source_keyword": "code on screen",
       "source_category": "technology",
@@ -203,16 +193,6 @@
       "seed": 3008
     },
     {
-      "filename": "people_chef_hands_1.png",
-      "source_keyword": "chef hands",
-      "source_category": "people",
-      "size_kb": 69,
-      "width": 1344,
-      "height": 896,
-      "prompt": "close-up of hands slicing a ripe red tomato on a wooden chopping board in a professional kitchen, fresh basil leaves visible, natural light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3020
-    },
-    {
       "filename": "technology_smartphone_flatlay_1.png",
       "source_keyword": "smartphone flatlay",
       "source_category": "technology",
@@ -243,16 +223,6 @@
       "seed": 3026
     },
     {
-      "filename": "people_park_friends_1.png",
-      "source_keyword": "park friends",
-      "source_category": "people",
-      "size_kb": 93,
-      "width": 1344,
-      "height": 896,
-      "prompt": "two friends sitting on a wooden park bench seen from behind, sunny afternoon, autumn trees, easy relaxed conversation, warm light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3018
-    },
-    {
       "filename": "technology_circuit_board_macro_1.png",
       "source_keyword": "circuit board macro",
       "source_category": "technology",
@@ -271,16 +241,6 @@
       "height": 896,
       "prompt": "extreme macro of water droplets on a glass surface refracting coloured light into jewel tones, black background, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3023
-    },
-    {
-      "filename": "people_window_silhouette_1.png",
-      "source_keyword": "window silhouette",
-      "source_category": "people",
-      "size_kb": 45,
-      "width": 1344,
-      "height": 896,
-      "prompt": "silhouette of a person standing at a large rain-streaked window looking at a misty city below, moody atmospheric light, peaceful, face not visible, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3016
     },
     {
       "filename": "travel_cobblestone_village_1.png",
@@ -313,16 +273,6 @@
       "seed": 3030
     },
     {
-      "filename": "people_cafe_worker_1.png",
-      "source_keyword": "cafe worker",
-      "source_category": "people",
-      "size_kb": 58,
-      "width": 1344,
-      "height": 896,
-      "prompt": "over-the-shoulder view of a person typing on a laptop in a warm independent cafe, coffee cup on table, blurred background, cosy and focused, face not visible, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3019
-    },
-    {
       "filename": "abstract_bokeh_golden_1.png",
       "source_keyword": "bokeh golden",
       "source_category": "abstract",
@@ -346,10 +296,60 @@
       "filename": "business_team_collaboration_1.png",
       "source_keyword": "team collaboration",
       "source_category": "business",
-      "size_kb": 2836,
+      "size_kb": 2726,
       "width": 1536,
       "height": 1024,
       "prompt": "A top-down photograph of architectural blueprints spread across a dark oak conference table with technical pens, a brass compass and two coffee cups arranged around the edges. No people. Professional and atmospheric.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "people_cafe_worker_1.png",
+      "source_keyword": "cafe worker",
+      "source_category": "people",
+      "size_kb": 2345,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "An over-the-shoulder photograph of a person working on a laptop in a cosy independent caf\u00e9. A latte in a ceramic cup beside them, warm bokeh in the background. Shot from behind, face not visible.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "people_chef_hands_1.png",
+      "source_keyword": "chef hands",
+      "source_category": "people",
+      "size_kb": 2270,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A close-up photograph of a professional chef's hands carefully slicing a ripe red tomato on a wooden chopping board. Fresh basil leaves and other vegetables in the background. Sharp focus on the hands and knife, natural light.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "people_forest_walker_1.png",
+      "source_keyword": "forest walker",
+      "source_category": "people",
+      "size_kb": 2649,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A photograph of a young person walking away from the camera along a misty autumn forest trail, wearing a cosy knit jacket with a backpack, surrounded by golden fallen leaves. Shot from behind, soft natural light.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "people_park_friends_1.png",
+      "source_keyword": "park friends",
+      "source_category": "people",
+      "size_kb": 2462,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A warm photograph of two friends sitting on a wooden park bench seen from behind, looking out at a golden autumn park. Relaxed body language, late afternoon sun filtering through the trees behind them.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "people_window_silhouette_1.png",
+      "source_keyword": "window silhouette",
+      "source_category": "people",
+      "size_kb": 2557,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A moody atmospheric photograph of a person standing at a tall rain-streaked window, looking out over a misty city. The person faces away from camera, warm room light creating a gentle glow around their outline. No face visible.",
       "model": "gpt-image-1"
     }
   ]

@@ -85,11 +85,6 @@
       <image:caption>Free AI stock photo of urban garden, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_forest_walker_1.png</image:loc>
-      <image:title>Free Forest Walker Stock Photo — People | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of forest walker, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_code_on_screen_1.png</image:loc>
       <image:title>Free Code On Screen Stock Photo — Technology | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of code on screen, generated with DALL-E 3. Free for commercial use.</image:caption>
@@ -120,11 +115,6 @@
       <image:caption>Free AI stock photo of wildflower meadow, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_chef_hands_1.png</image:loc>
-      <image:title>Free Chef Hands Stock Photo — People | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of chef hands, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_smartphone_flatlay_1.png</image:loc>
       <image:title>Free Smartphone Flatlay Stock Photo — Technology | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of smartphone flatlay, generated with DALL-E 3. Free for commercial use.</image:caption>
@@ -140,11 +130,6 @@
       <image:caption>Free AI stock photo of avocado toast, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_park_friends_1.png</image:loc>
-      <image:title>Free Park Friends Stock Photo — People | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of park friends, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_circuit_board_macro_1.png</image:loc>
       <image:title>Free Circuit Board Macro Stock Photo — Technology | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of circuit board macro, generated with DALL-E 3. Free for commercial use.</image:caption>
@@ -153,11 +138,6 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/abstract_water_macro_1.png</image:loc>
       <image:title>Free Water Macro Stock Photo — Abstract | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of water macro, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_window_silhouette_1.png</image:loc>
-      <image:title>Free Window Silhouette Stock Photo — People | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of window silhouette, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/travel_cobblestone_village_1.png</image:loc>
@@ -175,11 +155,6 @@
       <image:caption>Free AI stock photo of sourdough loaf, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_cafe_worker_1.png</image:loc>
-      <image:title>Free Cafe Worker Stock Photo — People | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of cafe worker, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/abstract_bokeh_golden_1.png</image:loc>
       <image:title>Free Bokeh Golden Stock Photo — Abstract | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of bokeh golden, generated with DALL-E 3. Free for commercial use.</image:caption>
@@ -193,6 +168,31 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_team_collaboration_1.png</image:loc>
       <image:title>Free Team Collaboration Stock Photo — Business | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of team collaboration, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_cafe_worker_1.png</image:loc>
+      <image:title>Free Cafe Worker Stock Photo — People | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of cafe worker, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_chef_hands_1.png</image:loc>
+      <image:title>Free Chef Hands Stock Photo — People | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of chef hands, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_forest_walker_1.png</image:loc>
+      <image:title>Free Forest Walker Stock Photo — People | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of forest walker, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_park_friends_1.png</image:loc>
+      <image:title>Free Park Friends Stock Photo — People | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of park friends, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_window_silhouette_1.png</image:loc>
+      <image:title>Free Window Silhouette Stock Photo — People | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of window silhouette, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
   </url>
 
