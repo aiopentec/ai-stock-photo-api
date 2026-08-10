@@ -13,6 +13,7 @@ Requires:
   export OPENAI_API_KEY=sk-...   (or GitHub Actions secret)
 """
 
+import base64
 import json
 import os
 import re
@@ -35,10 +36,10 @@ IMAGES_DIR = REPO_ROOT / "images"
 API_DIR    = REPO_ROOT / "api"
 INDEX_PATH = API_DIR / "images.json"
 
-DALLE_SIZE    = "1792x1024"   # best landscape size for stock photos
-DALLE_QUALITY = "hd"          # "standard" = $0.04, "hd" = $0.08
-DALLE_MODEL   = "dall-e-3"
-IMAGE_WIDTH   = 1792
+DALLE_SIZE    = "1536x1024"   # gpt-image-1 landscape option (closest to old 1792x1024)
+DALLE_QUALITY = "high"        # gpt-image-1 uses "low", "medium", "high"
+DALLE_MODEL   = "gpt-image-1" # current OpenAI image model; dall-e-3 was deprecated
+IMAGE_WIDTH   = 1536
 IMAGE_HEIGHT  = 1024
 
 # DALL-E 3 rate limit: 5 images/min on Tier 1
@@ -156,9 +157,16 @@ def load_index():
     return {"total_images": 0, "generated_at": None, "images": []}
 
 def download_url(url, dest_path):
+    """Download image from a URL (DALL-E 3 style response)."""
     req = urllib.request.Request(url, headers={"User-Agent": "stock-photo-bot/dalle"})
     with urllib.request.urlopen(req, timeout=60) as resp:
         data = resp.read()
+    dest_path.write_bytes(data)
+    return len(data) // 1024
+
+def save_b64(b64_data, dest_path):
+    """Save base64-encoded image (gpt-image-1 style response)."""
+    data = base64.b64decode(b64_data)
     dest_path.write_bytes(data)
     return len(data) // 1024
 
@@ -180,9 +188,19 @@ def generate_one(task, client):
                 quality=DALLE_QUALITY,
                 n=1,
             )
-            image_url      = response.data[0].url
-            revised_prompt = response.data[0].revised_prompt or prompt
-            size_kb        = download_url(image_url, dest_path)
+            # gpt-image-1 returns base64; dall-e-3 returned a URL.
+            # Handle both so the script works regardless of which model is active.
+            item = response.data[0]
+            if getattr(item, 'b64_json', None):
+                size_kb = save_b64(item.b64_json, dest_path)
+                revised_prompt = prompt
+            elif getattr(item, 'url', None):
+                size_kb = download_url(item.url, dest_path)
+                revised_prompt = getattr(item, 'revised_prompt', None) or prompt
+            else:
+                tprint(f"  [err]   {filename}: no image data in response")
+                time.sleep(REQUEST_PAUSE)
+                continue
 
             tprint(f"  [ok]    {filename}  {size_kb} KB")
             return {
@@ -245,8 +263,8 @@ def main():
         print("All catalogue images already exist.")
         return
 
-    print(f"Generating {len(tasks)} images via DALL-E 3 ({DALLE_QUALITY}, {DALLE_SIZE})")
-    print(f"Estimated cost: ${len(tasks) * 0.08:.2f} USD\n")
+    print(f"Generating {len(tasks)} images via {DALLE_MODEL} ({DALLE_QUALITY}, {DALLE_SIZE})")
+    print(f"Check platform.openai.com/docs for current {DALLE_MODEL} pricing\n")
 
     t0 = time.time()
     new_entries, failed = [], []
