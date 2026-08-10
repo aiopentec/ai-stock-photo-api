@@ -36,11 +36,12 @@ IMAGES_DIR = REPO_ROOT / "images"
 API_DIR    = REPO_ROOT / "api"
 INDEX_PATH = API_DIR / "images.json"
 
-DALLE_SIZE    = "1536x1024"   # gpt-image-1 landscape option (closest to old 1792x1024)
-DALLE_QUALITY = "high"        # gpt-image-1 uses "low", "medium", "high"
-DALLE_MODEL   = "gpt-image-1" # current OpenAI image model; dall-e-3 was deprecated
-IMAGE_WIDTH   = 1536
-IMAGE_HEIGHT  = 1024
+DALLE_SIZE        = "1536x1024"
+DALLE_QUALITY     = "high"
+DALLE_MODEL       = "gpt-image-1"
+IMAGE_WIDTH       = 1536
+IMAGE_HEIGHT      = 1024
+MAX_NEW_PER_RUN   = 3      # images generated per weekly run; increase when ready
 
 # DALL-E 3 rate limit: 5 images/min on Tier 1
 # 3 workers x 15s pause keeps well under that
@@ -59,7 +60,7 @@ CATALOGUE = {
         ("startup office",
          "A wide-angle photograph of a bright modern open-plan startup office with standing desks, hanging plants, exposed brick and floor-to-ceiling windows. Empty of people, late afternoon golden light streaming in."),
         ("business growth",
-         "A close-up photograph of a single hand drawing a clean upward-trending arrow on a white glass whiteboard with a blue marker. Minimal composition, soft background, one hand only."),
+         "A clean glass whiteboard showing a bold upward-trending arrow and a simple bar chart drawn in blue marker. Bright office background, no people, no hands, professional and minimal."),
         ("entrepreneur desk",
          "An overhead flat-lay photograph of a minimal workspace: a thin silver laptop, reading glasses, a small succulent in a white pot, and a leather-bound notebook on a pale oak desk, warm morning light from the left."),
     ],
@@ -262,6 +263,13 @@ def main():
     if not tasks:
         print("All catalogue images already exist.")
         return
+
+    # Limit to MAX_NEW_PER_RUN per weekly run to control spend.
+    # Increase this constant when ready to scale.
+    if len(tasks) > MAX_NEW_PER_RUN:
+        print(f"Limiting to {MAX_NEW_PER_RUN} images this run "
+              f"({len(tasks)} pending total — rest will generate in future runs)")
+        tasks = tasks[:MAX_NEW_PER_RUN]
 
     print(f"Generating {len(tasks)} images via {DALLE_MODEL} ({DALLE_QUALITY}, {DALLE_SIZE})")
     print(f"Check platform.openai.com/docs for current {DALLE_MODEL} pricing\n")
