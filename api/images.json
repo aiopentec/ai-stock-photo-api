@@ -1,6 +1,6 @@
 {
-  "total_images": 34,
-  "generated_at": "2026-08-10T05:39:40.299246+00:00",
+  "total_images": 35,
+  "generated_at": "2026-08-10T11:18:20.592979+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -341,6 +341,16 @@
       "height": 896,
       "prompt": "modern data center corridor with blue LED-lit server racks receding into the distance, dramatic lighting, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3012
+    },
+    {
+      "filename": "business_team_collaboration_1.png",
+      "source_keyword": "team collaboration",
+      "source_category": "business",
+      "size_kb": 2836,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A top-down photograph of architectural blueprints spread across a dark oak conference table with technical pens, a brass compass and two coffee cups arranged around the edges. No people. Professional and atmospheric.",
+      "model": "gpt-image-1"
     }
   ]
 }
