@@ -45,7 +45,7 @@ CATALOGUE = {
         ("remote work",         "overhead flat lay of a laptop coffee cup notebook and pen on a clean white desk, morning light, minimal"),
         ("team collaboration",  "top-down flat lay of architectural blueprints with technical pens ruler compass and coffee cup on a dark oak conference table, no people, no hands"),
         ("startup office",      "wide shot of a bright modern open-plan office with standing desks plants and large windows, empty, golden hour light"),
-        ("business growth",     "close-up of one hand drawing an upward arrow on a whiteboard with a blue marker, minimal, white background"),
+        ("growth",              "close-up of one hand drawing an upward arrow on a whiteboard with a blue marker, minimal, white background"),
         ("entrepreneur desk",   "overhead flat lay of a minimal workspace: slim laptop glasses succulent plant leather notebook on oak desk, warm morning light"),
     ],
     "nature": [

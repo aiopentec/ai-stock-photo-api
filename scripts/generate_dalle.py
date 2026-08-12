@@ -59,7 +59,7 @@ CATALOGUE = {
          "A top-down photograph of architectural blueprints spread across a dark oak conference table with technical pens, a brass compass and two coffee cups arranged around the edges. No people. Professional and atmospheric."),
         ("startup office",
          "A wide-angle photograph of a bright modern open-plan startup office with standing desks, hanging plants, exposed brick and floor-to-ceiling windows. Empty of people, late afternoon golden light streaming in."),
-        ("business growth",
+        ("growth",
          "A clean glass whiteboard showing a bold upward-trending arrow and a simple bar chart drawn in blue marker. Bright office background, no people, no hands, professional and minimal."),
         ("entrepreneur desk",
          "An overhead flat-lay photograph of a minimal workspace: a thin silver laptop, reading glasses, a small succulent in a white pot, and a leather-bound notebook on a pale oak desk, warm morning light from the left."),
