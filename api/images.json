@@ -1,6 +1,6 @@
 {
-  "total_images": 35,
-  "generated_at": "2026-08-10T11:45:35.697517+00:00",
+  "total_images": 36,
+  "generated_at": "2026-08-12T07:52:28.079299+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -350,6 +350,16 @@
       "width": 1536,
       "height": 1024,
       "prompt": "A moody atmospheric photograph of a person standing at a tall rain-streaked window, looking out over a misty city. The person faces away from camera, warm room light creating a gentle glow around their outline. No face visible.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_growth_1.png",
+      "source_keyword": "growth",
+      "source_category": "business",
+      "size_kb": 2325,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A clean glass whiteboard showing a bold upward-trending arrow and a simple bar chart drawn in blue marker. Bright office background, no people, no hands, professional and minimal.",
       "model": "gpt-image-1"
     }
   ]

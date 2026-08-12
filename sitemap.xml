@@ -5,14 +5,14 @@
 
   <url>
     <loc>https://aiopentec.github.io/ai-stock-photo-api/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://aiopentec.github.io/ai-stock-photo-api/about.html</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -193,6 +193,11 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/people_window_silhouette_1.png</image:loc>
       <image:title>Free Window Silhouette Stock Photo — People | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of window silhouette, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_growth_1.png</image:loc>
+      <image:title>Free Growth Stock Photo — Business | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of growth, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
   </url>
 
