@@ -1,6 +1,6 @@
 {
-  "total_images": 36,
-  "generated_at": "2026-08-16T03:02:44.920538+00:00",
+  "total_images": 35,
+  "generated_at": "2026-08-16T03:54:52.571380+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -31,26 +31,6 @@
       "height": 896,
       "prompt": "neatly arranged layers of torn white and cream paper textures, overhead flat lay, subtle soft shadows, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3025
-    },
-       {
-      "filename": "business_entrepreneur_desk_1.png",
-      "source_keyword": "entrepreneur desk",
-      "source_category": "business",
-      "size_kb": 97,
-      "width": 1344,
-      "height": 896,
-      "prompt": "flat lay of a minimalist workspace: slim laptop, reading glasses, succulent plant, leather notebook on an oak desk, warm morning light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3005
-    },
-    {
-      "filename": "business_remote_work_1.png",
-      "source_keyword": "remote work",
-      "source_category": "business",
-      "size_kb": 53,
-      "width": 1344,
-      "height": 896,
-      "prompt": "overhead flat lay of a laptop, coffee cup, notebook and pen on a clean white desk, morning light from window, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3001
     },
     {
       "filename": "business_startup_office_1.png",
@@ -131,16 +111,6 @@
       "height": 896,
       "prompt": "close-up of a dark-themed code editor on a monitor showing colourful syntax-highlighted code, slight blue glow, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3013
-    },
-    {
-      "filename": "technology_smart_home_devices_1.png",
-      "source_keyword": "smart home devices",
-      "source_category": "technology",
-      "size_kb": 53,
-      "width": 1344,
-      "height": 896,
-      "prompt": "collection of smart home devices neatly arranged on a white table: smart speaker, tablet, bulb and cables, overhead shot, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3015
     },
     {
       "filename": "travel_airport_terminal_1.png",
@@ -350,6 +320,36 @@
       "width": 1536,
       "height": 1024,
       "prompt": "A clean glass whiteboard showing a bold upward-trending arrow and a simple bar chart drawn in blue marker. Bright office background, no people, no hands, professional and minimal.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_entrepreneur_desk_1.png",
+      "source_keyword": "entrepreneur desk",
+      "source_category": "business",
+      "size_kb": 2929,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "flat lay of a minimalist workspace: slim laptop, reading glasses, succulent plant, leather notebook on an oak desk, warm morning light, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_remote_work_1.png",
+      "source_keyword": "remote work",
+      "source_category": "business",
+      "size_kb": 2240,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "overhead flat lay of a laptop, coffee cup, notebook and pen on a clean white desk, morning light from window, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "technology_smart_home_devices_1.png",
+      "source_keyword": "smart home devices",
+      "source_category": "technology",
+      "size_kb": 2145,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "collection of smart home devices neatly arranged on a white table: smart speaker, tablet, bulb and cables, overhead shot, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "model": "gpt-image-1"
     }
   ]

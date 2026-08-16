@@ -35,16 +35,6 @@
       <image:caption>Free AI stock photo of paper layers, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_entrepreneur_desk_1.png</image:loc>
-      <image:title>Free Entrepreneur Desk Stock Photo — Business | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of entrepreneur desk, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_remote_work_1.png</image:loc>
-      <image:title>Free Remote Work Stock Photo — Business | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of remote work, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_startup_office_1.png</image:loc>
       <image:title>Free Startup Office Stock Photo — Business | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of startup office, generated with DALL-E 3. Free for commercial use.</image:caption>
@@ -83,11 +73,6 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_code_on_screen_1.png</image:loc>
       <image:title>Free Code On Screen Stock Photo — Technology | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of code on screen, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_smart_home_devices_1.png</image:loc>
-      <image:title>Free Smart Home Devices Stock Photo — Technology | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of smart home devices, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/travel_airport_terminal_1.png</image:loc>
@@ -193,6 +178,21 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_growth_1.png</image:loc>
       <image:title>Free Growth Stock Photo — Business | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of growth, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_entrepreneur_desk_1.png</image:loc>
+      <image:title>Free Entrepreneur Desk Stock Photo — Business | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of entrepreneur desk, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_remote_work_1.png</image:loc>
+      <image:title>Free Remote Work Stock Photo — Business | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of remote work, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_smart_home_devices_1.png</image:loc>
+      <image:title>Free Smart Home Devices Stock Photo — Technology | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of smart home devices, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
   </url>
 
