@@ -45,11 +45,6 @@
       <image:caption>Free AI stock photo of grain bowl, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/food_latte_art_1.png</image:loc>
-      <image:title>Free Latte Art Stock Photo — Food | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of latte art, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/nature_forest_path_1.png</image:loc>
       <image:title>Free Forest Path Stock Photo — Nature | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of forest path, generated with DALL-E 3. Free for commercial use.</image:caption>
@@ -93,11 +88,6 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/nature_wildflower_meadow_1.png</image:loc>
       <image:title>Free Wildflower Meadow Stock Photo — Nature | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of wildflower meadow, generated with DALL-E 3. Free for commercial use.</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_smartphone_flatlay_1.png</image:loc>
-      <image:title>Free Smartphone Flatlay Stock Photo — Technology | AI Stock Photos</image:title>
-      <image:caption>Free AI stock photo of smartphone flatlay, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/travel_city_reflection_1.png</image:loc>
@@ -193,6 +183,16 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_smart_home_devices_1.png</image:loc>
       <image:title>Free Smart Home Devices Stock Photo — Technology | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of smart home devices, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/food_latte_art_1.png</image:loc>
+      <image:title>Free Latte Art Stock Photo — Food | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of latte art, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_smartphone_flatlay_1.png</image:loc>
+      <image:title>Free Smartphone Flatlay Stock Photo — Technology | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of smartphone flatlay, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
   </url>
 

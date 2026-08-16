@@ -1,6 +1,6 @@
 {
   "total_images": 35,
-  "generated_at": "2026-08-16T03:54:52.571380+00:00",
+  "generated_at": "2026-08-16T04:15:05.884763+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -51,16 +51,6 @@
       "height": 896,
       "prompt": "overhead flat lay of a colourful grain bowl with roasted vegetables, chickpeas, tahini and fresh herbs on a light grey surface, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3028
-    },
-    {
-      "filename": "food_latte_art_1.png",
-      "source_keyword": "latte art",
-      "source_category": "food",
-      "size_kb": 56,
-      "width": 1344,
-      "height": 896,
-      "prompt": "close-up of a flat white coffee with a perfect leaf latte art pattern in a wide ceramic cup on a cafe table, warm natural tones, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3027
     },
     {
       "filename": "nature_forest_path_1.png",
@@ -151,16 +141,6 @@
       "height": 896,
       "prompt": "vast wildflower meadow in summer with red poppies and yellow flowers, blue sky, wide angle, no people, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "seed": 3008
-    },
-    {
-      "filename": "technology_smartphone_flatlay_1.png",
-      "source_keyword": "smartphone flatlay",
-      "source_category": "technology",
-      "size_kb": 50,
-      "width": 1344,
-      "height": 896,
-      "prompt": "flat lay of a modern smartphone face-down next to a coffee cup and small succulent on a white marble surface, clean, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
-      "seed": 3014
     },
     {
       "filename": "travel_city_reflection_1.png",
@@ -350,6 +330,26 @@
       "width": 1536,
       "height": 1024,
       "prompt": "collection of smart home devices neatly arranged on a white table: smart speaker, tablet, bulb and cables, overhead shot, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "food_latte_art_1.png",
+      "source_keyword": "latte art",
+      "source_category": "food",
+      "size_kb": 2446,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "close-up of a flat white coffee with a perfect leaf latte art pattern in a wide ceramic cup on a cafe table, warm natural tones, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "technology_smartphone_flatlay_1.png",
+      "source_keyword": "smartphone flatlay",
+      "source_category": "technology",
+      "size_kb": 2389,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "flat lay of a modern smartphone face-down next to a coffee cup and small succulent on a white marble surface, clean, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
       "model": "gpt-image-1"
     }
   ]
