@@ -1,6 +1,6 @@
 {
   "total_images": 36,
-  "generated_at": "2026-08-12T08:01:00.449556+00:00",
+  "generated_at": "2026-08-16T02:53:54.807082+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -356,7 +356,7 @@
       "filename": "business_growth_1.png",
       "source_keyword": "growth",
       "source_category": "business",
-      "size_kb": 2167,
+      "size_kb": 2163,
       "width": 1536,
       "height": 1024,
       "prompt": "A clean glass whiteboard showing a bold upward-trending arrow and a simple bar chart drawn in blue marker. Bright office background, no people, no hands, professional and minimal.",
