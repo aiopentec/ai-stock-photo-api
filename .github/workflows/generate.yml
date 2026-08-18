@@ -1,7 +1,7 @@
 name: AI Stock Photo Generator
 
 # Provider routing (automatic):
-#   OPENAI_API_KEY set  →  DALL-E 3       (best quality, ~$0.08/image)
+#   OPENAI_API_KEY set  →  gpt-image-1    (best quality, ~$0.29/image)
 #   HF_API_TOKEN set    →  HuggingFace    (free, SD 3.5 Medium — known issues)
 #   Neither set         →  Pollinations   (free, FLUX.1-schnell)
 
@@ -59,13 +59,13 @@ jobs:
         run: |
           mkdir -p images api
           if [ -n "$OPENAI_API_KEY" ]; then
-            echo "Provider: DALL-E 3"
+            echo "Provider: gpt-image-1"
             python scripts/generate_dalle.py
           elif [ -n "$HF_API_TOKEN" ]; then
-            echo "Provider: HuggingFace"
+            echo "Provider: HuggingFace SD 3.5"
             python scripts/generate_huggingface.py
           else
-            echo "Provider: Pollinations"
+            echo "Provider: Pollinations FLUX"
             python scripts/generate_pollinations.py
           fi
         env:
