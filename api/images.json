@@ -1,6 +1,6 @@
 {
-  "total_images": 35,
-  "generated_at": "2026-08-16T04:15:05.884763+00:00",
+  "total_images": 38,
+  "generated_at": "2026-08-18T19:52:03.803588+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -350,6 +350,36 @@
       "width": 1536,
       "height": 1024,
       "prompt": "flat lay of a modern smartphone face-down next to a coffee cup and small succulent on a white marble surface, clean, minimal, sharp focus, high resolution, 4k, professional quality, no watermark, no text, no logo",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_brainstorm_wall_1.png",
+      "source_keyword": "brainstorm wall",
+      "source_category": "business",
+      "size_kb": 2149,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A glass wall covered with colourful sticky notes and mind-map diagrams in a bright modern office. No people, wide angle, natural light.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_business_meeting_1.png",
+      "source_keyword": "business meeting",
+      "source_category": "business",
+      "size_kb": 2609,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Overhead flat lay of a round meeting table with notebooks, pens, a laptop and coffee cups arranged neatly. No people. Clean, professional, natural light.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_coworking_space_1.png",
+      "source_keyword": "coworking space",
+      "source_category": "business",
+      "size_kb": 2431,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Wide photograph of a bright modern coworking space with long communal tables, pendant lights, plants and large windows. Several empty MacBooks open on tables. No faces visible.",
       "model": "gpt-image-1"
     }
   ]
