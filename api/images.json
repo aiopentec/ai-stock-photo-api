@@ -1,6 +1,6 @@
 {
-  "total_images": 38,
-  "generated_at": "2026-08-18T19:52:03.803588+00:00",
+  "total_images": 41,
+  "generated_at": "2026-08-24T04:54:22.747669+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.png",
@@ -380,6 +380,36 @@
       "width": 1536,
       "height": 1024,
       "prompt": "Wide photograph of a bright modern coworking space with long communal tables, pendant lights, plants and large windows. Several empty MacBooks open on tables. No faces visible.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_business_plan_1.png",
+      "source_keyword": "business plan",
+      "source_category": "business",
+      "size_kb": 2411,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Flat lay of a business plan document, a fountain pen, reading glasses and a small succulent on a white desk. Clean and professional. No people.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "business_coffee_meeting_1.png",
+      "source_keyword": "coffee meeting",
+      "source_category": "business",
+      "size_kb": 2693,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Two ceramic coffee cups on a wooden caf\u00e9 table with a small notebook and pen between them. Warm bokeh background. No people, overhead angle.",
+      "model": "gpt-image-1"
+    },
+    {
+      "filename": "nature_autumn_forest_1.png",
+      "source_keyword": "autumn forest",
+      "source_category": "nature",
+      "size_kb": 3241,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A wide path through a deciduous forest in full autumn colour, golden and red leaves covering the ground and hanging from the trees. Soft light, no people.",
       "model": "gpt-image-1"
     }
   ]

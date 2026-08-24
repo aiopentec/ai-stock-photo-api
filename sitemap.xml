@@ -5,14 +5,14 @@
 
   <url>
     <loc>https://aiopentec.github.io/ai-stock-photo-api/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://aiopentec.github.io/ai-stock-photo-api/about.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -208,6 +208,21 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_coworking_space_1.png</image:loc>
       <image:title>Free Coworking Space Stock Photo — Business | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of coworking space, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_business_plan_1.png</image:loc>
+      <image:title>Free Business Plan Stock Photo — Business | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of business plan, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/business_coffee_meeting_1.png</image:loc>
+      <image:title>Free Coffee Meeting Stock Photo — Business | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of coffee meeting, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/nature_autumn_forest_1.png</image:loc>
+      <image:title>Free Autumn Forest Stock Photo — Nature | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of autumn forest, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
   </url>
 
