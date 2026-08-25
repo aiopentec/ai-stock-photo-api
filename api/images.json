@@ -1,6 +1,6 @@
 {
-  "total_images": 47,
-  "generated_at": "2026-08-25T19:32:38.099336+00:00",
+  "total_images": 50,
+  "generated_at": "2026-08-25T19:44:06.462142+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.webp",
@@ -518,6 +518,39 @@
       "prompt": "A lush spring garden in full bloom with pink cherry blossoms, tulips and fresh green grass. Soft morning light, no people.",
       "model": "gpt-image-1",
       "thumbnail": "thumbs/nature_spring_garden_1.webp"
+    },
+    {
+      "filename": "nature_tropical_rainforest_1.webp",
+      "source_keyword": "tropical rainforest",
+      "source_category": "nature",
+      "size_kb": 362,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Dense tropical rainforest with massive ferns, hanging vines and dappled light filtering through the canopy. No people, lush and green.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/nature_tropical_rainforest_1.webp"
+    },
+    {
+      "filename": "technology_smartphone_flat_lay_1.webp",
+      "source_keyword": "smartphone flat lay",
+      "source_category": "technology",
+      "size_kb": 73,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Overhead flat-lay of a modern smartphone placed face-down beside a ceramic espresso cup and small succulent on white marble. Minimal.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/technology_smartphone_flat_lay_1.webp"
+    },
+    {
+      "filename": "technology_solar_panels_roof_1.webp",
+      "source_keyword": "solar panels roof",
+      "source_category": "technology",
+      "size_kb": 500,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Aerial view of a house roof covered with sleek black solar panels, surrounded by green garden. No people, bright sunny day.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/technology_solar_panels_roof_1.webp"
     }
   ]
 }
