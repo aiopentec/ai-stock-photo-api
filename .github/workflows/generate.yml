@@ -3,6 +3,11 @@ name: AI Stock Photo Generator
 permissions:
   contents: write
 
+# Prevent simultaneous deployments — queue instead of running in parallel
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
 on:
   schedule:
     - cron: '0 4 * * 1'
