@@ -1,10 +1,5 @@
 name: AI Stock Photo Generator
 
-# Provider routing (automatic):
-#   OPENAI_API_KEY set  →  gpt-image-1    (best quality, ~$0.29/image)
-#   HF_API_TOKEN set    →  HuggingFace    (free, SD 3.5 Medium — known issues)
-#   Neither set         →  Pollinations   (free, FLUX.1-schnell)
-
 permissions:
   contents: write
 
@@ -26,7 +21,6 @@ on:
 jobs:
   generate-images:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,23 +35,24 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests
-          if [ -n "${{ secrets.OPENAI_API_KEY }}" ]; then
-            pip install openai
-          fi
+          pip install requests Pillow
+          if [ -n "${{ secrets.OPENAI_API_KEY }}" ]; then pip install openai; fi
 
       - name: Regenerate specific images (if requested)
         if: ${{ github.event.inputs.regenerate != '' }}
         run: |
-          mkdir -p images api
+          mkdir -p images/thumbs api
           python scripts/regenerate.py ${{ github.event.inputs.regenerate }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           HF_API_TOKEN:   ${{ secrets.HF_API_TOKEN }}
 
-      - name: Generate images
+      - name: Optimise existing images (PNG->WebP + thumbnails)
+        run: python scripts/optimize_images.py
+
+      - name: Generate new images
         run: |
-          mkdir -p images api
+          mkdir -p images/thumbs api
           if [ -n "$OPENAI_API_KEY" ]; then
             echo "Provider: gpt-image-1"
             python scripts/generate_dalle.py
