@@ -3,90 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free AI Stock Photos | Commercial Use | DALL-E 3 Generated</title>
-<meta name="description" content="Download free AI-generated stock photos for commercial use. Professional quality images created with DALL-E 3. No attribution required. 35+ photos across business, nature, technology, people, food, abstract and travel.">
+<title>Free AI Stock Photos | Commercial Use | gpt-image-1 Generated</title>
+<meta name="description" content="Download free AI-generated stock photos for commercial use. Professional quality images created with OpenAI gpt-image-1. No attribution required.">
 <link rel="canonical" href="https://aiopentec.github.io/ai-stock-photo-api/">
-
-<!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
-<meta property="og:type"        content="website">
-<meta property="og:url"         content="https://aiopentec.github.io/ai-stock-photo-api/">
-<meta property="og:title"       content="Free AI Stock Photos — Commercial Use OK">
-<meta property="og:description" content="35+ professional AI-generated stock photos, free for personal and commercial use. Generated with DALL-E 3. New images every week.">
-<meta property="og:image"       content="https://aiopentec.github.io/ai-stock-photo-api/images/nature_forest_path_1.png">
-<meta property="og:site_name"   content="AI Stock Photos">
-
-<!-- Twitter / X Card -->
-<meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="Free AI Stock Photos — Commercial Use OK">
-<meta name="twitter:description" content="35+ professional AI-generated stock photos, free for commercial use. New images added weekly.">
-<meta name="twitter:image"       content="https://aiopentec.github.io/ai-stock-photo-api/images/nature_forest_path_1.png">
-
-<!-- Structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://aiopentec.github.io/ai-stock-photo-api/#website",
-      "url": "https://aiopentec.github.io/ai-stock-photo-api/",
-      "name": "AI Stock Photos",
-      "description": "Free AI-generated stock photos for commercial and personal use",
-      "publisher": { "@id": "https://aiopentec.github.io/ai-stock-photo-api/#org" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://aiopentec.github.io/ai-stock-photo-api/#org",
-      "name": "AI Stock Photos",
-      "url": "https://aiopentec.github.io/ai-stock-photo-api/",
-      "sameAs": ["https://github.com/aiopentec/ai-stock-photo-api"]
-    },
-    {
-      "@type": "ImageGallery",
-      "name": "Free AI Stock Photos",
-      "description": "Professional AI-generated stock photos free for commercial use, created with DALL-E 3",
-      "url": "https://aiopentec.github.io/ai-stock-photo-api/",
-      "genre": ["business", "nature", "technology", "people", "abstract", "food", "travel"],
-      "license": "https://openai.com/policies/terms-of-use"
-    }
-  ]
-}
-</script>
+<meta property="og:type" content="website">
+<meta property="og:url"  content="https://aiopentec.github.io/ai-stock-photo-api/">
+<meta property="og:title" content="Free AI Stock Photos — Commercial Use OK">
+<meta property="og:description" content="Professional AI-generated stock photos, free for commercial use. OpenAI gpt-image-1. New images every week.">
+<meta property="og:image" content="https://aiopentec.github.io/ai-stock-photo-api/images/nature_forest_path_1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AI Stock Photos — Commercial Use OK">
+<meta name="twitter:image" content="https://aiopentec.github.io/ai-stock-photo-api/images/nature_forest_path_1.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","name":"Free AI Stock Photos","description":"Professional AI-generated stock photos free for commercial use","url":"https://aiopentec.github.io/ai-stock-photo-api/","license":"https://openai.com/policies/terms-of-use"}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--purple:#667eea;--purple2:#764ba2;--pink:#f093fb;--red:#f5576c;--dark:#1a202c;--gray:#718096;--light-gray:#e2e8f0;--card-radius:18px;}
+:root{--purple:#667eea;--purple2:#764ba2;--pink:#f093fb;--red:#f5576c;--dark:#1a202c;--gray:#718096;--lg:#e2e8f0;--cr:18px;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f2f8;min-height:100vh;color:var(--dark);}
+/* Header */
 header{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;padding:2.5rem 1rem 5rem;text-align:center;}
 header h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;margin-bottom:.4rem;text-shadow:0 2px 8px rgba(0,0,0,.2);}
 header p{font-size:1.1rem;opacity:.9;margin-bottom:1.25rem;}
 .badges{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;}
 .badge{background:rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:.4rem 1.1rem;border-radius:50px;font-size:.82rem;font-weight:600;border:1.5px solid rgba(255,255,255,.28);}
+/* Search */
 .search-wrap{max-width:680px;margin:-2.2rem auto 0;position:relative;z-index:10;padding:0 1rem 1.2rem;}
 .search-box{display:flex;background:#fff;border-radius:60px;box-shadow:0 12px 35px rgba(0,0,0,.15);overflow:hidden;transition:box-shadow .3s,transform .3s;}
 .search-box:focus-within{box-shadow:0 18px 45px rgba(0,0,0,.2);transform:translateY(-2px);}
 .search-box input{flex:1;padding:1.1rem 1.6rem;border:none;font-size:1rem;outline:none;background:transparent;min-width:0;}
 .search-box button{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border:none;padding:1.1rem 1.8rem;cursor:pointer;font-weight:700;font-size:.95rem;white-space:nowrap;}
-.surprise-btn{display:block;text-align:center;margin-top:.9rem;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:#fff;padding:.5rem 1.4rem;border-radius:30px;cursor:pointer;font-size:.88rem;font-weight:600;transition:background .2s;width:fit-content;margin-left:auto;margin-right:auto;position:relative;z-index:11;}
+.surprise-btn{display:block;text-align:center;margin-top:.9rem;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);color:#fff;padding:.5rem 1.4rem;border-radius:30px;cursor:pointer;font-size:.88rem;font-weight:600;width:fit-content;margin-left:auto;margin-right:auto;position:relative;z-index:11;}
 .surprise-btn:hover{background:rgba(255,255,255,.28);}
+/* Main */
 main{max-width:1400px;margin:0 auto;padding:2.5rem 1rem 4rem;}
 .stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;margin:2.5rem 0 2rem;}
 .stat-card{background:#fff;padding:1.3rem;border-radius:14px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.07);transition:transform .25s;}
 .stat-card:hover{transform:translateY(-4px);}
 .stat-value{font-size:2.1rem;font-weight:800;background:linear-gradient(135deg,var(--purple),var(--purple2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .stat-label{color:var(--gray);font-size:.82rem;font-weight:600;margin-top:.2rem;}
-.license-note{background:#fffbeb;border:1px solid #f6d860;border-radius:10px;padding:.8rem 1.1rem;margin-bottom:1.8rem;font-size:.84rem;color:#744210;line-height:1.5;}
+.license-note{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:.8rem 1.1rem;margin-bottom:1.8rem;font-size:.84rem;color:#14532d;line-height:1.5;}
+.license-note a{color:#14532d;}
+/* Categories */
 .categories{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem;}
-.cat-btn{padding:.55rem 1.2rem;border:2px solid var(--light-gray);background:#fff;border-radius:30px;cursor:pointer;font-weight:600;font-size:.85rem;color:#4a5568;transition:all .25s;white-space:nowrap;}
+.cat-btn{padding:.55rem 1.2rem;border:2px solid var(--lg);background:#fff;border-radius:30px;cursor:pointer;font-weight:600;font-size:.85rem;color:#4a5568;transition:all .25s;white-space:nowrap;}
 .cat-btn:hover{border-color:var(--purple);color:var(--purple);}
 .cat-btn.active{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border-color:transparent;}
 .cat-count{font-size:.75rem;opacity:.75;margin-left:.3rem;}
+/* Grid */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.8rem;}
-.skeleton-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.07);}
+/* Skeleton */
+.skeleton-card{background:#fff;border-radius:var(--cr);overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.07);}
 .skel-img{height:220px;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;}
 .skel-line{height:14px;border-radius:6px;margin:1rem 1.2rem .6rem;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;}
 .skel-line.short{width:55%;margin-top:0;}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.image-card{background:#fff;border-radius:var(--card-radius);overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.09);transition:transform .35s cubic-bezier(.175,.885,.32,1.275),box-shadow .35s;cursor:pointer;}
+/* Card */
+.image-card{background:#fff;border-radius:var(--cr);overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.09);transition:transform .35s cubic-bezier(.175,.885,.32,1.275),box-shadow .35s;cursor:pointer;content-visibility:auto;contain-intrinsic-size:0 320px;}
 .image-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 16px 40px rgba(0,0,0,.16);}
 .card-img-wrap{position:relative;overflow:hidden;}
 .card-img-wrap img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s;}
@@ -101,8 +72,16 @@ main{max-width:1400px;margin:0 auto;padding:2.5rem 1rem 4rem;}
 .card-meta{display:flex;justify-content:space-between;align-items:center;}
 .tag{background:linear-gradient(135deg,var(--pink),var(--red));color:#fff;padding:.28rem .8rem;border-radius:20px;font-size:.75rem;font-weight:600;}
 .card-size{color:#a0aec0;font-size:.8rem;font-weight:500;}
+/* Pagination */
+.pagination{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;}
+.page-btn{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border:none;padding:.65rem 1.5rem;border-radius:25px;cursor:pointer;font-weight:600;font-size:.88rem;transition:opacity .2s,transform .2s;}
+.page-btn:disabled{opacity:.35;cursor:not-allowed;transform:none !important;}
+.page-btn:not(:disabled):hover{opacity:.85;transform:translateY(-2px);}
+.page-info{color:var(--gray);font-size:.88rem;font-weight:500;text-align:center;}
+/* Empty */
 .empty{grid-column:1/-1;text-align:center;padding:4rem 1rem;color:var(--gray);}
 .empty .emoji{font-size:3rem;margin-bottom:1rem;}
+/* Modal */
 .modal{display:none;position:fixed;inset:0;z-index:9000;background:rgba(10,10,20,.88);backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1rem;}
 .modal.open{display:flex;}
 .modal-inner{background:#fff;border-radius:20px;overflow:hidden;display:flex;max-width:960px;width:100%;max-height:90vh;box-shadow:0 30px 80px rgba(0,0,0,.5);}
@@ -113,8 +92,7 @@ main{max-width:1400px;margin:0 auto;padding:2.5rem 1rem 4rem;}
 .modal-close:hover{background:rgba(255,255,255,.3);}
 .modal-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.13);border:none;color:#fff;font-size:1.6rem;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:10;}
 .modal-arrow:hover{background:rgba(255,255,255,.28);}
-.modal-arrow.prev{left:.8rem;}
-.modal-arrow.next{right:.8rem;}
+.modal-arrow.prev{left:.8rem;} .modal-arrow.next{right:.8rem;}
 .modal-counter{position:absolute;bottom:.8rem;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.55);color:#fff;font-size:.8rem;padding:.3rem .8rem;border-radius:20px;}
 .modal-title{font-size:1.2rem;font-weight:700;color:var(--dark);}
 .modal-cat{display:inline-block;font-size:.78rem;font-weight:600;background:linear-gradient(135deg,var(--pink),var(--red));color:#fff;padding:.25rem .75rem;border-radius:20px;margin-top:.2rem;}
@@ -126,9 +104,11 @@ main{max-width:1400px;margin:0 auto;padding:2.5rem 1rem 4rem;}
 .action-btn.primary{background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;}
 .action-btn.primary:hover{opacity:.88;transform:translateY(-1px);}
 .action-btn.secondary{background:#f0f2f8;color:var(--dark);}
-.action-btn.secondary:hover{background:var(--light-gray);}
+.action-btn.secondary:hover{background:var(--lg);}
 .action-btn.fav-btn.fav-on{background:#fff0f3;color:var(--red);border:1.5px solid var(--red);}
 .license-mini{font-size:.75rem;color:#a0aec0;line-height:1.5;margin-top:auto;}
+.license-mini a{color:#a0aec0;}
+/* Toast & back-to-top */
 #toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:.7rem 1.4rem;border-radius:30px;font-size:.88rem;font-weight:600;z-index:99999;pointer-events:none;transition:transform .35s cubic-bezier(.175,.885,.32,1.275),opacity .35s;opacity:0;white-space:nowrap;}
 #toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
 #backTop{position:fixed;bottom:2rem;right:1.5rem;background:linear-gradient(135deg,var(--purple),var(--purple2));color:#fff;border:none;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 14px rgba(102,126,234,.45);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;}
@@ -166,27 +146,30 @@ footer p{margin:.5rem 0;font-size:.9rem;opacity:.8;}
     <div class="stat-card"><div class="stat-value" id="statFavs">0</div><div class="stat-label">Your Favorites</div></div>
     <div class="stat-card"><div class="stat-value">Free</div><div class="stat-label">Forever</div></div>
   </div>
-  <div class="license-note" style="background:#f0fdf4;border-color:#86efac;color:#14532d;">✅ <strong>Free for commercial use.</strong> Images are generated via <a href="https://openai.com/index/gpt-image-1" target="_blank" style="color:#14532d;">OpenAI gpt-image-1</a>. Per <a href="https://openai.com/policies/terms-of-use" target="_blank" style="color:#14532d;">OpenAI's Terms of Service</a>, you own the output and may use it freely for personal and commercial projects. No attribution required.</div>
+  <div class="license-note">✅ <strong>Free for commercial use.</strong> Images generated via <a href="https://openai.com/index/gpt-image-1" target="_blank">OpenAI gpt-image-1</a>. Per <a href="https://openai.com/policies/terms-of-use" target="_blank">OpenAI's Terms of Service</a>, you own the output and may use it freely. No attribution required.</div>
   <div class="categories" id="catBar">
-    <button class="cat-btn active" data-cat="all" onclick="filterCat('all',this)">🌟 All<span class="cat-count" id="cnt-all"></span></button>
-    <button class="cat-btn" data-cat="business" onclick="filterCat('business',this)">💼 Business<span class="cat-count" id="cnt-business"></span></button>
-    <button class="cat-btn" data-cat="nature" onclick="filterCat('nature',this)">🌿 Nature<span class="cat-count" id="cnt-nature"></span></button>
-    <button class="cat-btn" data-cat="technology" onclick="filterCat('technology',this)">💻 Technology<span class="cat-count" id="cnt-technology"></span></button>
-    <button class="cat-btn" data-cat="people" onclick="filterCat('people',this)">🤝 People<span class="cat-count" id="cnt-people"></span></button>
-    <button class="cat-btn" data-cat="abstract" onclick="filterCat('abstract',this)">🎨 Abstract<span class="cat-count" id="cnt-abstract"></span></button>
-    <button class="cat-btn" data-cat="food" onclick="filterCat('food',this)">🍽️ Food<span class="cat-count" id="cnt-food"></span></button>
-    <button class="cat-btn" data-cat="travel" onclick="filterCat('travel',this)">✈️ Travel<span class="cat-count" id="cnt-travel"></span></button>
-    <button class="cat-btn" data-cat="favorites" onclick="filterCat('favorites',this)">❤️ Favorites<span class="cat-count" id="cnt-favorites"></span></button>
+    <button class="cat-btn active" data-cat="all"         onclick="filterCat('all',this)">🌟 All<span class="cat-count" id="cnt-all"></span></button>
+    <button class="cat-btn" data-cat="business"           onclick="filterCat('business',this)">💼 Business<span class="cat-count" id="cnt-business"></span></button>
+    <button class="cat-btn" data-cat="nature"             onclick="filterCat('nature',this)">🌿 Nature<span class="cat-count" id="cnt-nature"></span></button>
+    <button class="cat-btn" data-cat="technology"         onclick="filterCat('technology',this)">💻 Technology<span class="cat-count" id="cnt-technology"></span></button>
+    <button class="cat-btn" data-cat="people"             onclick="filterCat('people',this)">🤝 People<span class="cat-count" id="cnt-people"></span></button>
+    <button class="cat-btn" data-cat="abstract"           onclick="filterCat('abstract',this)">🎨 Abstract<span class="cat-count" id="cnt-abstract"></span></button>
+    <button class="cat-btn" data-cat="food"               onclick="filterCat('food',this)">🍽️ Food<span class="cat-count" id="cnt-food"></span></button>
+    <button class="cat-btn" data-cat="travel"             onclick="filterCat('travel',this)">✈️ Travel<span class="cat-count" id="cnt-travel"></span></button>
+    <button class="cat-btn" data-cat="sustainable"        onclick="filterCat('sustainable',this)">🌱 Sustainable<span class="cat-count" id="cnt-sustainable"></span></button>
+    <button class="cat-btn" data-cat="favorites"          onclick="filterCat('favorites',this)">❤️ Favorites<span class="cat-count" id="cnt-favorites"></span></button>
   </div>
   <div class="grid" id="grid"></div>
+  <div class="pagination" id="pagination"></div>
 </main>
+
 <div class="modal" id="modal" onclick="onModalBackdrop(event)">
   <div class="modal-inner">
-    <div class="modal-img-side" id="modalImgSide">
+    <div class="modal-img-side">
       <button class="modal-close" onclick="closeModal()">✕</button>
       <button class="modal-arrow prev" onclick="prevImg()">&#8249;</button>
       <button class="modal-arrow next" onclick="nextImg()">&#8250;</button>
-      <img id="modalImg" src="" alt="">
+      <img id="modalImg" src="" alt="" decoding="async">
       <div class="modal-counter" id="modalCounter"></div>
     </div>
     <div class="modal-info-side">
@@ -199,30 +182,37 @@ footer p{margin:.5rem 0;font-size:.9rem;opacity:.8;}
         <button class="action-btn secondary" onclick="copyUrl()">🔗 Copy Image URL</button>
         <button class="action-btn secondary fav-btn" id="modalFavBtn" onclick="toggleFavCurrent()">♡ Add to Favorites</button>
       </div>
-      <div class="license-mini">Generated with OpenAI gpt-image-1 &bull; Free for commercial use &bull; <a href="about.html" style="color:#a0aec0;">About this project</a></div>
+      <div class="license-mini">Generated with OpenAI gpt-image-1 &bull; Free for commercial use &bull; <a href="about.html">About</a></div>
     </div>
   </div>
 </div>
+
 <div id="toast"></div>
 <button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <footer>
   <p><strong>AI Stock Photos</strong></p>
   <p>Powered by <a href="https://openai.com/index/gpt-image-1" target="_blank">OpenAI gpt-image-1</a> &bull; Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
-  <p style="margin-top:1.2rem;">
-    <a href="index.html">Gallery</a> &nbsp;&bull;&nbsp;
-    <a href="about.html">About</a> &nbsp;&bull;&nbsp;
-    <a href="https://github.com/aiopentec/ai-stock-photo-api" target="_blank">GitHub</a>
-  </p>
-  <p style="margin-top:1rem;opacity:.5;font-size:.8rem;">Free for commercial use &bull; Generated weekly via automation &bull; &copy; 2025 AI Stock Photos</p>
+  <p style="margin-top:1.2rem;"><a href="index.html">Gallery</a> &nbsp;&bull;&nbsp; <a href="about.html">About</a> &nbsp;&bull;&nbsp; <a href="https://github.com/aiopentec/ai-stock-photo-api" target="_blank">GitHub</a></p>
+  <p style="margin-top:1rem;opacity:.5;font-size:.8rem;">Free for commercial use &bull; &copy; 2025 AI Stock Photos</p>
 </footer>
+
 <script>
-var allImages=[],displayImages=[],currentIndex=-1,favorites=[],toastTimer=null,base='';
+// ── State ──────────────────────────────────────────────────────────────────────
+var allImages=[], displayImages=[], currentIndex=-1, favorites=[], toastTimer=null, base='';
+var PAGE_SIZE=24, currentPage=1;
+
+// ── Boot ───────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded',function(){
   base=(window.location.origin+window.location.pathname).replace(/\/[^/]*$/,'');
-  loadFavorites();renderSkeletons(8);loadImages();
+  loadFavorites();
+  renderSkeletons(8);
+  loadImages();
   document.getElementById('searchInput').addEventListener('keypress',function(e){if(e.key==='Enter')searchImages();});
   window.addEventListener('scroll',function(){document.getElementById('backTop').classList.toggle('visible',window.scrollY>500);});
 });
+
+// ── Load ───────────────────────────────────────────────────────────────────────
 function loadImages(){
   fetch('api/images.json?t='+Date.now())
     .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
@@ -231,65 +221,119 @@ function loadImages(){
       document.getElementById('statTotal').textContent=allImages.length||'--';
       var kb=allImages.reduce(function(s,i){return s+(i.size_kb||0);},0);
       document.getElementById('statSize').textContent=allImages.length?(kb/1024).toFixed(1)+' MB':'--';
-      updateCounts();displayImages=allImages.slice();renderImages(displayImages);
+      updateCounts();
+      displayImages=allImages.slice();
+      renderPage();
     })
     .catch(function(err){
       document.getElementById('grid').innerHTML='<div class="empty"><div class="emoji">⚠️</div><h2>Could not load photos</h2><p>'+err.message+'</p></div>';
     });
 }
+
+// ── Skeletons ──────────────────────────────────────────────────────────────────
 function renderSkeletons(n){
   var h='';for(var i=0;i<n;i++)h+='<div class="skeleton-card"><div class="skel-img"></div><div class="skel-line"></div><div class="skel-line short"></div><div style="height:.8rem"></div></div>';
   document.getElementById('grid').innerHTML=h;
+  document.getElementById('pagination').innerHTML='';
 }
-function renderImages(images){
-  if(!images.length){document.getElementById('grid').innerHTML='<div class="empty"><div class="emoji">🔍</div><h2>No photos found</h2><p>Try a different search or category.</p></div>';return;}
-  var h='';for(var i=0;i<images.length;i++)h+=makeCard(images[i],i);
+
+// ── Pagination core ────────────────────────────────────────────────────────────
+function renderPage(){
+  var total=displayImages.length;
+  var pages=Math.ceil(total/PAGE_SIZE);
+  var start=(currentPage-1)*PAGE_SIZE;
+  var pageImgs=displayImages.slice(start,start+PAGE_SIZE);
+
+  if(pageImgs.length===0){
+    document.getElementById('grid').innerHTML='<div class="empty"><div class="emoji">🔍</div><h2>No photos found</h2><p>Try a different search or category.</p></div>';
+    document.getElementById('pagination').innerHTML='';
+    return;
+  }
+
+  var h='';
+  for(var i=0;i<pageImgs.length;i++) h+=makeCard(pageImgs[i],start+i);
   document.getElementById('grid').innerHTML=h;
+
+  // Pagination controls
+  var pg=document.getElementById('pagination');
+  if(pages<=1){pg.innerHTML='';return;}
+  pg.innerHTML=
+    '<button class="page-btn" onclick="goPage('+(currentPage-1)+')"'+(currentPage<=1?' disabled':'')+'>&#8592; Previous</button>'+
+    '<span class="page-info">Page '+currentPage+' of '+pages+'<br><small>'+total+' photo'+(total!==1?'s':'')+' total</small></span>'+
+    '<button class="page-btn" onclick="goPage('+(currentPage+1)+')"'+(currentPage>=pages?' disabled':'')+'>Next &#8594;</button>';
 }
+
+function goPage(n){
+  var pages=Math.ceil(displayImages.length/PAGE_SIZE);
+  if(n<1||n>pages)return;
+  currentPage=n;
+  renderPage();
+  var mainTop=document.querySelector('main').getBoundingClientRect().top+window.scrollY-20;
+  window.scrollTo({top:mainTop,behavior:'smooth'});
+}
+
+// ── Card ───────────────────────────────────────────────────────────────────────
 function makeCard(img,idx){
-  var url=base+'/images/'+img.filename;
+  // Thumbnail for gallery card, full image only in modal
+  var fullUrl  = base+'/images/'+img.filename;
+  var thumbUrl = img.thumbnail ? base+'/images/'+img.thumbnail : fullUrl;
   var title=(img.source_keyword||img.filename||'AI Photo').replace(/[_-]/g,' ');
-  var title35=title.length>35?title.slice(0,35)+'…':title;
+  var t35=title.length>35?title.slice(0,35)+'…':title;
   var cat=img.source_category||'general';
   var size=img.size_kb?img.size_kb+' KB':'HD';
   var fon=isFav(img.filename);
   return '<div class="image-card" onclick="openModal('+idx+')">'
     +'<div class="card-img-wrap">'
-    +'<img src="'+url+'" alt="'+escAttr(title)+'" loading="lazy" onerror="this.style.background=\'#dde\';this.onerror=null;">'
+    +'<img src="'+escAttr(thumbUrl)+'" alt="'+escAttr(title)+'" loading="lazy" decoding="async"'
+    +' onerror="this.src=\''+escAttr(fullUrl)+'\';this.onerror=null;">'
     +'<div class="card-overlay">'
-    +'<button class="ov-btn'+(fon?' fav-on':'')+'" title="Favorite" onclick="event.stopPropagation();toggleFav(\''+escAttr(img.filename)+'\',this)">'+(fon?'♥':'♡')+'</button>'
-    +'<button class="ov-btn" title="Download" onclick="event.stopPropagation();dlImage(\''+escAttr(url)+'\',\''+escAttr(img.filename)+'\')">⬇</button>'
+    +'<button class="ov-btn'+(fon?' fav-on':'')+'" title="Favorite"'
+    +' onclick="event.stopPropagation();toggleFav(\''+escAttr(img.filename)+'\',this)">'+(fon?'♥':'♡')+'</button>'
+    +'<button class="ov-btn" title="Download"'
+    +' onclick="event.stopPropagation();dlImage(\''+escAttr(fullUrl)+'\',\''+escAttr(img.filename)+'\')">⬇</button>'
     +'<button class="ov-btn" title="View" onclick="event.stopPropagation();openModal('+idx+')">🔍</button>'
     +'</div></div>'
-    +'<div class="card-info"><div class="card-title" title="'+escAttr(title)+'">'+escHtml(title35)+'</div>'
-    +'<div class="card-meta"><span class="tag">'+escHtml(cat)+'</span><span class="card-size">'+size+'</span></div></div></div>';
+    +'<div class="card-info">'
+    +'<div class="card-title" title="'+escAttr(title)+'">'+escHtml(t35)+'</div>'
+    +'<div class="card-meta"><span class="tag">'+escHtml(cat)+'</span><span class="card-size">'+size+'</span></div>'
+    +'</div></div>';
 }
+
+// ── Search ─────────────────────────────────────────────────────────────────────
 function searchImages(){
   var q=document.getElementById('searchInput').value.trim().toLowerCase();
-  displayImages=q?allImages.filter(function(img){return(img.source_keyword||'').toLowerCase().includes(q)||(img.source_category||'').toLowerCase().includes(q)||(img.filename||'').toLowerCase().includes(q);}):allImages.slice();
+  displayImages=q?allImages.filter(function(img){
+    return(img.source_keyword||'').toLowerCase().includes(q)||
+           (img.source_category||'').toLowerCase().includes(q)||
+           (img.filename||'').toLowerCase().includes(q);
+  }):allImages.slice();
   document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
   document.querySelector('[data-cat="all"]').classList.add('active');
-  renderImages(displayImages);
+  currentPage=1;
+  renderPage();
 }
+
+// ── Filter ─────────────────────────────────────────────────────────────────────
 function filterCat(cat,btn){
   document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
   btn.classList.add('active');
   document.getElementById('searchInput').value='';
-  if(cat==='all')displayImages=allImages.slice();
-  else if(cat==='favorites')displayImages=allImages.filter(function(img){return isFav(img.filename);});
+  if(cat==='all') displayImages=allImages.slice();
+  else if(cat==='favorites') displayImages=allImages.filter(function(img){return isFav(img.filename);});
   else displayImages=allImages.filter(function(img){return(img.source_category||'').toLowerCase()===cat;});
-  renderImages(displayImages);
+  currentPage=1;
+  renderPage();
 }
+
+var ALL_CATS=['business','nature','technology','people','abstract','food','travel','sustainable'];
 function updateCounts(){
-  var cats=['business','nature','technology','people','abstract','food','travel'];
   var el=document.getElementById('cnt-all');if(el)el.textContent=allImages.length?' ('+allImages.length+')':'';
-  cats.forEach(function(c){var el=document.getElementById('cnt-'+c);if(!el)return;var n=allImages.filter(function(i){return(i.source_category||'')===c;}).length;el.textContent=n?' ('+n+')':'';});
+  ALL_CATS.forEach(function(c){var el=document.getElementById('cnt-'+c);if(!el)return;var n=allImages.filter(function(i){return(i.source_category||'')===c;}).length;el.textContent=n?' ('+n+')':'';});
   updateFavCount();
 }
-function updateFavCount(){
-  var el=document.getElementById('cnt-favorites');if(el)el.textContent=favorites.length?' ('+favorites.length+')':'';
-  document.getElementById('statFavs').textContent=favorites.length;
-}
+function updateFavCount(){var el=document.getElementById('cnt-favorites');if(el)el.textContent=favorites.length?' ('+favorites.length+')':'';document.getElementById('statFavs').textContent=favorites.length;}
+
+// ── Favorites ──────────────────────────────────────────────────────────────────
 function loadFavorites(){try{favorites=JSON.parse(localStorage.getItem('ai_stock_favs')||'[]');}catch(e){favorites=[];}}
 function saveFavorites(){try{localStorage.setItem('ai_stock_favs',JSON.stringify(favorites));}catch(e){}}
 function isFav(f){return favorites.indexOf(f)>-1;}
@@ -299,12 +343,15 @@ function toggleFav(filename,btn){
   else{favorites.push(filename);if(btn){btn.classList.add('fav-on');btn.textContent='♥';}showToast('Added to favorites ♥');}
   saveFavorites();updateFavCount();updateModalFavBtn();
 }
+
+// ── Modal ──────────────────────────────────────────────────────────────────────
 function openModal(idx){currentIndex=idx;renderModal();document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
 function renderModal(){
   var img=displayImages[currentIndex];
-  var url=base+'/images/'+img.filename;
+  // Modal always loads the full-resolution image
+  var fullUrl=base+'/images/'+img.filename;
   var title=(img.source_keyword||img.filename||'AI Photo').replace(/[_-]/g,' ');
-  document.getElementById('modalImg').src=url;
+  document.getElementById('modalImg').src=fullUrl;
   document.getElementById('modalImg').alt=title;
   document.getElementById('modalTitle').textContent=title.replace(/\b\w/g,function(c){return c.toUpperCase();});
   document.getElementById('modalCat').textContent=img.source_category||'general';
@@ -313,31 +360,42 @@ function renderModal(){
   document.getElementById('modalCounter').textContent=(currentIndex+1)+' / '+displayImages.length;
   updateModalFavBtn();
 }
-function updateModalFavBtn(){
-  if(currentIndex<0||currentIndex>=displayImages.length)return;
-  var btn=document.getElementById('modalFavBtn');
-  var on=isFav(displayImages[currentIndex].filename);
-  btn.textContent=on?'♥ Remove Favorite':'♡ Add to Favorites';
-  btn.classList.toggle('fav-on',on);
-}
+function updateModalFavBtn(){if(currentIndex<0||currentIndex>=displayImages.length)return;var btn=document.getElementById('modalFavBtn');var on=isFav(displayImages[currentIndex].filename);btn.textContent=on?'♥ Remove Favorite':'♡ Add to Favorites';btn.classList.toggle('fav-on',on);}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 function onModalBackdrop(e){if(e.target===document.getElementById('modal'))closeModal();}
 function nextImg(){currentIndex=(currentIndex+1)%displayImages.length;renderModal();}
 function prevImg(){currentIndex=(currentIndex-1+displayImages.length)%displayImages.length;renderModal();}
+
+// ── Download ───────────────────────────────────────────────────────────────────
 function dlImage(url,filename){
   fetch(url).then(function(r){return r.blob();}).then(function(blob){
-    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename||'stock-photo.png';
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename||'photo.webp';
     document.body.appendChild(a);a.click();document.body.removeChild(a);
-    setTimeout(function(){URL.revokeObjectURL(a.href);},5000);showToast('Download started!');
+    setTimeout(function(){URL.revokeObjectURL(a.href);},5000);
+    showToast('Download started!');
   }).catch(function(){window.open(url,'_blank');showToast('Opened in new tab');});
 }
 function downloadCurrent(){if(currentIndex<0)return;var img=displayImages[currentIndex];dlImage(base+'/images/'+img.filename,img.filename);}
 function copyPrompt(){if(currentIndex<0)return;navigator.clipboard.writeText(displayImages[currentIndex].prompt||'').then(function(){showToast('Prompt copied!');}).catch(function(){showToast('Could not copy');});}
 function copyUrl(){if(currentIndex<0)return;navigator.clipboard.writeText(base+'/images/'+displayImages[currentIndex].filename).then(function(){showToast('URL copied!');}).catch(function(){showToast('Could not copy');});}
 function toggleFavCurrent(){if(currentIndex<0)return;toggleFav(displayImages[currentIndex].filename,null);updateModalFavBtn();}
-function surpriseMe(){if(!allImages.length){showToast('No images loaded yet');return;}displayImages=allImages.slice();renderImages(displayImages);openModal(Math.floor(Math.random()*displayImages.length));}
+
+// ── Surprise ───────────────────────────────────────────────────────────────────
+function surpriseMe(){if(!allImages.length){showToast('No images loaded yet');return;}displayImages=allImages.slice();currentPage=1;renderPage();openModal(Math.floor(Math.random()*displayImages.length));}
+
+// ── Toast ──────────────────────────────────────────────────────────────────────
 function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(function(){t.classList.remove('show');},2600);}
-document.addEventListener('keydown',function(e){if(!document.getElementById('modal').classList.contains('open'))return;if(e.key==='Escape')closeModal();else if(e.key==='ArrowRight')nextImg();else if(e.key==='ArrowLeft')prevImg();else if(e.key==='f'||e.key==='F')toggleFavCurrent();});
+
+// ── Keyboard ───────────────────────────────────────────────────────────────────
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('modal').classList.contains('open'))return;
+  if(e.key==='Escape')closeModal();
+  else if(e.key==='ArrowRight')nextImg();
+  else if(e.key==='ArrowLeft')prevImg();
+  else if(e.key==='f'||e.key==='F')toggleFavCurrent();
+});
+
+// ── Utils ──────────────────────────────────────────────────────────────────────
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function escAttr(s){return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 </script>
