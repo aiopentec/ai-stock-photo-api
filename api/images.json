@@ -1,6 +1,6 @@
 {
-  "total_images": 53,
-  "generated_at": "2026-08-27T09:08:12.190755+00:00",
+  "total_images": 56,
+  "generated_at": "2026-08-27T18:30:48.469457+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.webp",
@@ -584,6 +584,39 @@
       "prompt": "A modern electric car plugged into a white charging station in a bright clean garage. No people, minimal background.",
       "model": "gpt-image-1",
       "thumbnail": "thumbs/technology_electric_car_charging_1.webp"
+    },
+    {
+      "filename": "people_runner_sunrise_1.webp",
+      "source_keyword": "runner sunrise",
+      "source_category": "people",
+      "size_kb": 213,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A lone runner seen from behind on an empty coastal path at sunrise, ocean to one side. Warm golden light, energetic atmosphere.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/people_runner_sunrise_1.webp"
+    },
+    {
+      "filename": "people_yoga_silhouette_1.webp",
+      "source_keyword": "yoga silhouette",
+      "source_category": "people",
+      "size_kb": 77,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Silhouette of a person in a yoga warrior pose on a hilltop against a vivid orange and pink sunrise sky. No face visible.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/people_yoga_silhouette_1.webp"
+    },
+    {
+      "filename": "technology_drone_aerial_1.webp",
+      "source_keyword": "drone aerial",
+      "source_category": "technology",
+      "size_kb": 32,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A consumer drone hovering against a clear blue sky, photographed from below at a slight angle. Minimal background, sharp detail.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/technology_drone_aerial_1.webp"
     }
   ]
 }
