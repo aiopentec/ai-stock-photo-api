@@ -314,17 +314,22 @@ def main():
     API_DIR.mkdir(parents=True, exist_ok=True)
 
     index    = load_index()
-    existing = {img["filename"] for img in index["images"]}
+    # Compare by filename stem (strip extension) so images indexed as .png
+    # are correctly recognised as existing even though we generate .webp.
+    # optimize_images.py converts them in the same run, but the index
+    # update happens before generate_dalle.py reads it.
+    existing_stems = {img["filename"].rsplit(".", 1)[0]
+                      for img in index["images"]}
 
     tasks = []
     for category, items in CATALOGUE.items():
         for keyword, prompt in items:
-            fn = f"{category}_{slugify(keyword)}_1.webp"
-            if fn not in existing:
+            fn   = f"{category}_{slugify(keyword)}_1.webp"
+            stem = fn.rsplit(".", 1)[0]
+            if stem not in existing_stems:
                 tasks.append({"category": category, "keyword": keyword,
                                "prompt": prompt, "filename": fn,
                                "dest_path": IMAGES_DIR / fn})
-
     if not tasks:
         print("All catalogue images already exist."); return
 
