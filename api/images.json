@@ -454,39 +454,6 @@
       "thumbnail": "thumbs/nature_autumn_forest_1.webp"
     },
     {
-      "filename": "business_remote_work_1.webp",
-      "source_keyword": "remote work",
-      "source_category": "business",
-      "size_kb": 2549,
-      "width": 1536,
-      "height": 1024,
-      "prompt": "Overhead flat lay of a modern home office desk with a slim laptop, ceramic coffee mug, open notebook and pen, bright natural window light. Minimal and professional.",
-      "model": "gpt-image-1",
-      "thumbnail": "thumbs/business_remote_work_1.webp"
-    },
-    {
-      "filename": "business_startup_office_1.webp",
-      "source_keyword": "startup office",
-      "source_category": "business",
-      "size_kb": 2664,
-      "width": 1536,
-      "height": 1024,
-      "prompt": "Wide-angle view of a bright modern open-plan startup office with standing desks, hanging plants and floor-to-ceiling windows. Empty of people, golden late afternoon light.",
-      "model": "gpt-image-1",
-      "thumbnail": "thumbs/business_startup_office_1.webp"
-    },
-    {
-      "filename": "business_team_collaboration_1.webp",
-      "source_keyword": "team collaboration",
-      "source_category": "business",
-      "size_kb": 2813,
-      "width": 1536,
-      "height": 1024,
-      "prompt": "Top-down flat lay of architectural blueprints spread across a dark oak conference table with technical pens, a brass compass and coffee cups. No people. Professional planning atmosphere.",
-      "model": "gpt-image-1",
-      "thumbnail": "thumbs/business_team_collaboration_1.webp"
-    },
-    {
       "filename": "nature_desert_dunes_1.webp",
       "source_keyword": "desert dunes",
       "source_category": "nature",
