@@ -5,14 +5,14 @@
 
   <url>
     <loc>https://aiopentec.github.io/ai-stock-photo-api/</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://aiopentec.github.io/ai-stock-photo-api/about.html</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -268,6 +268,21 @@
       <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_solar_panels_roof_1.webp</image:loc>
       <image:title>Free Solar Panels Roof Stock Photo — Technology | AI Stock Photos</image:title>
       <image:caption>Free AI stock photo of solar panels roof, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_3d_printer_1.webp</image:loc>
+      <image:title>Free 3D Printer Stock Photo — Technology | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of 3d printer, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_vr_headset_1.webp</image:loc>
+      <image:title>Free Vr Headset Stock Photo — Technology | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of VR headset, generated with DALL-E 3. Free for commercial use.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aiopentec.github.io/ai-stock-photo-api/images/technology_electric_car_charging_1.webp</image:loc>
+      <image:title>Free Electric Car Charging Stock Photo — Technology | AI Stock Photos</image:title>
+      <image:caption>Free AI stock photo of electric car charging, generated with DALL-E 3. Free for commercial use.</image:caption>
     </image:image>
   </url>
 
