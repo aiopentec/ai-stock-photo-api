@@ -1,6 +1,6 @@
 {
   "total_images": 56,
-  "generated_at": "2026-08-27T18:30:48.469457+00:00",
+  "generated_at": "2026-08-31T10:45:22.677631+00:00",
   "images": [
     {
       "filename": "abstract_colour_smoke_1.webp",
@@ -584,6 +584,39 @@
       "prompt": "A consumer drone hovering against a clear blue sky, photographed from below at a slight angle. Minimal background, sharp detail.",
       "model": "gpt-image-1",
       "thumbnail": "thumbs/technology_drone_aerial_1.webp"
+    },
+    {
+      "filename": "people_couple_sunset_1.webp",
+      "source_keyword": "couple sunset",
+      "source_category": "people",
+      "size_kb": 128,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Two people sitting together on a clifftop watching a vivid ocean sunset. Seen from behind, silhouetted against the sky.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/people_couple_sunset_1.webp"
+    },
+    {
+      "filename": "people_cyclist_path_1.webp",
+      "source_keyword": "cyclist path",
+      "source_category": "people",
+      "size_kb": 336,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A cyclist seen from behind riding along a scenic tree-lined country path in autumn. Dappled light, relaxed pace.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/people_cyclist_path_1.webp"
+    },
+    {
+      "filename": "people_reading_cafe_1.webp",
+      "source_keyword": "reading cafe",
+      "source_category": "people",
+      "size_kb": 224,
+      "width": 1536,
+      "height": 1024,
+      "prompt": "A person sitting alone in a cosy window seat of a cafe, reading a book, seen in profile. Warm afternoon light, coffee on the table.",
+      "model": "gpt-image-1",
+      "thumbnail": "thumbs/people_reading_cafe_1.webp"
     }
   ]
 }
